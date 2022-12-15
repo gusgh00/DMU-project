@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Care Bicycle Case</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/instyle.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon/favicon.ico">
+    <script
+        src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxf8a0d7c16d01466a8bae0f6451de98be"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="js/confetti.js"></script>
+
+    <style>
+        body {
+            overflow-y: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input {
+            border: none;
+            background: transparent;
+            font-family: 'SBAggroB';
+            color: #fff;
+        }
+
+        button {
+            all: unset;
+        }
+
+
+        .ms-div {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 1080px;
+            z-index: 0;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var map;
+        var map1;
+        var map2;
+        var map3;
+        var label;
+        var slatlngsear;
+        let lt;
+        let ln;
+        function initTmap1() {
+            map1 = new Tmapv3.Map("map1_div", {
+                center: new Tmapv3.LatLng(37.56520450, 126.98702028),
+                width: "95%",   // 지도의 넓이
+                height: "95%",  // 지도의 높이
+                zoom: 17   // 지도 줌레벨
+            });
+        };
+        function initTmap2() {
+            map2 = new Tmapv3.Map("map2_div", {
+                center: new Tmapv3.LatLng(37.56520450, 126.98702028),
+                width: "95%",   // 지도의 넓이
+                height: "95%",  // 지도의 높이
+                zoom: 17   // 지도 줌레벨
+            });
+        };
+        function initTmap3() {
+            map3 = new Tmapv3.Map("map3_div", {
+                center: new Tmapv3.LatLng(37.56520450, 126.98702028),
+                width: "95%",   // 지도의 넓이
+                height: "95%",  // 지도의 높이
+                zoom: 17   // 지도 줌레벨
+            });
+        };
+        //변수 초기화 내용 중략…
+        function btnclick() {
+            alert("관리모드를 시작합니다.");
+            accimarker = setInterval(function () {
+                //기본
+                fetch("https://api.parkbomin.duckdns.org/admin/user-list/", {
+                    method: "GET"
+                })
+                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response.MESSAGE);
+                        console.log(response.MESSAGE);
+                        let arrNum = newArray();
+                        let arrName = newArray();
+                        //중략…
+                        for (i = 0; i < response.MESSAGE.length; i++) { // 값 전체 가져오는법
+                            arrNum[i] = i + 1;
+                            arrName[i] = response.MESSAGE[i].name;
+                            arrEmail[i] = response.MESSAGE[i].email;
+                            arrPhone[i] = response.MESSAGE[i].phone;
+                            arrLat[i] = response.MESSAGE[i].lat;
+                            arrLon[i] = response.MESSAGE[i].lng;
+                        }
+                        for (i = 0; i < response.MESSAGE.length; i++) {
+                            tr = document.createElement("tr");
+                            tr.id = "ttrr";
+                            let td1 = document.createElement("td");
+                            td1.appendChild(document.createTextNode(arrNum[i] + ""));
+                            let td2 = document.createElement("td");
+                            td2.appendChild(document.createTextNode(arrName[i] + ""));
+                            //증략…
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+                            tr.appendChild(td3);
+                            //중략…
+                            table.appendChild(tr);
+                        }
+                    })
+                var polyline1 = new Tmapv3.Polyline({
+                    path: paths1,
+                    strokeColor: "#3D5220",
+                    strokeWeight: 6,
+                    direction: true,
+                    map: map1 // 지도 객체
+                });
+                //중략…
+                fetch("https://api.parkbomin.duckdns.org/sensor/problem/", {
+                    method: "GET"
+                })
+                    .then(rps => rps.json())
+                    .then(rps => {
+                        if (rps.MESSAGE[0] != null) {
+                            bomblat1 = rps.MESSAGE[0].lat;
+                            bomblng1 = rps.MESSAGE[0].lng;
+                            bombnick1 = rps.MESSAGE[0].nickname;
+                        }
+                        //중략…
+                        if (bombnick1 == nick1) {
+                            let marker1 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map1,
+                                icon: "../../imgs/marker/acc.png" //마커 디자인
+                            });
+                            markers1.push(marker1);
+                        }
+                        else if (bombnick1 == nick2) {
+                            let marker2 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map2,
+                                icon: "../../imgs/marker/acc.png" //마커 디자인
+                            });
+                            markers2.push(marker2);
+                        }
+                        //중략…
+                    })
+            }
+                , 3000);
+            //목록 갱신
+            tableclear = setInterval(function () {
+                for (i = 0; i < lengths; i++) {
+                    $("#ttrr").remove();
+                }
+            }, 3000)
+        }
+        function btnclick2() {
+            alert("관리모드를 종료합니다.");
+            clearInterval(accimarker);
+            clearInterval(tableclear);
+        }
+        function btnclick3() {
+            window.location.reload();
+        }
+        function removeMarkers() {
+            for (vari = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+        }
+    </script>
+
+</head>
+
+<body onload="initTmap()">
+    <!--헤더-->
+    <header class="container">
+        <a href="../index.html" class="index-css">
+            Care Bicycle Case 축약형 포트폴리오
+        </a>
+        <nav>
+            <ul class="mmenu">
+                <!-- <li class="menu1">
+                    <a id="aggro" href="html/main/info.html">
+                        길 찾기
+                    </a>
+                </li>
+                <li class="menu3">
+                    <a id="aggro" href="html/main/mapsearch.html">
+                        테마지도
+                    </a>
+                </li>
+                <li class="menu4">
+                    <a id="aggro" href="html/main/product.html">
+                        실시간 사고
+                    </a>
+                </li> -->
+                <li>
+                    <a id="aggro" class="list-title">
+                        실시간 사고
+                    </a>
+                </li>
+                <li class="useri">
+                    <!-- <a id="aggro" href="html/rog/rogin.html">
+                        <img id="userinfo" src="imgs/usericon.png">
+                    </a> -->
+                    <span id="user_msg">라이더님 환영합니다!</span>
+                    <a id="aggro" href="javascript:void(0);" onclick="sign(); return false;">
+                        <span id="sign">로그인</span>
+                        <!--로그인 후 로그아웃으로 변경
+                        if 토큰 값이 널 값이 아닌 경우 로그아웃, 널인 경우 로그인-->
+                    </a>
+                    <span>|</span>
+                    <a id="aggro" href="javascript:void(0);" onclick="user(); return false;">
+                        <span id="user">회원가입</span>
+                        <!--로그인 후 회원정보로 변경
+                        if 토큰 값이 널 값이 아닌 경우 회원정보, 널인 경우 회원가입-->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script type="text/javascript" src="js/header.js"></script>
+    </header>
+    <!--페이지-->
+    <main>
+        <div class="ms-div">
+            <div id="map_div" class="map-div">
+            </div>
+        </div>
+    </main>
+    <!--푸터-->
+    <footer class="foot-container">
+        <a href="../index.html">
+            <img src="../imgs/cbc_logo_ui.png" class="cbc-logo-ui">
+        </a>
+        <nav>
+            <p>
+                <span>NAME : 유현호</span>
+                <span>TEAM : 자슬라</span>
+                <span>ROLE : 웹 프론트 & 시스템 프레임 디자인 및 제작</span>
+            </p>
+            <p>
+                동양미래대학교 컴퓨터공학부 컴퓨터정보공학과 사회맞춤형 지능형컴퓨팅과정
+            </p>
+            <p>
+                2022 스마트 ICT 프로젝트 경진대회 최우수상
+            </p>
+        </nav>
+        <nav class="footer-contact">
+            <span>
+                Contact
+            </span>
+            <a href="hyno0913@naver.com">
+                <img src="../imgs/ui_email.png" class="email-ui">
+            </a>
+            <a href="https://github.com/gusgh00">
+                <img src="../imgs/ui_github.png" class="git-ui">
+            </a>
+            <a href="https://www.dongyang.ac.kr">
+                <img src="../imgs/ui_school.png" class="school-ui">
+            </a>
+        </nav>
+    </footer>
+    <script>
+        if (localStorage.getItem('user_nickname') == "관리자") {
+            document.getElementById('sign').innerHTML = '로그아웃'
+            document.getElementById('user').innerHTML = '관리페이지'
+
+            function sign() {
+                localStorage.clear()
+                alert("로그아웃 되었습니다!")
+                location.href = "../index.html";
+            }
+            function user() {
+                location.href = "../index.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Care Bicycle Case</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/instyle.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon/favicon.ico">
+    <script
+        src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxf8a0d7c16d01466a8bae0f6451de98be"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="js/confetti.js"></script>
+
+    <style>
+        body {
+            overflow-y: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        input:focus {
+            outline: none;
+        }
+        input {
+            border: none;
+            background: transparent;
+            font-family: 'SBAggroB';
+            color: #fff;
+        }
+        button {
+            all: unset;
+        }
+
+        .ms-div {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 1080px;
+            z-index: 0;
+        }
+
+        .sch-div {
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 10;
+            top: 200px;
+            left: 90px;
+            width: 500px;
+            height: 220px;
+            background-color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 1rem;
+            font-family: 'SBAggroB';
+            opacity: 0.4;
+            transition: all 1.0s;
+        }
+        .sch-div:hover {
+            opacity: 1;
+        }
+        .res-div {
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 10;
+            top: 600px;
+            left: 90px;
+            width: 400px;
+            height: 160px;
+            background-color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 1rem;
+            font-family: 'SBAggroB';
+            opacity: 0.4;
+            transition: all 1.0s;
+        }
+        .res-div:hover {
+            opacity: 1;
+        }
+
+        .sp-board-div {
+            width: 460px;
+            margin: 20px;
+        }
+
+        .sp-title-div {
+            float: left;
+            z-index: 20;
+            width: 80px;
+            height: 50px;
+            margin: 5px;
+            background-color: chartreuse;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+
+        .sp-title-div>span {
+            line-height: 50px;
+        }
+
+        .sp-div {
+            float:left;
+            z-index: 20;
+            margin: 5px;
+            width: 270px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 1rem;
+        }
+        .sp-text {
+            line-height: 50px;
+            font-size: 20px;
+        }
+        .sp-btn-div {
+            float: right;
+            z-index: 20;
+            width: 80px;
+            height: 50px;
+            margin: 5px;
+            background-color: blueviolet;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+        .sp-btn-div>button {
+            line-height: 50px;
+        }
+
+        .ep-board-div {
+            width: 460px;
+            margin: 20px;
+        }
+
+        .ep-title-div {
+            float: left;
+            z-index: 20;
+            width: 80px;
+            height: 50px;
+            margin: 5px;
+            background-color: chartreuse;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+
+        .ep-title-div>span {
+            line-height: 50px;
+        }
+
+        .ep-div {
+            float:left;
+            z-index: 20;
+            margin: 5px;
+            width: 270px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 1rem;
+        }
+        .ep-text {
+            line-height: 50px;
+            font-size: 20px;
+        }
+        .ep-btn-div {
+            float: right;
+            z-index: 20;
+            width: 80px;
+            height: 50px;
+            margin: 5px;
+            background-color: blueviolet;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+        .ep-btn-div>button {
+            line-height: 50px;
+        }
+
+        .sch-board-div {
+            width: 460px;
+            margin: 20px;
+        }
+        .post-btn {
+            float: left;
+            z-index: 20;
+            width: 220px;
+            height: 50px;
+            margin: 5px;
+            background-color: aquamarine;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+        .post-btn>button {
+            line-height: 50px;
+        }
+        .cancel-btn {
+            float: right;
+            z-index: 20;
+            width: 220px;
+            height: 50px;
+            margin: 5px;
+            background-color: aquamarine;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+        .cancel-btn>button {
+            line-height: 50px;
+        }
+
+
+
+
+        
+
+        .tm-board-div {
+            width: 360px;
+            margin: 20px;
+        }
+
+        .tm-title-div {
+            float: left;
+            z-index: 20;
+            width: 80px;
+            height: 50px;
+            margin: 5px;
+            background-color: chartreuse;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+
+        .tm-title-div>span {
+            line-height: 50px;
+        }
+
+        .tm-div {
+            float: right;
+            z-index: 20;
+            margin: 5px;
+            width: 240px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 1rem;
+        }
+        .tm-div>span {
+            line-height: 50px;
+        }
+
+        .ds-board-div {
+            width: 360px;
+            margin: 20px;
+        }
+
+        .ds-title-div {
+            float: left;
+            z-index: 20;
+            width: 80px;
+            height: 50px;
+            margin: 5px;
+            background-color: chartreuse;
+            border-radius: 1rem;
+            font-size: 25px;
+        }
+
+        .ds-title-div>span {
+            line-height: 50px;
+        }
+
+        .ds-div {
+            float: right;
+            z-index: 20;
+            margin: 5px;
+            width: 240px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 1rem;
+        }
+        .ds-div>span {
+            line-height: 50px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // 페이지가 로딩이 된 후 호출하는 함수입니다.
+        var map;
+        var label;
+        var markers = [];
+        var emarkers = [];
+        var slatlngsear;
+        var elatlngsear;
+        var jsonObject;
+        // 페이지가 로딩이 된 후 호출하는 함수입니다.
+        function initTmap() {
+            // map 생성
+            // Tmap.map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
+            map = new Tmapv3.Map("map_div", {
+                center: new Tmapv3.LatLng(37.500812, 126.867576),
+                width: "100%",  // 지도의 넓이
+                height: "100%", // 지도의 높이
+                zoom: 16   // 지도 줌레벨
+            });
+        }
+        //출발지 마커의 옵션을 설정해주는 함수입니다.
+        function addMarker(lonlatoption) {
+            // 마커 생성
+            var marker = new Tmapv3.Marker({
+                position: new Tmapv3.LatLng(lonlatoption.lonlat.latitude(), lonlatoption.lonlat.longitude()), //Marker의 중심좌표 설정.
+                map: map, //Marker가 표시될 Map 설정..
+                icon: "../imgs/mapview/start.png"
+            });
+            markers.push(marker);
+            marker.on("Click", function (evt) {
+                document.getElementById("startPoint").value = lonlatoption.title;
+                console.log(lonlatoption.lonlat);
+                slatlngsear = {
+                    slat: lonlatoption.lonlat._lat,
+                    slng: lonlatoption.lonlat._lng
+                }
+            });
+        }
+        //출발지 특정 장소를 검색하는 함수입니다.
+        function searchPOI() {
+            var center = map.getCenter();//map의 중심 좌표 값을 받아 옵니다.
+            var optionObj = {
+                reqCoordType: "WGS84GEO", //요청 좌표계 옵셥 설정입니다.
+                resCoordType: "WGS84GEO",  //응답 좌표계 옵셥 설정입니다.
+                centerLon: 126.867576,  //POI검색시 중앙좌표의 경도입니다.
+                centerLat: 37.500812 //POI검색시 중앙좌표의 위도입니다.
+            };
+            var params = {
+                onComplete: onComplete,
+                onProgress: onProgress,
+                onError: onError
+            };
+            var tData = new Tmapv3.extension.TData();
+            var startPoint = $('#startPoint').val();
+            tData.getPOIDataFromSearchJson(encodeURIComponent(startPoint), optionObj, params);//encodeURIComponent함수로 해당 파라메터 값을 처리합니다.
+        }
+        //출발지 POI검색
+        function onComplete() {
+            console.log(this._responseData); //json로 데이터를 받은 정보들을 콘솔창에서 확인할 수 있습니다.
+            if (this._responseData.searchPoiInfo.pois.poi != '') {
+                jQuery(this._responseData.searchPoiInfo.pois.poi).each(function () {//결과를 each문으로 돌려 마커를 등록합니다.
+                    //response 데이터중 원하는 값을 find 함수로 찾습니다.
+                    var name = this.name;
+                    var id = this.id;
+                    var lon = this.frontLon;
+                    var lat = this.frontLat;
+                    var lonlatoption = {
+                        title: name,//마커 라벨 text 설정
+                        lonlat: new Tmapv3.LatLng(lat, lon)//마커 라벨 좌표 설정
+                    };
+                    addMarker(lonlatoption);//마커를 추가하는 함수입니다.
+                });
+            } else {
+                alert('검색결과가 없습니다.');
+            }
+            map.setCenter(new Tmapv3.LatLng(this._responseData.searchPoiInfo.pois.poi[0].frontLat, this._responseData.searchPoiInfo.pois.poi[0].frontLon));
+            map.setZoom(14);
+        }
+        //도착지 마커의 옵션을 설정해주는 함수입니다.
+        function addMarkerE(lonlatoption) {
+            // 마커 생성
+            var emarker = new Tmapv3.Marker({
+                position: new Tmapv3.LatLng(lonlatoption.lonlat.latitude(), lonlatoption.lonlat.longitude()), //Marker의 중심좌표 설정.
+                map: map, //Marker가 표시될 Map 설정..
+                //title: lonlatoption.title, //마우스 위치시 출력할 타이틀
+                icon: "../imgs/mapview/end.png"
+            });
+            emarkers.push(emarker);
+            emarker.on("Click", function (evt) {
+                document.getElementById("endPoint").value = lonlatoption.title;
+                console.log(lonlatoption.lonlat);
+                elatlngsear = {
+                    elat: lonlatoption.lonlat._lat,
+                    elng: lonlatoption.lonlat._lng
+                }
+            });
+        }
+        //도착지 특정 장소를 검색하는 함수입니다.
+        function searchPOIs() {
+            var center = map.getCenter();//map의 중심 좌표 값을 받아 옵니다.
+            var optionObj = {
+                reqCoordType: "WGS84GEO", //요청 좌표계 옵셥 설정입니다.
+                resCoordType: "WGS84GEO",  //응답 좌표계 옵셥 설정입니다.
+                centerLon: 126.867576,  //POI검색시 중앙좌표의 경도입니다.
+                centerLat: 37.500812 //POI검색시 중앙좌표의 위도입니다.
+            };
+            var params = {
+                onComplete: onCompleteE,
+                onProgress: onProgress,
+                onError: onError
+            };
+            var tData = new Tmapv3.extension.TData();
+            var endPoint = $('#endPoint').val();
+            tData.getPOIDataFromSearchJson(encodeURIComponent(endPoint), optionObj, params);//encodeURIComponent함수로 해당 파라메터 값을 처리합니다.
+        }
+        //도착지 POI검색
+        function onCompleteE() {
+            console.log(this._responseData); //json로 데이터를 받은 정보들을 콘솔창에서 확인할 수 있습니다.
+            if (this._responseData.searchPoiInfo.pois.poi != '') {
+                jQuery(this._responseData.searchPoiInfo.pois.poi).each(function () {//결과를 each문으로 돌려 마커를 등록합니다.
+                    //response 데이터중 원하는 값을 find 함수로 찾습니다.
+                    var name = this.name;
+                    var id = this.id;
+                    var lon = this.frontLon;
+                    var lat = this.frontLat;
+                    var lonlatoption = {
+                        title: name,//마커 라벨 text 설정
+                        lonlat: new Tmapv3.LatLng(lat, lon)//마커 라벨 좌표 설정
+                    };
+                    addMarkerE(lonlatoption);//마커를 추가하는 함수입니다.
+                });
+            } else {
+                alert('검색결과가 없습니다.');
+            }
+            map.setCenter(new Tmapv3.LatLng(this._responseData.searchPoiInfo.pois.poi[0].frontLat, this._responseData.searchPoiInfo.pois.poi[0].frontLon));
+            map.setZoom(14);
+        }
+        //경로안내 요청 함수
+        function getRP() {
+            var s_latlng = new Tmapv3.LatLng(slatlngsear.slat, slatlngsear.slng);
+            var e_latlng = new Tmapv3.LatLng(elatlngsear.elat, elatlngsear.elng);
+            var optionObj = {
+                reqCoordType: "WGS84GEO", //요청 좌표계 옵셥 설정입니다.
+                resCoordType: "WGS84GEO",  //응답 좌표계 옵셥 설정입니다.
+                trafficInfo: "Y",
+                searchOption: 12
+            };
+
+            var params = {
+                onComplete: onCompleteH,
+                onProgress: onProgress,
+                onError: onError
+            };
+            // TData 객체 생성
+            var tData2 = new Tmapv3.extension.TData();
+            // TData 객체의 경로요청 함수
+            tData2.getRoutePlanJson(s_latlng, e_latlng, optionObj, params);
+            removeMarkers()
+            removeMarkersE()
+            //중략…
+        }
+        //경로안내
+        function onCompleteH() {
+            console.log(this._responseData); //json으로 데이터를 받은 정보들을 콘솔창에서 확인할 수 있습니다.
+            jsonObject = new Tmapv3.extension.GeoJSON();
+            var jsonForm = jsonObject.rpTrafficRead(this._responseData);
+            //교통정보 표출시 생성되는 LineColor 입니다.
+            var trafficColors = {
+                // 사용자가 임의로 색상을 설정할 수 있습니다.
+                // 교통정보 옵션 - 라인색상
+                trafficDefaultColor: "#000000", //교통 정보가 없을 때
+                trafficType1Color: "#009900", //원할
+                trafficType2Color: "#7A8E0A", //서행
+                trafficType3Color: "#8E8111",  //정체
+                trafficType4Color: "#FF0000" //정체
+            };
+            jsonObject.drawRouteByTraffic(map, jsonForm, trafficColors);
+            map.setCenter(new Tmapv3.LatLng(slatlngsear.slat, slatlngsear.slng));
+            map.setZoom(13);
+            var resdist = this._responseData.features[0].properties.totalDistance / 1000;
+            document.getElementById("whatdistance").innerHTML = resdist.toFixed(2) + "km"
+            var TRFlength = this._responseData.features.length;
+            var SumTotalTime = this._responseData.features[0].properties.totalTime;
+            var Hour = 0;
+            var Min = 0;
+            var Sec = 0;
+            Hour = 4 * SumTotalTime / 3600;
+            Min = (Hour - Math.floor(Hour)) * 60;
+            Sec = (Min - Math.floor(Min)) * 60;
+            //자가용 속력과 시간을 자전거 속력과 시간으로 변환 시키는 코드
+            if (Math.floor(Hour) == 0) {
+                console.log(Math.floor(Min));
+                console.log(Math.floor(Sec));
+                document.getElementById("whattime").innerHTML = Math.floor(Min) + "분" + " " + Math.floor(Sec) + "초";
+            }
+            else if (Math.floor(Hour) != 0) {
+                console.log(Math.floor(Hour));
+                console.log(Math.floor(Min));
+                console.log(Math.floor(Sec));
+                document.getElementById("whattime").innerHTML = Math.floor(Hour) + "시간" + " " + Math.floor(Min) + "분" + " " + Math.floor(Sec) + "초";
+            }
+        }
+        //경로취소
+        function RoadCancel() {
+            var btn_sp = document.getElementById("searchSP");
+            var btn_ep = document.getElementById("searchEP");
+            var btn_search = document.getElementById("searchLoad");
+            var btn_cancel = document.getElementById("searchLoadCancel");
+            // btn_sp.disabled = false;
+            // btn_sp.style.backgroundColor = '#ff3d7e';
+            // btn_sp.style.color = '#ffffff';
+            // btn_ep.disabled = false;
+            // btn_ep.style.backgroundColor = '#9c35fd';
+            // btn_ep.style.color = '#ffffff';
+            // btn_search.disabled = false;
+            // btn_search.style.backgroundColor = '#88a795';
+            // btn_search.style.color = '#ffffff';
+            // btn_cancel.disabled = true;
+            // btn_cancel.style.backgroundColor = '#4e5c77';
+            // btn_cancel.style.color = '#46494f'
+
+            var inputs = document.getElementById("startPoint");
+            var inpute = document.getElementById("endPoint");
+
+            document.getElementById("whattime").innerHTML = "-"
+            document.getElementById("whatdistance").innerHTML = "-"
+
+            inputs.value = null;
+            inpute.value = null;
+
+            slatlngsear = null;
+            elatlngsear = null;
+
+            map.destroy(); //지도 삭제
+            initTmap(); //지도 불러오기
+        }
+        // 모든 마커를 제거하는 함수입니다.
+        function removeMarkers() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+        }
+        // 모든 마커를 제거하는 함수입니다.
+        function removeMarkersE() {
+            for (var i = 0; i < emarkers.length; i++) {
+                emarkers[i].setMap(null);
+            }
+            emarkers = [];
+        }
+        //데이터 로드중 실행하는 함수입니다.
+        function onProgress() {
+        }
+        //데이터 로드 중 에러가 발생시 실행하는 함수입니다.
+        function onError() {
+            alert("onError");
+        }
+    </script>
+
+</head>
+
+<body onload="initTmap()">
+    <!--헤더-->
+    <header class="container">
+        <a href="../index.html" class="index-css">
+            Care Bicycle Case 축약형 포트폴리오
+        </a>
+        <nav>
+            <ul class="mmenu">
+                <!-- <li class="menu1">
+                    <a id="aggro" href="html/main/info.html">
+                        길 찾기
+                    </a>
+                </li>
+                <li class="menu3">
+                    <a id="aggro" href="html/main/mapsearch.html">
+                        테마지도
+                    </a>
+                </li>
+                <li class="menu4">
+                    <a id="aggro" href="html/main/product.html">
+                        실시간 사고
+                    </a>
+                </li> -->
+                <li>
+                    <a id="aggro" class="list-title">
+                        길 찾기
+                    </a>
+                </li>
+                <li class="useri">
+                    <!-- <a id="aggro" href="html/rog/rogin.html">
+                        <img id="userinfo" src="imgs/usericon.png">
+                    </a> -->
+                    <span id="user_msg">라이더님 환영합니다!</span>
+                    <a id="aggro" href="javascript:void(0);" onclick="sign(); return false;">
+                        <span id="sign">로그인</span>
+                        <!--로그인 후 로그아웃으로 변경
+                        if 토큰 값이 널 값이 아닌 경우 로그아웃, 널인 경우 로그인-->
+                    </a>
+                    <span>|</span>
+                    <a id="aggro" href="javascript:void(0);" onclick="user(); return false;">
+                        <span id="user">회원가입</span>
+                        <!--로그인 후 회원정보로 변경
+                        if 토큰 값이 널 값이 아닌 경우 회원정보, 널인 경우 회원가입-->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script type="text/javascript" src="js/header.js"></script>
+    </header>
+    <!--페이지-->
+    <main>
+        <div class="ms-div">
+            <div id="map_div" class="map-div">
+                <div class="sch-div">
+                    <div class="sp-board-div">
+                        <div class="sp-title-div">
+                            <span>시작</span>
+                        </div>
+                        <div class="sp-div">
+                            <input type="text" id="startPoint" class="sp-text" placeholder="시작 지점을 입력하세요.">
+                        </div>
+                        <div class="sp-btn-div">
+                            <button onclick="searchPOI()" id="searchSP">검색</button>
+                        </div>
+                    </div>
+                    <div class="ep-board-div">
+                        <div class="ep-title-div">
+                            <span>종료</span>
+                        </div>
+                        <div class="ep-div">
+                            <input type="text" id="endPoint" class="ep-text" placeholder="종료 지점을 입력하세요.">
+                        </div>
+                        <div class="ep-btn-div">
+                            <button onclick="searchPOIs()" id="searchEP">검색</button>
+                        </div>
+                    </div>
+                    <div class="sch-board-div">
+                        <div class="post-btn">
+                            <button onclick="getRP()">경로요청</button>
+                        </div>
+                        <div class="cancel-btn">
+                            <button onclick="RoadCancel()">경로취소</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-div">
+                    <div class="tm-board-div">
+                        <div class="tm-title-div">
+                            <span>시간</span>
+                        </div>
+                        <div class="tm-div">
+                            <span id="whattime">-</span>
+                        </div>
+                    </div>
+                    <div class="ds-board-div">
+                        <div class="ds-title-div">
+                            <span>거리</span>
+                        </div>
+                        <div class="ds-div">
+                            <span id="whatdistance">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--푸터-->
+    <footer class="foot-container">
+        <a href="../index.html">
+            <img src="../imgs/cbc_logo_ui.png" class="cbc-logo-ui">
+        </a>
+        <nav>
+            <p>
+                <span>NAME : 유현호</span>
+                <span>TEAM : 자슬라</span>
+                <span>ROLE : 웹 프론트 & 시스템 프레임 디자인 및 제작</span>
+            </p>
+            <p>
+                동양미래대학교 컴퓨터공학부 컴퓨터정보공학과 사회맞춤형 지능형컴퓨팅과정
+            </p>
+            <p>
+                2022 스마트 ICT 프로젝트 경진대회 최우수상
+            </p>
+        </nav>
+        <nav class="footer-contact">
+            <span>
+                Contact
+            </span>
+            <a href="hyno0913@naver.com">
+                <img src="../imgs/ui_email.png" class="email-ui">
+            </a>
+            <a href="https://github.com/gusgh00">
+                <img src="../imgs/ui_github.png" class="git-ui">
+            </a>
+            <a href="https://www.dongyang.ac.kr">
+                <img src="../imgs/ui_school.png" class="school-ui">
+            </a>
+        </nav>
+    </footer>
+    <script>
+        if (localStorage.getItem('user_nickname') == "관리자") {
+            document.getElementById('sign').innerHTML = '로그아웃'
+            document.getElementById('user').innerHTML = '관리페이지'
+
+            function sign() {
+                localStorage.clear()
+                alert("로그아웃 되었습니다!")
+                location.href = "../index.html";
+            }
+            function user() {
+                location.href = "../index.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

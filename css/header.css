@@ -33,6 +33,13 @@ a {
     outline: none;
     color: #323232;
 }
+
+.index-css {
+    font-family: 'SBAggroB';
+    font-size: 20px;
+    margin-left: 100px;
+}
+
 .useri span {
     font-family: 'Cafe24Simplehae';
 }
@@ -43,14 +50,14 @@ a {
     top: 0px;
     right: 0px;
     margin: 0 auto;
-    background: #fff;
+    background: #eeeeee;
 }
 
 header {
     position: fixed;
     width: 100%;
     top: 0px;
-    height: 50px;
+    height: 30px;
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -65,16 +72,22 @@ header>img {
 }
 
 header>nav {
-    width: 800px;
+    width: auto;
     height: 100%;
     margin-right: 100px;
 }
 
 ul.mmenu {
-    width: 100%;
+    width: auto;
     height: 100%;
     display: flex;
     justify-content: space-between;
+    margin: 0px;
+}
+
+.list-title {
+    font-size: 30px;
+    margin-right: 130px;
 }
 
 ul.mmenu>li {
@@ -85,56 +98,6 @@ ul.mmenu>li {
     position: relative;
 }
 
-ul.mmenu > li ul.submenu {
-    display: none;
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-    position: absolute;
-    top: 50px;
-    justify-content: space-between;
-    right: 60px;
-    z-index: 37;
-}
-ul.mmenu > li ul.submenu > li {
-    display: inline-block;
-    align-items: center;
-    height: 50px;
-    width: 200px;
-    text-align: center;
-    background: rgb(238, 238, 238, 0.7);
-}
-
 #userinfo {
     width: 30px;
 }
-
-ul.mmenu > li:hover ul.submenu {display: block;}
-
-ul.mmenu > li ul.submenu {display: none;}
-
-/*햄버거 메뉴*/
-#hammenu {
-    width: 20px;
-}
-#hamcan {
-    width: 50px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-input[id="menuicon"] {display: none;}
-input[id="menuicon"]:checked + label {z-index: 9;}
-
-div[class="sidebar"] {
-    width: 350px;
-    height: 100%;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    right: -350px;
-    z-index: 38;
-    transition: all .35s;
-    box-shadow: -5px 0 20px rgb(0, 0, 0);
-}
-input[id="menuicon"]:checked + label + div {right: 0;}

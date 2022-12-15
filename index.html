@@ -5,50 +5,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Care Bicycle Case</title>
-    <meta name="author" content="Alvaro Trigo Lopez" />
-    <meta name="description" content="fullPage full-screen backgrounds." />
-    <meta name="keywords" content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
-    <meta name="Resource-type" content="Document" />
 
     <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/instyle.css" />
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon/favicon.ico">
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
     <style>
         body {
             overflow-y: hidden;
+            top: 0;
+            left: 0;
         }
 
-        #video {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            overflow: hidden;
+        .selecter {
+            position: relative;
+            top: 300px;
         }
 
-        .vtext {
+        .selecter img {
+            width: 500px;
+            filter: drop-shadow(5px 5px 20px #000);
+            transition: all 1.0s;
+        }
+
+        .select_mapsearch {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .select_mapmarker {
             position: absolute;
-            width: 100%;
-            top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            margin-left: -250px;
         }
 
-        .vttitle {
-            text-align: center;
-            font-size: 80px;
-            color: #fff;
+        .select_admin {
+            float: right;
+            margin-right: 50px;
         }
 
-        .vtnext {
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
+        .sel-1:hover {
+            transform: scale(1.10);
+        }
+
+        .sel-2:hover {
+            transform: scale(1.10);
+        }
+
+        .sel-3:hover {
+            transform: scale(1.10);
         }
     </style>
 
@@ -57,36 +65,30 @@
 <body>
     <!--헤더-->
     <header class="container">
-        <a href="index.html">
-            <img src="imgs/로고_웹사이트.png">
+        <a href="index.html" class="index-css">
+            Care Bicycle Case 축약형 포트폴리오
         </a>
         <nav>
             <ul class="mmenu">
-                <li class="menu1">
+                <!-- <li class="menu1">
                     <a id="aggro" href="html/main/info.html">
-                        작품소개
+                        길 찾기
                     </a>
-                    <ul class="submenu">
-                        <li><a id="aggro" href="html/main/info.html">작품소개</a></li>
-                        <li><a id="aggro" href="html/main/contact.html">개발자소개</a></li>
-                    </ul>
                 </li>
                 <li class="menu3">
                     <a id="aggro" href="html/main/mapsearch.html">
-                        위치검색
+                        테마지도
                     </a>
-                    <ul class="submenu">
-                        <li><a id="aggro" href="html/main/mapsearch.html">위치검색</a></li>
-                    </ul>
                 </li>
                 <li class="menu4">
                     <a id="aggro" href="html/main/product.html">
-                        제품구매
+                        실시간 사고
                     </a>
-                    <ul class="submenu">
-                        <li><a id="aggro" href="html/main/productinfo.html">제품소개</a></li>
-                        <li><a id="aggro" href="html/main/product.html">구매하러 가기</a></li>
-                    </ul>
+                </li> -->
+                <li>
+                    <a id="aggro" class="list-title">
+                        메인 페이지
+                    </a>
                 </li>
                 <li class="useri">
                     <!-- <a id="aggro" href="html/rog/rogin.html">
@@ -109,20 +111,59 @@
         </nav>
         <script type="text/javascript" src="js/header.js"></script>
     </header>
-    <!--홍보페이지-->
+    <!--페이지-->
     <main>
-        <div>
-            <video id="video" width="100%" height="auto" autoplay loop muted controls>
-                <source src="imgs/bike.mp4">
-            </video>
-            <div class="vtext">
-                <p id="aggro" class="vttitle">케바케에 오신 것을 환영합니다!</p>
-                <p id="aggro" class="vtnext">자전거 통합 관리를 해주는 저희는 '자슬라'입니다.</p>
-                <p id="aggro" class="vttitle">Welcome to Care Bicycle Case Web!</p>
-                <p id="aggro" class="vtnext">We are 'Jasla' who provide bicycle management.</p>
+        <div class="selecter">
+            <div class="select_mapsearch">
+                <a href="html/mapsearch.html">
+                    <img src="./imgs/sel_1.png" class="sel-1">
+                </a>
+            </div>
+            <div class="select_mapmarker">
+                <a href="html/mapmarker.html">
+                    <img src="./imgs/sel_2.png" class="sel-2">
+                </a>
+            </div>
+            <div class="select_admin">
+                <a href="html/admin.html">
+                    <img src="./imgs/sel_3.png" class="sel-3">
+                </a>
             </div>
         </div>
     </main>
+    <!--푸터-->
+    <footer class="foot-container">
+        <a href="index.html">
+            <img src="imgs/cbc_logo_ui.png" class="cbc-logo-ui">
+        </a>
+        <nav>
+            <p>
+                <span>NAME : 유현호</span>
+                <span>TEAM : 자슬라</span>
+                <span>ROLE : 웹 프론트 & 시스템 프레임 디자인 및 제작</span>
+            </p>
+            <p>
+                동양미래대학교 컴퓨터공학부 컴퓨터정보공학과 사회맞춤형 지능형컴퓨팅과정
+            </p>
+            <p>
+                2022 스마트 ICT 프로젝트 경진대회 최우수상
+            </p>
+        </nav>
+        <nav class="footer-contact">
+            <span>
+                Contact
+            </span>
+            <a href="hyno0913@naver.com">
+                <img src="imgs/ui_email.png" class="email-ui">
+            </a>
+            <a href="https://github.com/gusgh00">
+                <img src="imgs/ui_github.png" class="git-ui">
+            </a>
+            <a href="https://www.dongyang.ac.kr">
+                <img src="imgs/ui_school.png" class="school-ui">
+            </a>
+        </nav>
+    </footer>
     <script>
         if (localStorage.getItem('user_nickname') == "관리자") {
             document.getElementById('sign').innerHTML = '로그아웃'
