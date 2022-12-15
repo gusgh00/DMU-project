@@ -1,0 +1,61 @@
+body {
+    align-items: center;
+}
+
+#mainadmin {
+    position: absolute;
+    width: 1000px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    margin-left: -500px;
+}
+
+#admintitle {
+    font-size: 50px;
+    color: #fff;
+}
+
+#auserlist1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    text-align: center;
+    background-color: #121212;
+    table-layout: fixed;
+    font-family: 'Cafe24Simplehae';
+}
+
+#userlist {
+    width: 800px;
+    height: 60px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #222;
+}
+
+#userlist {
+    margin: 30px;
+    font-size: 20px;
+    color: #fff;
+}
+#namelist {
+    width: 800px;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #121212;
+    margin: 30px;
+    font-size: 20px;
+    color: #fff;
+}
+.bikeul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.bikeli {
+    list-style: none;
+}

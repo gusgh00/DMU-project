@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Care Bicycle Case</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="fullPage full-screen backgrounds." />
+    <meta name="keywords" content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/instyle.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon/favicon.ico">
+
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+
+        #video {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .vtext {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .vttitle {
+            text-align: center;
+            font-size: 80px;
+            color: #fff;
+        }
+
+        .vtnext {
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--헤더-->
+    <header class="container">
+        <a href="index.html">
+            <img src="imgs/로고_웹사이트.png">
+        </a>
+        <nav>
+            <ul class="mmenu">
+                <li class="menu1">
+                    <a id="aggro" href="html/main/info.html">
+                        작품소개
+                    </a>
+                    <ul class="submenu">
+                        <li><a id="aggro" href="html/main/info.html">작품소개</a></li>
+                        <li><a id="aggro" href="html/main/contact.html">개발자소개</a></li>
+                    </ul>
+                </li>
+                <li class="menu3">
+                    <a id="aggro" href="html/main/mapsearch.html">
+                        위치검색
+                    </a>
+                    <ul class="submenu">
+                        <li><a id="aggro" href="html/main/mapsearch.html">위치검색</a></li>
+                    </ul>
+                </li>
+                <li class="menu4">
+                    <a id="aggro" href="html/main/product.html">
+                        제품구매
+                    </a>
+                    <ul class="submenu">
+                        <li><a id="aggro" href="html/main/productinfo.html">제품소개</a></li>
+                        <li><a id="aggro" href="html/main/product.html">구매하러 가기</a></li>
+                    </ul>
+                </li>
+                <li class="useri">
+                    <!-- <a id="aggro" href="html/rog/rogin.html">
+                        <img id="userinfo" src="imgs/usericon.png">
+                    </a> -->
+                    <span id="user_msg">라이더님 환영합니다!</span>
+                    <a id="aggro" href="javascript:void(0);" onclick="sign(); return false;">
+                        <span id="sign">로그인</span>
+                        <!--로그인 후 로그아웃으로 변경
+                        if 토큰 값이 널 값이 아닌 경우 로그아웃, 널인 경우 로그인-->
+                    </a>
+                    <span>|</span>
+                    <a id="aggro" href="javascript:void(0);" onclick="user(); return false;">
+                        <span id="user">회원가입</span>
+                        <!--로그인 후 회원정보로 변경
+                        if 토큰 값이 널 값이 아닌 경우 회원정보, 널인 경우 회원가입-->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script type="text/javascript" src="js/header.js"></script>
+    </header>
+    <!--홍보페이지-->
+    <main>
+        <div>
+            <video id="video" width="100%" height="auto" autoplay loop muted controls>
+                <source src="imgs/bike.mp4">
+            </video>
+            <div class="vtext">
+                <p id="aggro" class="vttitle">케바케에 오신 것을 환영합니다!</p>
+                <p id="aggro" class="vtnext">자전거 통합 관리를 해주는 저희는 '자슬라'입니다.</p>
+                <p id="aggro" class="vttitle">Welcome to Care Bicycle Case Web!</p>
+                <p id="aggro" class="vtnext">We are 'Jasla' who provide bicycle management.</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        if (localStorage.getItem('user_nickname') == "관리자") {
+            document.getElementById('sign').innerHTML = '로그아웃'
+            document.getElementById('user').innerHTML = '관리페이지'
+
+            function sign() {
+                localStorage.clear()
+                alert("로그아웃 되었습니다!")
+                location.href = "http://parkbomin.iptime.org:8081/";
+            }
+            function user() {
+                location.href = "http://parkbomin.iptime.org:8081/html/admin/admin.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

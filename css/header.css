@@ -1,0 +1,140 @@
+/*폰트*/
+@font-face {
+    font-family: 'Cafe24Simplehae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font: inherit
+}
+
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#aggro {
+    font-family: 'SBAggroB';
+}
+
+#simplehae {
+    font-family: 'Cafe24Simplehae';
+}
+
+/*헤더 메뉴*/
+
+ul.mmenu {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #323232;
+}
+.useri span {
+    font-family: 'Cafe24Simplehae';
+}
+
+.container {
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 50px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    z-index: 40;
+    justify-content: space-between;
+
+    box-shadow: 0 5px 20px rgb(0, 0, 0);
+}
+
+header>img {
+    margin-left: 100px;
+}
+
+header>nav {
+    width: 800px;
+    height: 100%;
+    margin-right: 100px;
+}
+
+ul.mmenu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul.mmenu>li {
+    font-size: 20px;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    position: relative;
+}
+
+ul.mmenu > li ul.submenu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    position: absolute;
+    top: 50px;
+    justify-content: space-between;
+    right: 60px;
+    z-index: 37;
+}
+ul.mmenu > li ul.submenu > li {
+    display: inline-block;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    background: rgb(238, 238, 238, 0.7);
+}
+
+#userinfo {
+    width: 30px;
+}
+
+ul.mmenu > li:hover ul.submenu {display: block;}
+
+ul.mmenu > li ul.submenu {display: none;}
+
+/*햄버거 메뉴*/
+#hammenu {
+    width: 20px;
+}
+#hamcan {
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+input[id="menuicon"] {display: none;}
+input[id="menuicon"]:checked + label {z-index: 9;}
+
+div[class="sidebar"] {
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: -350px;
+    z-index: 38;
+    transition: all .35s;
+    box-shadow: -5px 0 20px rgb(0, 0, 0);
+}
+input[id="menuicon"]:checked + label + div {right: 0;}
