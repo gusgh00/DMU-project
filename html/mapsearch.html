@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Care Bicycle Case</title>
+    <title>Care Bicycle Case - 길 찾기</title>
 
     <link rel="stylesheet" type="text/css" href="../css/header.css" />
     <link rel="stylesheet" type="text/css" href="../css/footer.css" />
@@ -13,7 +13,6 @@
     <script
         src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxf8a0d7c16d01466a8bae0f6451de98be"></script>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <script src="js/confetti.js"></script>
 
     <style>
         body {
@@ -101,7 +100,6 @@
             width: 80px;
             height: 50px;
             margin: 5px;
-            background-color: chartreuse;
             border-radius: 1rem;
             font-size: 25px;
         }
@@ -116,12 +114,12 @@
             margin: 5px;
             width: 270px;
             height: 50px;
-            background-color: blue;
             border-radius: 1rem;
         }
         .sp-text {
             line-height: 50px;
             font-size: 20px;
+            color: #434343;
         }
         .sp-btn-div {
             float: right;
@@ -129,9 +127,10 @@
             width: 80px;
             height: 50px;
             margin: 5px;
-            background-color: blueviolet;
+            background-color: rgb(0, 9, 182);
             border-radius: 1rem;
             font-size: 25px;
+            color: #fff;
         }
         .sp-btn-div>button {
             line-height: 50px;
@@ -148,7 +147,6 @@
             width: 80px;
             height: 50px;
             margin: 5px;
-            background-color: chartreuse;
             border-radius: 1rem;
             font-size: 25px;
         }
@@ -163,12 +161,12 @@
             margin: 5px;
             width: 270px;
             height: 50px;
-            background-color: blue;
             border-radius: 1rem;
         }
         .ep-text {
             line-height: 50px;
             font-size: 20px;
+            color: #434343;
         }
         .ep-btn-div {
             float: right;
@@ -176,9 +174,10 @@
             width: 80px;
             height: 50px;
             margin: 5px;
-            background-color: blueviolet;
+            background-color: rgb(181, 21, 0);
             border-radius: 1rem;
             font-size: 25px;
+            color: #fff;
         }
         .ep-btn-div>button {
             line-height: 50px;
@@ -194,7 +193,7 @@
             width: 220px;
             height: 50px;
             margin: 5px;
-            background-color: aquamarine;
+            background-color: rgb(160, 255, 169);
             border-radius: 1rem;
             font-size: 25px;
         }
@@ -207,7 +206,7 @@
             width: 220px;
             height: 50px;
             margin: 5px;
-            background-color: aquamarine;
+            background-color: rgb(235, 202, 255);
             border-radius: 1rem;
             font-size: 25px;
         }
@@ -231,7 +230,6 @@
             width: 80px;
             height: 50px;
             margin: 5px;
-            background-color: chartreuse;
             border-radius: 1rem;
             font-size: 25px;
         }
@@ -246,7 +244,6 @@
             margin: 5px;
             width: 240px;
             height: 50px;
-            background-color: blue;
             border-radius: 1rem;
         }
         .tm-div>span {
@@ -264,7 +261,6 @@
             width: 80px;
             height: 50px;
             margin: 5px;
-            background-color: chartreuse;
             border-radius: 1rem;
             font-size: 25px;
         }
@@ -279,7 +275,6 @@
             margin: 5px;
             width: 240px;
             height: 50px;
-            background-color: blue;
             border-radius: 1rem;
         }
         .ds-div>span {
@@ -544,6 +539,16 @@
         function onError() {
             alert("onError");
         }
+        function enterkey1() {
+            if (window.event.keyCode == 13) {
+                searchPOI();
+            }
+        }
+        function enterkey2() {
+            if (window.event.keyCode == 13) {
+                searchPOIs();
+            }
+        }
     </script>
 
 </head>
@@ -595,7 +600,7 @@
                 </li>
             </ul>
         </nav>
-        <script type="text/javascript" src="js/header.js"></script>
+        <script type="text/javascript" src="../js/header.js"></script>
     </header>
     <!--페이지-->
     <main>
@@ -607,7 +612,7 @@
                             <span>시작</span>
                         </div>
                         <div class="sp-div">
-                            <input type="text" id="startPoint" class="sp-text" placeholder="시작 지점을 입력하세요.">
+                            <input type="text" id="startPoint" class="sp-text" placeholder="시작 지점을 입력하세요." onkeypress="enterkey1()">
                         </div>
                         <div class="sp-btn-div">
                             <button onclick="searchPOI()" id="searchSP">검색</button>
@@ -618,7 +623,7 @@
                             <span>종료</span>
                         </div>
                         <div class="ep-div">
-                            <input type="text" id="endPoint" class="ep-text" placeholder="종료 지점을 입력하세요.">
+                            <input type="text" id="endPoint" class="ep-text" placeholder="종료 지점을 입력하세요." onkeypress="enterkey2()">
                         </div>
                         <div class="ep-btn-div">
                             <button onclick="searchPOIs()" id="searchEP">검색</button>
@@ -662,7 +667,9 @@
         <nav>
             <p>
                 <span>NAME : 유현호</span>
+                <span>|</span>
                 <span>TEAM : 자슬라</span>
+                <span>|</span>
                 <span>ROLE : 웹 프론트 & 시스템 프레임 디자인 및 제작</span>
             </p>
             <p>

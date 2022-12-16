@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Care Bicycle Case - 회원가입</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/instyle.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../imgs/favicon/favicon.ico">
+
+    <style>
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SEBANG_Gothic_Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        a {
+            font-family: 'SEBANG_Gothic_Bold';
+            color: #eee;
+            font-size: 5px;
+            text-decoration: none;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        p {
+            width: 200px;
+            height: 30px;
+            background: #323232;
+            border-radius: 0.5rem;
+            font-family: 'SEBANG_Gothic_Bold';
+            font-size: 25px;
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;
+            box-shadow: inset 2px 2px 10px rgb(0, 0, 0);
+        }
+
+        input {
+            width: 270px;
+            height: 30px;
+            font-size: 18px;
+            background: #eee;
+            border: 2px solid #000000;
+            border-radius: 0.5rem;
+            box-shadow: inset 2px 2px 10px rgb(0, 0, 0);
+        }
+
+        .divbtn button {
+            all: unset;
+            width: 600px;
+            height: 40px;
+            font-size: 25px;
+            background: #2294ff;
+            border-radius: 0.5rem;
+            font-family: 'SEBANG_Gothic_Bold';
+            color: #eee;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        }
+
+        .selbtn {
+            all: unset;
+            height: 30px;
+            width: 100px;
+            background: rgb(0, 207, 45);
+            border-radius: 0.5rem;
+            font-family: 'SEBANG_Gothic_Bold';
+            color: #eee;
+            vertical-align: middle;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:hover {
+            transform: scale(1.04);
+        }
+
+        body {
+            align-items: center;
+        }
+
+        img {
+            width: 200px;
+            filter: drop-shadow(10px 10px 5px #000);
+        }
+
+        .lotti {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            overflow-y: hidden;
+        }
+
+        .signuppage {
+            z-index: 300;
+            position: relative;
+            width: 700px;
+            height: 700px;
+            text-align: center;
+            vertical-align: middle;
+            left: 50%;
+            top: 80px;
+            margin-left: -350px;
+            background-color: #232323;
+            border-radius: 0.5rem;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        }
+
+        .signuptb {
+            /* background: #000000;
+            border-radius: 0.5rem; */
+            width: 600px;
+            margin-left: 50px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .sect {
+            width: 400px;
+        }
+
+        .divimg {
+            padding-top: 20px;
+        }
+
+        .divbtn {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--회원가입 페이지-->
+    <!-- <lottie-player src="../../js/loginRegister.json" class="lotti" speed="1" loop autoplay>
+    </lottie-player> -->
+    <section class="signuppage">
+        <div class="divimg">
+            <a href="../../index.html">
+                <img src="../../imgs/cbc_logo_ui.png" />
+            </a>
+        </div>
+        <div class="signuptb">
+            <table>
+                <tr class="sect">
+                    <td>
+                        <p>이름</p>
+                    </td>
+                    <td><input id="name" type="text" name="name" placeholder="이름을 입력하세요!" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>이메일</p>
+                    </td>
+                    <td><input id="useremail" type="text" name="email" placeholder="이메일을 입력하세요!" /></td>
+                    <td><button class="selbtn" onclick="e_check()">중복확인</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>닉네임</p>
+                    </td>
+                    <td><input id="nickname" type="text" name="name" placeholder="닉네임을 입력하세요!" /></td>
+                    <td><button class="selbtn" onclick="n_check()">중복확인</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>전화번호</p>
+                    </td>
+                    <td><input id="phone" type="tel" name="tel" placeholder="전화번호를 입력하세요!" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>비밀번호</p>
+                    </td>
+                    <td><input type="password" name="pwd" id="password1" placeholder="비밀번호를 입력하세요!" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>비밀번호 확인</p>
+                    </td>
+                    <td><input type="password" name="pwd" id="password2" placeholder="비밀번호 확인입니다!" /></td>
+                </tr>
+            </table>
+        </div>
+        <div class="divbtn">
+            <button onclick="signup()">회원가입!</button>
+        </div>
+    </section>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script type="text/javascript">
+        function signup() {
+            var p1 = document.getElementById('password1').value;
+            var p2 = document.getElementById('password2').value;
+
+            if (p1.length < 6) {
+                alert('비밀번호는 6글자 이상이어야 합니다.');
+                return;
+            }
+            else if (p1 != p2) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return;
+            } else {
+                fetch("https://api.parkbomin.duckdns.org/user/sign-up/", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        "name": document.getElementById('name').value,
+                        "email": document.getElementById('useremail').value,
+                        "password": document.getElementById('password2').value,
+                        "nickname": document.getElementById('nickname').value,
+                        "phone": document.getElementById('phone').value
+                    })
+                })
+                    .then(res => res.json())
+                    .then(res => console.log(res))
+                alert("회원가입이 완료되었습니다!");
+                location.href = "rogin.html";
+                return;
+            }
+        }
+        function n_check() {
+            var nickk = document.getElementById('nickname').value;
+            if (nickk.length < 3) {
+                alert("닉네임이 너무 짧습니다!");
+                return;
+            }
+            fetch("https://api.parkbomin.duckdns.org/user/name-check/", {
+                method: "POST",
+                body: JSON.stringify({
+                    "nickname": document.getElementById('nickname').value
+                })
+            })
+                .then((response) => response.json())
+                .then(function(response) {
+                return response.MESSAGE;
+            })
+
+            .then(function(mydata) {
+                login_flag = mydata;
+            if (login_flag == "SUCCESS!") {
+                alert("사용 가능한 닉네임입니다!");
+            }
+            else if (login_flag == "NICKNAME_ALEADY_IN_USE") {
+                alert("이미 사용중인 닉네임입니다!");
+                return;
+            }
+            })
+        }
+    </script>
+</body>
+
+</html>

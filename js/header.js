@@ -9,17 +9,17 @@ if (token != null) {
     function sign() {
         localStorage.clear()
         alert("로그아웃 되었습니다!!")
-        location.href = "http://parkbomin.iptime.org:8081/";
+        location.href = "../index.html";
     }
     function user() {
-        location.href = "http://parkbomin.iptime.org:8081/html/rog/user.html";
+        location.href = "../html/sign/user.html";
     }
 }
 else if (token == null) {
     function sign() {
-        location.href = "http://parkbomin.iptime.org:8081/html/rog/rogin.html";
+        location.href = "../html/sign/login.html";
     }
     function user() {
-        location.href = "http://parkbomin.iptime.org:8081/html/rog/register.html";
+        location.href = "../html/sign/register.html";
     }
 }

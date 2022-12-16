@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Care Bicycle Case - 로그인</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/instyle.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../imgs/favicon/favicon.ico">
+
+    <style>
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        a {
+            font-family: 'Cafe24Simplehae';
+            color: #eee;
+            font-size: 5px;
+            text-decoration: none;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        input {
+            width: 350px;
+            height: 35px;
+            font-size: 18px;
+            background: #eee;
+            border: 2px solid #000000;
+            border-radius: 0.5rem;
+            box-shadow: inset 2px 2px 10px rgb(0, 0, 0);
+        }
+
+        button {
+            all: unset;
+            width: 350px;
+            height: 30px;
+            background: #2294ff;
+            border-radius: 0.5rem;
+            font-family: 'SBAggroB';
+            font-size: 20px;
+            color: #eee;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        }
+
+        .btna {
+            background: rgb(0, 207, 45);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        body {
+            align-items: center;
+        }
+
+        img {
+            width: 200px;
+            filter: drop-shadow(10px 10px 5px #000);
+        }
+
+        button:hover {
+            transform: scale(1.04);
+        }
+
+        .roginpage {
+            position: absolute;
+            width: 400px;
+            height: 380px;
+            text-align: center;
+            vertical-align: middle;
+            left: 50%;
+            top: 250px;
+            margin-left: -200px;
+            background-color: #232323;
+            border-radius: 0.5rem;
+            box-shadow: inset 5px 5px 20px rgb(0, 0, 0);
+        }
+
+        .divimg {
+            padding-top: 20px;
+        }
+
+        .divid {
+            padding-top: 20px;
+        }
+
+        .divpwd {
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        .divbtn {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        hr {
+            width: 360px;
+            color: #424242;
+        }
+    </style>
+</head>
+
+<body>
+    <!--로그인 페이지-->
+    <main class="instyle">
+        <section class="roginpage">
+            <div class="divimg">
+                <a href="../../index.html">
+                    <img src="../../imgs/cbc_logo_ui.png" />
+                </a>
+            </div>
+            <div class="divid">
+                <input id="email" type="text" name="email" placeholder="이메일을 입력하세요!" />
+            </div>
+            <div class="divpwd">
+                <input id="password" type="password" name="pwd" placeholder="비밀번호를 입력하세요!" />
+            </div>
+            <div class="divbtn">
+                <button onclick="signin()">로그인!</button>
+            </div>
+            <hr>
+            <div class="divbtn">
+                <a href="register.html"><button class="btna">회원가입!</button></a>
+            </div>
+            <div>
+                <a href="#">로그인이 안되시나요?</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        var ema = document.getElementById('email').value;
+        var pwd = document.getElementById('password').value;
+        function signin() {
+            fetch("https://api.parkbomin.duckdns.org/user/log-in/", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "email": document.getElementById('email').value,
+                    "password": document.getElementById('password').value
+                })
+            })
+                .then(response => response.json())
+                .then(response => {
+                    localStorage.setItem('access_token', response.access_token);
+                    localStorage.setItem('user_nickname', response.user_nickname);
+                })
+            alert("로그인이 완료되었습니다!");
+            location.href = "../../index.html";
+        }
+    </script>
+</body>
+
+</html>

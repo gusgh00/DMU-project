@@ -5,7 +5,7 @@ function signin() {
     console.log(ema.length)
     console.log(pwd.length)
 
-    fetch("http://parkbomin.iptime.org:18000/user/log-in/", {
+    fetch("https://api.parkbomin.duckdns.org/user/log-in/", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

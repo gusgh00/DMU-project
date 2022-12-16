@@ -5,9 +5,9 @@ if (localStorage.getItem('user_nickname') == "관리자") {
     function sign() {
         localStorage.clear()
         alert("로그아웃 되었습니다!")
-        location.href = "http://parkbomin.iptime.org:8081/";
+        location.href = "https://jasla.duckdns.org/";
     }
     function user() {
-        location.href = "http://parkbomin.iptime.org:8081/html/admin/admin.html";
+        location.href = "https://jasla.duckdns.org/html/admin/admin.html";
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Care Bicycle Case</title>
+    <title>Care Bicycle Case - 관리모드</title>
 
     <link rel="stylesheet" type="text/css" href="../css/header.css" />
     <link rel="stylesheet" type="text/css" href="../css/footer.css" />
@@ -13,7 +13,6 @@
     <script
         src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxf8a0d7c16d01466a8bae0f6451de98be"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="js/confetti.js"></script>
 
     <style>
         body {
@@ -47,11 +46,141 @@
 
         .ms-div {
             position: relative;
-            top: 0;
-            left: 0;
-            width: 1920px;
-            height: 1080px;
-            z-index: 0;
+            top: 100px;
+            width: 1800px;
+            left: 50%;
+            margin-left: -900px;
+        }
+        .map-1-div {
+            position: absolute;
+            float: left;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 10;
+            width: 500px;
+            height: 360px;
+            padding-top: 30px;
+            background-color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 1rem;
+            font-family: 'SBAggroB';
+        }
+        .map-2-div {
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 10;
+            width: 500px;
+            height: 360px;
+            left: 50%;
+            margin-left: -250px;
+            padding-top: 30px;
+            background-color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 1rem;
+            font-family: 'SBAggroB';
+        }
+        .map-3-div {
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 10;
+            width: 500px;
+            height: 360px;
+            left: 100%;
+            margin-left: -500px;
+            padding-top: 30px;
+            background-color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 1rem;
+            font-family: 'SBAggroB';
+        }
+
+        .tb-div {
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 10;
+            width: 750px;
+            height: 160px;
+            top: 560px;
+            left: 60px;
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 1rem;
+            font-family: 'SBAggroB';
+        }
+
+        .title-tr {
+            width: 750px;
+        }
+        .id-td {
+            width: 50px;
+            color: lightseagreen;
+        }
+        .name-td {
+            width: 150px;
+            color: lightgreen;
+        }
+        .phone-td {
+            width: 170px;
+            color: lightpink;
+        }
+        .email-td {
+            width: 170px;
+            color: lightsalmon;
+        }
+        .lat-td {
+            width: 80px;
+            color: lightskyblue;
+        }
+        .lon-td {
+            width: 80px;
+            color: lightsteelblue;
+        }
+
+
+        .btn-div {
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 10;
+            width: 300px;
+            height: 50px;
+            top: 500px;
+            left: 60px;
+            font-family: 'SBAggroB';
+        }
+        .btn-1 {
+            display: inline-block;
+            width: 90px;
+            line-height: 50px;
+            margin-right: 5px;
+            background-color: darkslategray;
+            color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 0.7rem;
+        }
+        .btn-2 {
+            display: inline-block;
+            width: 90px;
+            line-height: 50px;
+            margin-right: 5px;
+            background-color:darkslateblue;
+            color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 0.7rem;
+        }
+        .btn-3 {
+            display: inline-block;
+            width: 90px;
+            line-height: 50px;
+            margin-right: 5px;
+            background-color:darkseagreen;
+            color: #fff;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            border-radius: 0.7rem;
         }
     </style>
 
@@ -66,29 +195,43 @@
         let ln;
         function initTmap1() {
             map1 = new Tmapv3.Map("map1_div", {
-                center: new Tmapv3.LatLng(37.56520450, 126.98702028),
-                width: "95%",   // 지도의 넓이
-                height: "95%",  // 지도의 높이
+                center: new Tmapv3.LatLng(37.500812, 126.867576),
+                width: "100%",   // 지도의 넓이
+                height: "90%",  // 지도의 높이
                 zoom: 17   // 지도 줌레벨
             });
         };
         function initTmap2() {
             map2 = new Tmapv3.Map("map2_div", {
-                center: new Tmapv3.LatLng(37.56520450, 126.98702028),
-                width: "95%",   // 지도의 넓이
-                height: "95%",  // 지도의 높이
+                center: new Tmapv3.LatLng(37.500812, 126.867576),
+                width: "100%",   // 지도의 넓이
+                height: "90%",  // 지도의 높이
                 zoom: 17   // 지도 줌레벨
             });
         };
         function initTmap3() {
             map3 = new Tmapv3.Map("map3_div", {
-                center: new Tmapv3.LatLng(37.56520450, 126.98702028),
-                width: "95%",   // 지도의 넓이
-                height: "95%",  // 지도의 높이
+                center: new Tmapv3.LatLng(37.500812, 126.867576),
+                width: "100%",   // 지도의 넓이
+                height: "90%",  // 지도의 높이
                 zoom: 17   // 지도 줌레벨
             });
         };
-        //변수 초기화 내용 중략…
+        let paths1 = [];
+        let paths2 = [];
+        let paths3 = [];
+        let bomblat1 = null;
+        let bomblng1 = null;
+        let bomblat2 = null;
+        let bomblng2 = null;
+        let bomblat3 = null;
+        let bomblng3 = null;
+        let nick1 = null;
+        let nick2 = null;
+        let nick3 = null;
+        let bombnick1 = null;
+        let bombnick2 = null;
+        let bombnick3 = null;
         function btnclick() {
             alert("관리모드를 시작합니다.");
             accimarker = setInterval(function () {
@@ -102,7 +245,10 @@
                         console.log(response.MESSAGE);
                         let arrNum = newArray();
                         let arrName = newArray();
-                        //중략…
+                        let arrEmail = newArray();
+                        let arrPhone = newArray();
+                        let arrLat = newArray();
+                        let arrLon = newArray();
                         for (i = 0; i < response.MESSAGE.length; i++) { // 값 전체 가져오는법
                             arrNum[i] = i + 1;
                             arrName[i] = response.MESSAGE[i].name;
@@ -110,6 +256,14 @@
                             arrPhone[i] = response.MESSAGE[i].phone;
                             arrLat[i] = response.MESSAGE[i].lat;
                             arrLon[i] = response.MESSAGE[i].lng;
+
+                            nick1 = response.MESSAGE[0].nickname;
+                            nick2 = response.MESSAGE[1].nickname;
+                            nick3 = response.MESSAGE[2].nickname;
+
+                            paths1 = new Tmapv3.LatLng(response.MESSAGE[0].lat, response.MESSAGE[0].lng);
+                            paths2 = new Tmapv3.LatLng(response.MESSAGE[1].lat, response.MESSAGE[1].lng);
+                            paths3 = new Tmapv3.LatLng(response.MESSAGE[2].lat, response.MESSAGE[2].lng);
                         }
                         for (i = 0; i < response.MESSAGE.length; i++) {
                             tr = document.createElement("tr");
@@ -118,11 +272,20 @@
                             td1.appendChild(document.createTextNode(arrNum[i] + ""));
                             let td2 = document.createElement("td");
                             td2.appendChild(document.createTextNode(arrName[i] + ""));
-                            //증략…
+                            let td3 = document.createElement("td");
+                            td3.appendChild(document.createTextNode(arrEmail[i]) + "");
+                            let td4 = document.createElement("td");
+                            td4.appendChild(document.createTextNode(arrPhone[i]) + "");
+                            let td5 = document.createElement("td");
+                            td5.appendChild(document.createTextNode(arrLat[i]) + "");
+                            let td6 = document.createElement("td");
+                            td6.appendChild(document.createTextNode(arrLon[i]) + "");
                             tr.appendChild(td1);
                             tr.appendChild(td2);
                             tr.appendChild(td3);
-                            //중략…
+                            tr.appendChild(td4);
+                            tr.appendChild(td5);
+                            tr.appendChild(td6);
                             table.appendChild(tr);
                         }
                     })
@@ -133,23 +296,47 @@
                     direction: true,
                     map: map1 // 지도 객체
                 });
-                //중략…
+                var polyline2 = new Tmapv3.Polyline({
+                    path: paths2,
+                    strokeColor: "#3D5220",
+                    strokeWeight: 6,
+                    direction: true,
+                    map: map2 // 지도 객체
+                });
+                var polyline3 = new Tmapv3.Polyline({
+                    path: paths3,
+                    strokeColor: "#3D5220",
+                    strokeWeight: 6,
+                    direction: true,
+                    map: map3 // 지도 객체
+                });
                 fetch("https://api.parkbomin.duckdns.org/sensor/problem/", {
                     method: "GET"
                 })
                     .then(rps => rps.json())
                     .then(rps => {
+                        //백엔드 API와 변수 대입 판별
                         if (rps.MESSAGE[0] != null) {
                             bomblat1 = rps.MESSAGE[0].lat;
                             bomblng1 = rps.MESSAGE[0].lng;
                             bombnick1 = rps.MESSAGE[0].nickname;
                         }
-                        //중략…
+                        if (rps.MESSAGE[1] != null) {
+                            bomblat2 = rps.MESSAGE[1].lat;
+                            bomblng2 = rps.MESSAGE[1].lng;
+                            bombnick2 = rps.MESSAGE[1].nickname;
+                        }
+                        if (rps.MESSAGE[2] != null) {
+                            bomblat3 = rps.MESSAGE[2].lat;
+                            bomblng3 = rps.MESSAGE[2].lng;
+                            bombnick3 = rps.MESSAGE[2].nickname;
+                        }
+
                         if (bombnick1 == nick1) {
                             let marker1 = new Tmapv3.Marker({
                                 position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
                                 map: map1,
-                                icon: "../../imgs/marker/acc.png" //마커 디자인
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
                             });
                             markers1.push(marker1);
                         }
@@ -157,11 +344,68 @@
                             let marker2 = new Tmapv3.Marker({
                                 position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
                                 map: map2,
-                                icon: "../../imgs/marker/acc.png" //마커 디자인
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
                             });
                             markers2.push(marker2);
                         }
-                        //중략…
+                        else if (bombnick1 == nick3) {
+                            let marker3 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map3,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            markers2.push(marker2);
+                        }
+
+                        if (bombnick2 == nick1) {
+                            let marker1 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map1,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            markers1.push(marker1);
+                        }
+                        else if (bombnick2 == nick2) {
+                            let marker2 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map2,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            markers2.push(marker2);
+                        }
+                        else if (bombnick2 == nick3) {
+                            let marker3 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map3,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            markers2.push(marker2);
+                        }
+
+                        if (bombnick3 == nick1) {
+                            let marker1 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map1,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            markers1.push(marker1);
+                        }
+                        else if (bombnick3 == nick2) {
+                            let marker2 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map2,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            markers2.push(marker2);
+                        }
+                        else if (bombnick3 == nick3) {
+                            let marker3 = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(bomblat1, bomblng1), //Marker의 중심좌표 설정.
+                                map: map3,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            markers2.push(marker2);
+                        }
                     })
             }
                 , 3000);
@@ -190,7 +434,7 @@
 
 </head>
 
-<body onload="initTmap()">
+<body onload="initTmap1(), initTmap2(), initTmap3()">
     <!--헤더-->
     <header class="container">
         <a href="../index.html" class="index-css">
@@ -237,13 +481,43 @@
                 </li>
             </ul>
         </nav>
-        <script type="text/javascript" src="js/header.js"></script>
+        <script type="text/javascript" src="../js/header.js"></script>
     </header>
     <!--페이지-->
     <main>
         <div class="ms-div">
-            <div id="map_div" class="map-div">
+            <div class="map-1-div">
+                <div id="map1_div"></div>
             </div>
+            <div class="map-2-div">
+                <div id="map2_div"></div>
+            </div>
+            <div class="map-3-div">
+                <div id="map3_div"></div>
+            </div>
+        </div>
+        <div class="btn-div">
+            <div class="btn-1">
+                <button onclick="btnclick()">관리시작</button>
+            </div>
+            <div class="btn-2">
+                <button onclick="btnclick2()">관리종료</button>
+            </div>
+            <div class="btn-3">
+                <button onclick="btnclick3()">새로고침</button>
+            </div>
+        </div>
+        <div class="tb-div">
+            <table>
+                <tr class="title-tr">
+                    <td class="id-td">id</td>
+                    <td class="name-td">name</td>
+                    <td class="phone-td">phone</td>
+                    <td class="email-td">email</td>
+                    <td class="lat-td">lat</td>
+                    <td class="lon-td">lon</td>
+                </tr>
+            </table>
         </div>
     </main>
     <!--푸터-->
