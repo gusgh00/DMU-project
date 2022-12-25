@@ -88,7 +88,23 @@ $(document).ready(function () {
                         var parkmarker = new Tmapv3.Marker({
                             position: new Tmapv3.LatLng(parklat, parklon), //Marker의 중심좌표 설정.
                             map: map,
-                            label: park.park[i].name,
+                            icon: "../imgs/mapview/park.png" //마커 디자인
+                        });
+                        parkmarkers.push(parkmarker);
+                    }
+                });
+
+            fetch("../json/park_gygi.json") //fetch 함수를 통한 json 파싱
+                .then(response => {
+                    return response.json();
+                })
+                .then(park => {
+                    for (var i = 0; i < park.park.length; i++) {
+                        var parklat = park.park[i].lat; //배열의 위도 값
+                        var parklon = park.park[i].lon; //배열의 경도 값
+                        var parkmarker = new Tmapv3.Marker({
+                            position: new Tmapv3.LatLng(parklat, parklon), //Marker의 중심좌표 설정.
+                            map: map,
                             icon: "../imgs/mapview/park.png" //마커 디자인
                         });
                         parkmarkers.push(parkmarker);

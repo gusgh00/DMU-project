@@ -145,6 +145,7 @@ function getRP() {
         trafficInfo: "Y",
         searchOption: 12
     };
+    console.log(optionObj);
 
     var params = {
         onComplete: onCompleteH,
