@@ -24,6 +24,7 @@ input {
 
 button {
     all: unset;
+    cursor: pointer;
 }
 
 
@@ -164,6 +165,7 @@ input[type="checkbox"]+label {
     background-color: lightcoral;
     border-radius: 0.8rem;
     position: relative;
+    cursor: pointer;
 }
 
 input[type="checkbox"]:checked+label::after {

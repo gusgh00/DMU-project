@@ -39,6 +39,7 @@
 .onoff-btn {
     width: 200px;
     line-height: 20px;
+    cursor: pointer;
 }
 .onoff-btn-div:hover {
     width: 250px;

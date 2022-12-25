@@ -9,9 +9,11 @@
     <link rel="stylesheet" type="text/css" href="css/header.css" />
     <link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/instyle.css" />
+    <link rel="stylesheet" type="text/css" href="css/loading.css" />
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon/favicon.ico">
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="js/loading.js"></script>
 
     <style>
         body {
@@ -22,29 +24,44 @@
 
         .selecter {
             position: relative;
+            text-align: center;
+            vertical-align: middle;
+            width: 1920px;
+            height: 900px;
             top: 300px;
         }
 
         .selecter img {
-            width: 500px;
+            width: 560px;
             filter: drop-shadow(5px 5px 20px #000);
             transition: all 1.0s;
         }
 
         .select_mapsearch {
-            float: left;
-            margin-left: 50px;
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            width: 560px;
+            left: 17%;
+            margin-left: -280px;
         }
 
         .select_mapmarker {
             position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            width: 560px;
             left: 50%;
-            margin-left: -250px;
+            margin-left: -280px;
         }
 
         .select_admin {
-            float: right;
-            margin-right: 50px;
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            width: 560px;
+            left: 83%;
+            margin-left: -280px;
         }
 
         .sel-1:hover {
@@ -63,6 +80,11 @@
 </head>
 
 <body>
+    <div class="loading">
+        <div class="lds-heart">
+            <div></div>
+        </div>
+    </div>
     <!--헤더-->
     <header class="container">
         <a href="index.html" class="index-css">

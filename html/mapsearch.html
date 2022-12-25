@@ -11,18 +11,25 @@
     <link rel="stylesheet" type="text/css" href="../css/instyle.css" />
     <link rel="stylesheet" type="text/css" href="../css/codediv.css" />
     <link rel="stylesheet" type="text/css" href="../css/main/mapsearch.css" />
+    <link rel="stylesheet" type="text/css" href="../css/loading.css" />
     <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon/favicon.ico">
     <script
         src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxf8a0d7c16d01466a8bae0f6451de98be"></script>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <script src="../js/onoffdiv.js"></script>
         <script src="../js/main/mapsearch.js"></script>
+        <script src="../js/loading.js"></script>
 
     
 
 </head>
 
 <body onload="initTmap()">
+    <div class="loading">
+        <div class="lds-heart">
+            <div></div>
+        </div>
+    </div>
     <!--헤더-->
     <header class="container">
         <a href="../index.html" class="index-css">

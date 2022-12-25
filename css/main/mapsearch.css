@@ -1,5 +1,5 @@
 body {
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     margin: 0;
     padding: 0;
 }
@@ -24,6 +24,7 @@ input {
 
 button {
     all: unset;
+    cursor: pointer;
 }
 
 .ms-div {
