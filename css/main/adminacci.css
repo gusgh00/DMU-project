@@ -1,0 +1,179 @@
+body {
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+input:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+    background: transparent;
+    font-family: 'SBAggroB';
+    color: #fff;
+}
+
+button {
+    all: unset;
+}
+
+
+.ms-div {
+    position: relative;
+    top: 100px;
+    width: 1800px;
+    left: 50%;
+    margin-left: -900px;
+}
+
+.map-1-div {
+    position: absolute;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    width: 500px;
+    height: 360px;
+    padding-top: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    border-radius: 1rem;
+    font-family: 'SBAggroB';
+}
+
+.map-2-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    width: 500px;
+    height: 360px;
+    left: 50%;
+    margin-left: -250px;
+    padding-top: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    border-radius: 1rem;
+    font-family: 'SBAggroB';
+}
+
+.map-3-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    width: 500px;
+    height: 360px;
+    left: 100%;
+    margin-left: -500px;
+    padding-top: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    border-radius: 1rem;
+    font-family: 'SBAggroB';
+}
+
+.tb-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    width: 750px;
+    height: 160px;
+    top: 560px;
+    left: 60px;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    border-radius: 1rem;
+    font-family: 'SBAggroB';
+}
+
+.title-tr {
+    width: 750px;
+}
+
+.id-td {
+    width: 50px;
+    color: lightseagreen;
+}
+
+.name-td {
+    width: 150px;
+    color: lightgreen;
+}
+
+.phone-td {
+    width: 170px;
+    color: lightpink;
+}
+
+.email-td {
+    width: 170px;
+    color: lightsalmon;
+}
+
+.lat-td {
+    width: 80px;
+    color: lightskyblue;
+}
+
+.lon-td {
+    width: 80px;
+    color: lightsteelblue;
+}
+
+
+.btn-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    width: 300px;
+    height: 50px;
+    top: 500px;
+    left: 60px;
+    font-family: 'SBAggroB';
+}
+
+.btn-1 {
+    display: inline-block;
+    width: 90px;
+    line-height: 50px;
+    margin-right: 5px;
+    background-color: darkslategray;
+    color: #fff;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    border-radius: 0.7rem;
+}
+
+.btn-2 {
+    display: inline-block;
+    width: 90px;
+    line-height: 50px;
+    margin-right: 5px;
+    background-color: darkslateblue;
+    color: #fff;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    border-radius: 0.7rem;
+}
+
+.btn-3 {
+    display: inline-block;
+    width: 90px;
+    line-height: 50px;
+    margin-right: 5px;
+    background-color: darkseagreen;
+    color: #fff;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    border-radius: 0.7rem;
+}

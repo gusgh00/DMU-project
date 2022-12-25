@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+.code-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 30;
+    width: 1920px;
+    height: 1080px;
+    top: 730px;
+    background-color: rgb(37, 37, 37);
+    opacity: 0.4;
+    transition: all 1.0s;
+}
+.onoff-btn-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 40;
+    width: 200px;
+    height: 10px;
+    top: 20px;
+    left: 50%;
+    margin-left: -100px;
+    background-color: #fff;
+    border-radius: 0.8rem;
+    transition: all 1.0s;
+}
+.onoff-btn {
+    width: 200px;
+    line-height: 20px;
+}
+.onoff-btn-div:hover {
+    width: 250px;
+    margin-left: -125px;
+}
+
+.code-1-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 50;
+    width: 520px;
+    height: 600px;
+    top: 80px;
+    left: 20%;
+    margin-left: -260px;
+    border-radius: 0.8rem;
+    border: 5px solid #fff;
+    background-color: rgb(0, 0, 0);
+}
+
+.code-2-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 50;
+    width: 520px;
+    height: 600px;
+    top: 80px;
+    left: 50%;
+    margin-left: -260px;
+    border-radius: 0.8rem;
+    border: 5px solid #fff;
+    background-color: rgb(0, 0, 0);
+}
+
+.code-3-div {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 50;
+    width: 520px;
+    height: 600px;
+    top: 80px;
+    left: 80%;
+    margin-left: -260px;
+    border-radius: 0.8rem;
+    border: 5px solid #fff;
+    background-color: rgb(0, 0, 0);
+}
+
+.code-title {
+    color: #fff;
+    font-size: 40px;
+    font-family: 'EliceDigitalBaeum_Bold';
+}
+
+hr {
+    width: 450px;
+}
+
+.code-div-div {
+    position: absolute;
+    width: 450px;
+    height: 500px;
+    text-align: left;
+    overflow-y: scroll;
+    overflow-x: auto;
+    left: 50%;
+    margin-left: -225px;
+    color: #fff;
+}
+pre {
+    font-family: 'EliceDigitalBaeum_Bold';
+}

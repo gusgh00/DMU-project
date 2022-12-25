@@ -9,422 +9,14 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css" />
     <link rel="stylesheet" type="text/css" href="../css/footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/instyle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/codediv.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main/mapmarker.css" />
     <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon/favicon.ico">
     <script
         src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxf8a0d7c16d01466a8bae0f6451de98be"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
-    <style>
-        body {
-            overflow-y: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        @font-face {
-            font-family: 'SBAggroB';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        input:focus {
-            outline: none;
-        }
-
-        input {
-            border: none;
-            background: transparent;
-            font-family: 'SBAggroB';
-            color: #fff;
-        }
-
-        button {
-            all: unset;
-        }
-
-
-        .ms-div {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 1920px;
-            height: 1080px;
-            z-index: 0;
-        }
-
-
-        .sch-div {
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            z-index: 10;
-            top: 100px;
-            left: 90px;
-            width: 500px;
-            height: 70px;
-            background-color: #fff;
-            box-shadow: 5px 5px 20px rgb(0, 0, 0);
-            border-radius: 1rem;
-            font-family: 'SBAggroB';
-            opacity: 0.4;
-            transition: all 1.0s;
-        }
-
-        .sch-div:hover {
-            opacity: 1;
-        }
-
-        .chk-div {
-            position: absolute;
-            vertical-align: middle;
-            z-index: 10;
-            top: 500px;
-            left: 90px;
-            width: 250px;
-            height: 250px;
-            background-color: #fff;
-            box-shadow: 5px 5px 20px rgb(0, 0, 0);
-            border-radius: 1rem;
-            font-family: 'SBAggroB';
-            opacity: 0.4;
-            transition: all 1.0s;
-        }
-
-        .chk-div:hover {
-            opacity: 1;
-        }
-
-
-        .sch-title-div {
-            float: left;
-            z-index: 20;
-            width: 80px;
-            height: 50px;
-            margin: 10px;
-            border-radius: 1rem;
-            font-size: 25px;
-        }
-
-        .sch-title-div>span {
-            line-height: 50px;
-        }
-
-
-        .sch-text-div {
-            float: left;
-            z-index: 20;
-            margin: 10px;
-            width: 280px;
-            height: 50px;
-            border-radius: 1rem;
-        }
-
-        .sch-text {
-            line-height: 50px;
-            font-size: 20px;
-            color: #434343;
-        }
-
-
-        .sch-btn-div {
-            float: right;
-            z-index: 20;
-            width: 80px;
-            height: 50px;
-            margin: 10px;
-            background-color: rgb(158, 255, 199);
-            border-radius: 1rem;
-            font-size: 25px;
-        }
-
-        .sch-btn-div>button {
-            line-height: 50px;
-        }
-
-
-
-
-
-        .chk-box-div {
-            float: left;
-            width: 50px;
-            height: 200px;
-            margin-top: 20px;
-        }
-        .chk-1-div, .chk-2-div, .chk-3-div, .chk-4-div {
-            height: 30px;
-            margin: 15px;
-        }
-        .chk-1-div>span, .chk-2-div>span, .chk-3-div>span, .chk-4-div>span {
-            float:right;
-            line-height: 30px;
-            font-size: 20px;
-        }
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        input[type="checkbox"] + label{
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background-color:lightcoral;
-            border-radius: 0.8rem;
-            position: relative;
-        }
-
-        input[type="checkbox"]:checked+label::after {
-            content: '✔';
-            font-size: 20px;
-            color: #434343;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .chk-img-div {
-            float: right;
-        }
-        .chk-img-div>img {
-            margin: 20px 20px 20px 0px;
-            height: 200px;
-        }
-    </style>
-
-    <script type="text/javascript">
-        var map;
-        var label;
-        var markers = [];
-        var ddrimarkers = [];
-        var parkmarkers = [];
-        var convimarkers = [];
-        var accimarkers = [];
-        var slatlngsear;
-        // 페이지가 로딩이 된 후 호출하는 함수입니다.
-        function initTmap() {
-            // map 생성
-            // Tmap.map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
-            map = new Tmapv3.Map("map_div", {
-                center: new Tmapv3.LatLng(37.500812, 126.867576),
-                width: "100%",  // 지도의 넓이
-                height: "100%", // 지도의 높이
-                zoom: 16   // 지도 줌레벨
-            });
-        };
-        //사고 다발 지역
-        $(document).ready(function () {
-            $("#ch1").change(function () {
-                if ($("#ch1").is(":checked")) { //체크박스가 체크 되었을 때
-                    fetch("../json/acci.json") //fetch 함수를 통한 json 파싱
-                        .then(response => {
-                            return response.json();
-                        })
-                        .then(acci => {
-                            for (var i = 0; i < acci.acci.length; i++) {
-                                var accilat = acci.acci[i].lat; //배열의 위도 값
-                                var accilon = acci.acci[i].lon; //배열의 경도 값
-                                var accimarker = new Tmapv3.Marker({
-                                    position: new Tmapv3.LatLng(accilat, accilon), //Marker의 중심좌표 설정.
-                                    map: map,
-                                    label: acci.acci[i].count,
-                                    icon: "../imgs/mapview/acc.png" //마커 디자인
-                                });
-                                accimarkers.push(accimarker);
-                            }
-                        });
-                } else { //체크박스가 체크 안되어 있을 때
-                    removeacciMarkers(); //마커 제거
-                }
-            });
-        });
-
-        //따릉이
-        $(document).ready(function () {
-            $("#ch2").change(function () {
-                if ($("#ch2").is(":checked")) { //체크박스가 체크 되었을 때
-                    fetch("../json/ddri4.json") //fetch 함수를 통한 json 파싱
-                        .then(response => {
-                            return response.json();
-                        })
-                        .then(ddri => {
-                            console.log(ddri);
-                            for (var i = 0; i < ddri.ddri.length; i++) {
-                                var ddrilat = ddri.ddri[i].lat; //배열의 위도 값
-                                var ddrilon = ddri.ddri[i].lon; //배열의 경도 값
-                                var ddrimarker = new Tmapv3.Marker({
-                                    position: new Tmapv3.LatLng(ddrilat, ddrilon), //Marker의 중심좌표 설정.
-                                    map: map,
-                                    label: ddri.ddri[i].name,
-                                    icon: "../imgs/mapview/ddr.png" //마커 디자인
-                                });
-                                ddrimarkers.push(ddrimarker);
-                            }
-                        });
-                } else { //체크박스가 체크 안되어 있을 때
-                    removeddriMarkers(); //마커 제거
-                }
-            });
-        });
-
-        //주차장
-        $(document).ready(function () {
-            $("#ch3").change(function () {
-                if ($("#ch3").is(":checked")) { //체크박스가 체크 되었을 때
-                    fetch("../json/parking.json") //fetch 함수를 통한 json 파싱
-                        .then(response => {
-                            return response.json();
-                        })
-                        .then(park => {
-                            for (var i = 0; i < park.park.length; i++) {
-                                var parklat = park.park[i].lat; //배열의 위도 값
-                                var parklon = park.park[i].lon; //배열의 경도 값
-                                var parkmarker = new Tmapv3.Marker({
-                                    position: new Tmapv3.LatLng(parklat, parklon), //Marker의 중심좌표 설정.
-                                    map: map,
-                                    label: park.park[i].name,
-                                    icon: "../imgs/mapview/park.png" //마커 디자인
-                                });
-                                parkmarkers.push(parkmarker);
-                            }
-                        });
-                } else { //체크박스가 체크 안되어 있을 때
-                    removeparkMarkers(); //마커 제거
-                }
-            });
-        });
-
-        //정비소
-        $(document).ready(function () {
-            $("#ch4").change(function () {
-                if ($("#ch4").is(":checked")) { //체크박스가 체크 되었을 때
-                    fetch("../json/convi.json") //fetch 함수를 통한 json 파싱
-                        .then(response => {
-                            return response.json();
-                        })
-                        .then(convi => {
-                            for (var i = 0; i < convi.convi.length; i++) {
-                                var convilat = convi.convi[i].lat; //배열의 위도 값
-                                var convilon = convi.convi[i].lon; //배열의 경도 값
-                                var convimarker = new Tmapv3.Marker({
-                                    position: new Tmapv3.LatLng(convilat, convilon), //Marker의 중심좌표 설정.
-                                    map: map,
-                                    label: convi.convi[i].label,
-                                    icon: "../imgs/mapview/pix.png" //마커 디자인
-                                });
-                                convimarkers.push(convimarker);
-                            }
-                        });
-                } else { //체크박스가 체크 안되어 있을 때
-                    removeconviMarkers(); //마커 제거
-                }
-            });
-        });
-
-
-        function addMarker(lonlatoption) {
-            // 마커 생성
-            var marker = new Tmapv3.Marker({
-                position: new Tmapv3.LatLng(lonlatoption.lonlat.latitude(), lonlatoption.lonlat.longitude()), //Marker의 중심좌표 설정.
-                map: map, //Marker가 표시될 Map 설정..
-            });
-            markers.push(marker);
-            marker.on("Click", function (evt) {
-                document.getElementById("startPoint").value = lonlatoption.title;
-                slatlngsear = {
-                    slat: lonlatoption.lonlat._lat,
-                    slng: lonlatoption.lonlat._lng
-                }
-                // removeMarkers()
-            });
-        }
-        function searchPOI() {
-            var center = map.getCenter();//map의 중심 좌표 값을 받아 옵니다.
-            var optionObj = {
-                reqCoordType: "WGS84GEO", //요청 좌표계 옵셥 설정입니다.
-                resCoordType: "WGS84GEO",  //응답 좌표계 옵셥 설정입니다.
-                centerLon: 126.867576,  //POI검색시 중앙좌표의 경도입니다.
-                centerLat: 37.500812 //POI검색시 중앙좌표의 위도입니다.
-            };
-            var params = {
-                onComplete: onComplete,
-                onProgress: onProgress,
-                onError: onError
-            };
-            var tData = new Tmapv3.extension.TData();
-            var startPoint = $('#startPoint').val();
-            tData.getPOIDataFromSearchJson(encodeURIComponent(startPoint), optionObj, params);//encodeURIComponent함수로 해당 파라메터 값을 처리합니다.
-        }
-        function onComplete() {
-            if (this._responseData.searchPoiInfo.pois.poi != '') {
-                jQuery(this._responseData.searchPoiInfo.pois.poi).each(function () {//결과를 each문으로 돌려 마커를 등록합니다.
-                    //response 데이터중 원하는 값을 find 함수로 찾습니다.
-                    var name = this.name;
-                    var id = this.id;
-                    var lon = this.frontLon;
-                    var lat = this.frontLat;
-                    var lonlatoption = {
-                        title: name,//마커 라벨 text 설정
-                        lonlat: new Tmapv3.LatLng(lat, lon)//마커 라벨 좌표 설정
-                    };
-                    addMarker(lonlatoption);//마커를 추가하는 함수입니다.
-                });
-            } else {
-                alert('검색결과가 없습니다.');
-            }
-            removeMarkers();
-            map.setCenter(new Tmapv3.LatLng(this._responseData.searchPoiInfo.pois.poi[0].frontLat, this._responseData.searchPoiInfo.pois.poi[0].frontLon));
-            map.setZoom(16);
-        }
-        // 각 마커 제거하는 함수
-        function removeMarkers() {
-            for (var i = 0; i < markers.length; i++) {
-                markers[i].setMap(null);
-            }
-            markers = [];
-        }
-        function removeddriMarkers() {
-            for (var i = 0; i < ddrimarkers.length; i++) {
-                ddrimarkers[i].setMap(null);
-            }
-            ddrimarkers = [];
-        }
-        function removeacciMarkers() {
-            for (var i = 0; i < accimarkers.length; i++) {
-                accimarkers[i].setMap(null);
-            }
-            accimarkers = [];
-        }
-        function removeparkMarkers() {
-            for (var i = 0; i < parkmarkers.length; i++) {
-                parkmarkers[i].setMap(null);
-            }
-            parkmarkers = [];
-        }
-        function removeconviMarkers() {
-            for (var i = 0; i < convimarkers.length; i++) {
-                convimarkers[i].setMap(null);
-            }
-            convimarkers = [];
-        }
-
-        //데이터 로드중 실행
-        function onProgress() {
-        }
-        //데이터 로드 중 에러 발생
-        function onError() {
-            alert("onError");
-        }
-        //input 타입에 엔터키 반응
-        function enterkey() {
-            if (window.event.keyCode == 13) {
-                searchPOI();
-            }
-        }
-    </script>
+    <script src="../js/onoffdiv.js"></script>
+    <script src="../js/main/mapmarker.js"></script>
 
 </head>
 
@@ -481,6 +73,613 @@
     <main>
         <div class="ms-div">
             <div id="map_div" class="map-div">
+                <div class="code-div" id="codediv">
+                    <div class="onoff-btn-div">
+                        <input type="button" class="onoff-btn" id="onoff" onclick="onoff()">
+                    </div>
+                    <div class="code-1-div">
+                        <span class="code-title">HTML</span>
+                        <hr>
+                        <div class="code-div-div">
+<pre>
+    &lt;body onload="initTmap()"&gt;
+    &lt;!--헤더--&gt;
+    &lt;header class="container"&gt;
+        &lt;a href="../index.html" class="index-css"&gt;
+            Care Bicycle Case 축약형 포트폴리오
+        &lt;/a&gt;
+        &lt;nav&gt;
+            &lt;ul class="mmenu"&gt;
+                &lt;!-- &lt;li class="menu1"&gt;
+                    &lt;a id="aggro" href="html/main/info.html"&gt;
+                        길 찾기
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="menu3"&gt;
+                    &lt;a id="aggro" href="html/main/mapsearch.html"&gt;
+                        테마지도
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="menu4"&gt;
+                    &lt;a id="aggro" href="html/main/product.html"&gt;
+                        실시간 사고
+                    &lt;/a&gt;
+                &lt;/li&gt; --&gt;
+                &lt;li&gt;
+                    &lt;a id="aggro" class="list-title"&gt;
+                        테마지도
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="useri"&gt;
+                    &lt;!-- &lt;a id="aggro" href="html/rog/rogin.html"&gt;
+                        &lt;img id="userinfo" src="imgs/usericon.png"&gt;
+                    &lt;/a&gt; --&gt;
+                    &lt;span id="user_msg"&gt;라이더님 환영합니다!&lt;/span&gt;
+                    &lt;a id="aggro" href="javascript:void(0);" onclick="sign(); return false;"&gt;
+                        &lt;span id="sign"&gt;로그인&lt;/span&gt;
+                        &lt;!--로그인 후 로그아웃으로 변경
+                        if 토큰 값이 널 값이 아닌 경우 로그아웃, 널인 경우 로그인--&gt;
+                    &lt;/a&gt;
+                    &lt;span&gt;|&lt;/span&gt;
+                    &lt;a id="aggro" href="javascript:void(0);" onclick="user(); return false;"&gt;
+                        &lt;span id="user"&gt;회원가입&lt;/span&gt;
+                        &lt;!--로그인 후 회원정보로 변경
+                        if 토큰 값이 널 값이 아닌 경우 회원정보, 널인 경우 회원가입--&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;script type="text/javascript" src="../js/header.js"&gt;&lt;/script&gt;
+    &lt;/header&gt;
+    &lt;!--페이지--&gt;
+    &lt;main&gt;
+        &lt;div class="ms-div"&gt;
+            &lt;div id="map_div" class="map-div"&gt;
+                &lt;div class="sch-div"&gt;
+                    &lt;div class="sch-title-div"&gt;
+                        &lt;span&gt;이동&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="sch-text-div"&gt;
+                        &lt;input type="text" id="startPoint" class="sch-text" placeholder="이동 할 지역을 입력하세요." onkeypress="enterkey()"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="sch-btn-div"&gt;
+                        &lt;button onclick="searchPOI()" id="searchSP"&gt;검색&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- &lt;div class="chk-div"&gt;
+                    &lt;div class="chk-box-div"&gt;
+                        &lt;div class="chk-1-div"&gt;
+                            &lt;input type="checkbox" id="ch1"&gt;&lt;label for="ch1"&gt;&lt;/label&gt;
+                            &lt;span&gt;사고 다발 지역&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chk-2-div"&gt;
+                            &lt;input type="checkbox" id="ch2"&gt;&lt;label for="ch2"&gt;&lt;/label&gt;
+                            &lt;span&gt;공용 자전거(따릉이)&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chk-3-div"&gt;
+                            &lt;input type="checkbox" id="ch3"&gt;&lt;label for="ch3"&gt;&lt;/label&gt;
+                            &lt;span&gt;자전거 주차장&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chk-4-div"&gt;
+                            &lt;input type="checkbox" id="ch4"&gt;&lt;label for="ch4"&gt;&lt;/label&gt;
+                            &lt;span&gt;자전거 정비소&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="chk-img-div"&gt;
+                        &lt;img src="../imgs/mapview/markerinfo.jpg"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt; --&gt;
+                &lt;div class="chk-div"&gt;
+                    &lt;div class="chk-box-div"&gt;
+                        &lt;div class="chk-1-div"&gt;
+                            &lt;input type="checkbox" id="ch1"&gt;&lt;label for="ch1"&gt;&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chk-2-div"&gt;
+                            &lt;input type="checkbox" id="ch2"&gt;&lt;label for="ch2"&gt;&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chk-3-div"&gt;
+                            &lt;input type="checkbox" id="ch3"&gt;&lt;label for="ch3"&gt;&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chk-4-div"&gt;
+                            &lt;input type="checkbox" id="ch4"&gt;&lt;label for="ch4"&gt;&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="chk-img-div"&gt;
+                        &lt;img src="../imgs/mapview/markerinfo.jpg"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;!--푸터--&gt;
+    &lt;footer class="foot-container"&gt;
+        &lt;a href="../index.html"&gt;
+            &lt;img src="../imgs/cbc_logo_ui.png" class="cbc-logo-ui"&gt;
+        &lt;/a&gt;
+        &lt;nav&gt;
+            &lt;p&gt;
+                &lt;span&gt;NAME : 유현호&lt;/span&gt;
+                &lt;span&gt;|&lt;/span&gt;
+                &lt;span&gt;TEAM : 자슬라&lt;/span&gt;
+                &lt;span&gt;|&lt;/span&gt;
+                &lt;span&gt;ROLE : 웹 프론트 & 시스템 프레임 디자인 및 제작&lt;/span&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                동양미래대학교 컴퓨터공학부 컴퓨터정보공학과 사회맞춤형 지능형컴퓨팅과정
+            &lt;/p&gt;
+            &lt;p&gt;
+                2022 스마트 ICT 프로젝트 경진대회 최우수상
+            &lt;/p&gt;
+        &lt;/nav&gt;
+        &lt;nav class="footer-contact"&gt;
+            &lt;span&gt;
+                Contact
+            &lt;/span&gt;
+            &lt;a href="hyno0913@naver.com"&gt;
+                &lt;img src="../imgs/ui_email.png" class="email-ui"&gt;
+            &lt;/a&gt;
+            &lt;a href="https://github.com/gusgh00"&gt;
+                &lt;img src="../imgs/ui_github.png" class="git-ui"&gt;
+            &lt;/a&gt;
+            &lt;a href="https://www.dongyang.ac.kr"&gt;
+                &lt;img src="../imgs/ui_school.png" class="school-ui"&gt;
+            &lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/footer&gt;
+    &lt;script&gt;
+        if (localStorage.getItem('user_nickname') == "관리자") {
+            document.getElementById('sign').innerHTML = '로그아웃'
+            document.getElementById('user').innerHTML = '관리페이지'
+
+            function sign() {
+                localStorage.clear()
+                alert("로그아웃 되었습니다!")
+                location.href = "../index.html";
+            }
+            function user() {
+                location.href = "../index.html";
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+                        </div>
+                    </div>
+                    <div class="code-2-div">
+                        <span class="code-title">CSS</span>
+                        <hr>
+                        <div class="code-div-div">
+<pre>
+    body {
+        overflow-y: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    
+    @font-face {
+        font-family: 'SBAggroB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    
+    input {
+        border: none;
+        background: transparent;
+        font-family: 'SBAggroB';
+        color: #fff;
+    }
+    
+    button {
+        all: unset;
+    }
+    
+    
+    .ms-div {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        z-index: 0;
+    }
+    
+    
+    .sch-div {
+        position: absolute;
+        text-align: center;
+        vertical-align: middle;
+        z-index: 10;
+        top: 100px;
+        left: 90px;
+        width: 500px;
+        height: 70px;
+        background-color: #fff;
+        box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        border-radius: 1rem;
+        font-family: 'SBAggroB';
+        opacity: 0.4;
+        transition: all 1.0s;
+    }
+    
+    .sch-div:hover {
+        opacity: 1;
+    }
+    
+    .chk-div {
+        position: absolute;
+        vertical-align: middle;
+        z-index: 10;
+        top: 500px;
+        left: 90px;
+        width: 250px;
+        height: 250px;
+        background-color: #fff;
+        box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        border-radius: 1rem;
+        font-family: 'SBAggroB';
+        opacity: 0.4;
+        transition: all 1.0s;
+    }
+    
+    .chk-div:hover {
+        opacity: 1;
+    }
+    
+    
+    .sch-title-div {
+        float: left;
+        z-index: 20;
+        width: 80px;
+        height: 50px;
+        margin: 10px;
+        border-radius: 1rem;
+        font-size: 25px;
+    }
+    
+    .sch-title-div>span {
+        line-height: 50px;
+    }
+    
+    
+    .sch-text-div {
+        float: left;
+        z-index: 20;
+        margin: 10px;
+        width: 280px;
+        height: 50px;
+        border-radius: 1rem;
+    }
+    
+    .sch-text {
+        line-height: 50px;
+        font-size: 20px;
+        color: #434343;
+    }
+    
+    
+    .sch-btn-div {
+        float: right;
+        z-index: 20;
+        width: 80px;
+        height: 50px;
+        margin: 10px;
+        background-color: rgb(158, 255, 199);
+        border-radius: 1rem;
+        font-size: 25px;
+    }
+    
+    .sch-btn-div>button {
+        line-height: 50px;
+    }
+    
+    
+    
+    
+    
+    .chk-box-div {
+        float: left;
+        width: 50px;
+        height: 200px;
+        margin-top: 20px;
+    }
+    
+    .chk-1-div,
+    .chk-2-div,
+    .chk-3-div,
+    .chk-4-div {
+        height: 30px;
+        margin: 15px;
+    }
+    
+    .chk-1-div>span,
+    .chk-2-div>span,
+    .chk-3-div>span,
+    .chk-4-div>span {
+        float: right;
+        line-height: 30px;
+        font-size: 20px;
+    }
+    
+    input[type="checkbox"] {
+        display: none;
+    }
+    
+    input[type="checkbox"]+label {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: lightcoral;
+        border-radius: 0.8rem;
+        position: relative;
+    }
+    
+    input[type="checkbox"]:checked+label::after {
+        content: '✔';
+        font-size: 20px;
+        color: #434343;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .chk-img-div {
+        float: right;
+    }
+    
+    .chk-img-div>img {
+        margin: 20px 20px 20px 0px;
+        height: 200px;
+    }
+</pre>
+                        </div>
+                    </div>
+                    <div class="code-3-div">
+                        <span class="code-title">JavaScript</span>
+                        <hr>
+                        <div class="code-div-div">
+<pre>
+    var map;
+    var label;
+    var markers = [];
+    var ddrimarkers = [];
+    var parkmarkers = [];
+    var convimarkers = [];
+    var accimarkers = [];
+    var slatlngsear;
+    // 페이지가 로딩이 된 후 호출하는 함수입니다.
+    function initTmap() {
+        // map 생성
+        // Tmap.map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
+        map = new Tmapv3.Map("map_div", {
+            center: new Tmapv3.LatLng(37.500812, 126.867576),
+            width: "100%",  // 지도의 넓이
+            height: "100%", // 지도의 높이
+            zoom: 16   // 지도 줌레벨
+        });
+    };
+    //사고 다발 지역
+    $(document).ready(function () {
+        $("#ch1").change(function () {
+            if ($("#ch1").is(":checked")) { //체크박스가 체크 되었을 때
+                fetch("../json/acci.json") //fetch 함수를 통한 json 파싱
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(acci => {
+                        for (var i = 0; i < acci.acci.length; i++) {
+                            var accilat = acci.acci[i].lat; //배열의 위도 값
+                            var accilon = acci.acci[i].lon; //배열의 경도 값
+                            var accimarker = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(accilat, accilon), //Marker의 중심좌표 설정.
+                                map: map,
+                                label: acci.acci[i].count,
+                                icon: "../imgs/mapview/acc.png" //마커 디자인
+                            });
+                            accimarkers.push(accimarker);
+                        }
+                    });
+            } else { //체크박스가 체크 안되어 있을 때
+                removeacciMarkers(); //마커 제거
+            }
+        });
+    });
+    
+    //따릉이
+    $(document).ready(function () {
+        $("#ch2").change(function () {
+            if ($("#ch2").is(":checked")) { //체크박스가 체크 되었을 때
+                fetch("../json/ddri4.json") //fetch 함수를 통한 json 파싱
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(ddri => {
+                        console.log(ddri);
+                        for (var i = 0; i < ddri.ddri.length; i++) {
+                            var ddrilat = ddri.ddri[i].lat; //배열의 위도 값
+                            var ddrilon = ddri.ddri[i].lon; //배열의 경도 값
+                            var ddrimarker = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(ddrilat, ddrilon), //Marker의 중심좌표 설정.
+                                map: map,
+                                label: ddri.ddri[i].name,
+                                icon: "../imgs/mapview/ddr.png" //마커 디자인
+                            });
+                            ddrimarkers.push(ddrimarker);
+                        }
+                    });
+            } else { //체크박스가 체크 안되어 있을 때
+                removeddriMarkers(); //마커 제거
+            }
+        });
+    });
+    
+    //주차장
+    $(document).ready(function () {
+        $("#ch3").change(function () {
+            if ($("#ch3").is(":checked")) { //체크박스가 체크 되었을 때
+                fetch("../json/parking.json") //fetch 함수를 통한 json 파싱
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(park => {
+                        for (var i = 0; i < park.park.length; i++) {
+                            var parklat = park.park[i].lat; //배열의 위도 값
+                            var parklon = park.park[i].lon; //배열의 경도 값
+                            var parkmarker = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(parklat, parklon), //Marker의 중심좌표 설정.
+                                map: map,
+                                label: park.park[i].name,
+                                icon: "../imgs/mapview/park.png" //마커 디자인
+                            });
+                            parkmarkers.push(parkmarker);
+                        }
+                    });
+            } else { //체크박스가 체크 안되어 있을 때
+                removeparkMarkers(); //마커 제거
+            }
+        });
+    });
+    
+    //정비소
+    $(document).ready(function () {
+        $("#ch4").change(function () {
+            if ($("#ch4").is(":checked")) { //체크박스가 체크 되었을 때
+                fetch("../json/convi.json") //fetch 함수를 통한 json 파싱
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(convi => {
+                        for (var i = 0; i < convi.convi.length; i++) {
+                            var convilat = convi.convi[i].lat; //배열의 위도 값
+                            var convilon = convi.convi[i].lon; //배열의 경도 값
+                            var convimarker = new Tmapv3.Marker({
+                                position: new Tmapv3.LatLng(convilat, convilon), //Marker의 중심좌표 설정.
+                                map: map,
+                                label: convi.convi[i].label,
+                                icon: "../imgs/mapview/pix.png" //마커 디자인
+                            });
+                            convimarkers.push(convimarker);
+                        }
+                    });
+            } else { //체크박스가 체크 안되어 있을 때
+                removeconviMarkers(); //마커 제거
+            }
+        });
+    });
+    
+    
+    function addMarker(lonlatoption) {
+        // 마커 생성
+        var marker = new Tmapv3.Marker({
+            position: new Tmapv3.LatLng(lonlatoption.lonlat.latitude(), lonlatoption.lonlat.longitude()), //Marker의 중심좌표 설정.
+            map: map, //Marker가 표시될 Map 설정..
+        });
+        markers.push(marker);
+        marker.on("Click", function (evt) {
+            document.getElementById("startPoint").value = lonlatoption.title;
+            slatlngsear = {
+                slat: lonlatoption.lonlat._lat,
+                slng: lonlatoption.lonlat._lng
+            }
+            // removeMarkers()
+        });
+    }
+    function searchPOI() {
+        var center = map.getCenter();//map의 중심 좌표 값을 받아 옵니다.
+        var optionObj = {
+            reqCoordType: "WGS84GEO", //요청 좌표계 옵셥 설정입니다.
+            resCoordType: "WGS84GEO",  //응답 좌표계 옵셥 설정입니다.
+            centerLon: 126.867576,  //POI검색시 중앙좌표의 경도입니다.
+            centerLat: 37.500812 //POI검색시 중앙좌표의 위도입니다.
+        };
+        var params = {
+            onComplete: onComplete,
+            onProgress: onProgress,
+            onError: onError
+        };
+        var tData = new Tmapv3.extension.TData();
+        var startPoint = $('#startPoint').val();
+        tData.getPOIDataFromSearchJson(encodeURIComponent(startPoint), optionObj, params);//encodeURIComponent함수로 해당 파라메터 값을 처리합니다.
+    }
+    function onComplete() {
+        if (this._responseData.searchPoiInfo.pois.poi != '') {
+            jQuery(this._responseData.searchPoiInfo.pois.poi).each(function () {//결과를 each문으로 돌려 마커를 등록합니다.
+                //response 데이터중 원하는 값을 find 함수로 찾습니다.
+                var name = this.name;
+                var id = this.id;
+                var lon = this.frontLon;
+                var lat = this.frontLat;
+                var lonlatoption = {
+                    title: name,//마커 라벨 text 설정
+                    lonlat: new Tmapv3.LatLng(lat, lon)//마커 라벨 좌표 설정
+                };
+                addMarker(lonlatoption);//마커를 추가하는 함수입니다.
+            });
+        } else {
+            alert('검색결과가 없습니다.');
+        }
+        removeMarkers();
+        map.setCenter(new Tmapv3.LatLng(this._responseData.searchPoiInfo.pois.poi[0].frontLat, this._responseData.searchPoiInfo.pois.poi[0].frontLon));
+        map.setZoom(16);
+    }
+    // 각 마커 제거하는 함수
+    function removeMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        markers = [];
+    }
+    function removeddriMarkers() {
+        for (var i = 0; i < ddrimarkers.length; i++) {
+            ddrimarkers[i].setMap(null);
+        }
+        ddrimarkers = [];
+    }
+    function removeacciMarkers() {
+        for (var i = 0; i < accimarkers.length; i++) {
+            accimarkers[i].setMap(null);
+        }
+        accimarkers = [];
+    }
+    function removeparkMarkers() {
+        for (var i = 0; i < parkmarkers.length; i++) {
+            parkmarkers[i].setMap(null);
+        }
+        parkmarkers = [];
+    }
+    function removeconviMarkers() {
+        for (var i = 0; i < convimarkers.length; i++) {
+            convimarkers[i].setMap(null);
+        }
+        convimarkers = [];
+    }
+    
+    //데이터 로드중 실행
+    function onProgress() {
+    }
+    //데이터 로드 중 에러 발생
+    function onError() {
+        alert("onError");
+    }
+    //input 타입에 엔터키 반응
+    function enterkey() {
+        if (window.event.keyCode == 13) {
+            searchPOI();
+        }
+    }
+</pre>
+                        </div>
+                    </div>
+                </div>
                 <div class="sch-div">
                     <div class="sch-title-div">
                         <span>이동</span>
