@@ -10,11 +10,30 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/instyle.css" />
     <link rel="stylesheet" type="text/css" href="css/loading.css" />
+    <link rel="stylesheet" type="text/css" href="css/codediv2.css" />
     <link rel="stylesheet" type="text/css" href="css/main/index.css" />
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon/favicon.ico">
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="js/loading.js"></script>
+    <script src="js/onoffdiv.js"></script>
+    <script type="text/javascript">
+        function onoff() {
+            let codediv = document.getElementById('codediv');
+            let title = document.getElementById("listtitle");
+
+            if (codediv.style.top === '60px') {
+                codediv.style.top = '730px';
+                codediv.style.opacity = '0.4'
+                document.getElementById("aggro").innerHTML = "메인 페이지";
+            }
+            else {
+                codediv.style.top = '60px';
+                codediv.style.opacity = '0.9'
+                document.getElementById("aggro").innerHTML = "Trello 정리 리스트";
+            }
+        }
+    </script>
 
 </head>
 
@@ -74,6 +93,526 @@
     </header>
     <!--페이지-->
     <main>
+        <div class="code-div" id="codediv">
+            <div class="onoff-btn-div">
+                <input type="button" class="onoff-btn" id="onoff" onclick="onoff()">
+            </div>
+            <button class="span-prev" id="prevbtn">
+                <span class="arrow-prev"></span>
+            </button>
+            <div class="code-div-div" id="codedivdiv">
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 5주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="회의-내용-및-개인-일정">회의 내용 및 개인 일정</h1>
+                        <ol>
+                            <li>개인 :</li>
+                        </ol>
+                        <ul>
+                            <li>해당 작품의 주제와 관련 된 자료 탐색 : 자전거를 점검하는 알림을 띄우게 하기 위한 목적. 일일, 주기, 정기, 연간 점검 목록 및 소모품 교체 시기 탐색
+                            </li>
+                            <li>유사 작품 탐색 후 분석 : 캐논데일, 자전거 블랙박스, 국내 IoT 도난방지 전기 자전거, 스마트 후미등</li>
+                            <li>주변 자전거에 관심 있는 지인들의 반응 확인 및 정리 : 대체로 긍정적 </li>
+                            <li>관련 API 및 자료 조사 : 자전거 보관소 API, 자전거 대여소 API, 자전거 사고 다발 지역 API, 전국 자전거 길 API, 각종 자전거 뉴스 사이트
+                            </li>
+                        </ul>
+                        <ol start="2">
+                            <li>단체 : 게더타운 회의 (4/5(수) 23:00~00:30)</li>
+                        </ol>
+                        <ul>
+                            <li>게더타운 사용법 숙지</li>
+                            <li>앞서 선정한 주제 (자전거 통합 관리 박스) 내용 정리와 자료 조사 후 추가</li>
+                            <li>각자 관심있거나 자신있는 언어 및 개발 환경 소개</li>
+                        </ul>
+                        <ol start="3">
+                            <li>단체 : 3호관 커뮤니티실 회의 (4/8(금) 13:00~17:00)</li>
+                        </ol>
+                        <ul>
+                            <li>각자 조사해온 유사작품 발표 및 정리</li>
+                            <li>프론트엔드, 백엔드 팀 구성 후 팀별 회의 및 조사</li>
+                            <li>개인 : 백엔드, 하드웨어 방향으로 조사하고 필요 센서와 품목 확인</li>
+                        </ul>
+                        <ol start="4">
+                            <li>단체 : 게더타운 회의 (4/9(토) 23:30<del>01:00, 4/10(일) 15:00</del>16:00)</li>
+                        </ol>
+                        <ul>
+                            <li>개발환경, 개발도구, 개발언어 구분</li>
+                            <li>하드웨어 센서 구성요소와 가격 확인</li>
+                            <li>4월 12일 강의에 있을 발표의 백엔드 부분 구성 의논</li>
+                        </ul>
+                        <ol start="5">
+                            <li>단체 : 게더타운 회의 (4/11(월) 19:00~23:00)</li>
+                        </ol>
+                        <ul>
+                            <li>발표 자료 구성</li>
+                        </ul>
+                        <hr>
+                        <h1 id="자전거를-좋아하는-주변-지인들의-반응">자전거를 좋아하는 주변 지인들의 반응</h1>
+                        <ol>
+                            <li>반응</li>
+                        </ol>
+                        <ul>
+                            <li>1번 지인 : <strong>매우 긍정적</strong>, 있으면 무조건 엄청 유용하게 쓸 것 같다.</li>
+                            <li>2번 지인 : <strong>매우 긍정적</strong>, 비에 맞았을 때나, 소모품 교체와 관련 된 부분에 대해서 엄청 유용하게 쓰일 것 같다. 다만 충격
+                                감지 센서 문제인데, 과속방지턱이나 언덕 오를 때 충격을 받게 되는 경우가 다반사고 심하게 몰 때는 충격 감지가 예민해 질 수 있다는 점에서 문제가 발생할 수
+                                있다.</li>
+                            <li>3번 지인 : <strong>약간 긍정적</strong>, 소모품 교체와 관련 되어서는 매우 큰 도움이 될 것으로 보임</li>
+                            <li>4번 지인 : <strong>약간 긍정적</strong>, 속도계는 어차피 건강 목적으로 확인하는 용도지 속도를 낸 상태로는 수시로 확인하지 못한다. 또
+                                온습도 센서와 관련되어서는 본인 자전거가 비싸다면 도난 예상해서도 집에 두는 경우가 많고 밖에 뒀다 하더라도 날씨는 본인이 파악하고 가져오게 될 것이다. 만약
+                                날씨 파악 시스템을 추가하고자 한다면 날씨를 불러오는(크롤링) 시스템이면 편하게 쓸 듯 하다. 거리 스택을 통한 소모품 교체 알람 보다는 달 마다 소모품 교체
+                                알람을 해주는게 편하게 쓰일 것 같다. 충격 센서는 여러모로 유용하게 쓸 듯 하다. 따릉이 대여나 전동 킥보드 대여를 보면서도 어플을 통한 부가기능 대중성에
+                                많은 사람들이 관심을 보이고 있기에 이러한 시스템에 만족하고 이용할 것 같다.</li>
+                            <li>5번 지인 : <strong>매우 긍정적</strong>, 센서를 통해서 소모품을 주기적으로 알려주는 것에 대해서는 상당히 좋을 것 같다. 요즘엔 고급차량
+                                위주로 들어가는 기능이 자전거에 들어간다면 향후 사고발생 할 확률도 미련에 방지하여 줄일 수 있으며 자전거를 이용하는 사용자들에게 소모품 주기에 따라서 비교적
+                                새 자전거를 고를 수 있는 기회를 주는 것이기에 대부분의 이용자들이 유효하게 사용할 것 같다. 문제점이라 하면 아무래도 센서의 갯수들로 인해서 향후 센서들의
+                                수명에 따른 교체 비용 혹은 센서들의 오작동으로 인해서 발생할 여러 부가적 비용일 것이다 이에 따른 대비책으론 백도어 시스템등을 활용하여서 센서가 망가지거나
+                                하는 일이 있더라도 기능이 원활히 작동 되게끔 하는 체계를 구성하는 것이 좋을 듯 하다.</li>
+                        </ul>
+                        <ol start="2">
+                            <li>있었으면 하는 기능</li>
+                        </ol>
+                        <ul>
+                            <li>바퀴 공기량 및 압력 측정 기능 : 눌렀다 팽창하는 힘을 측정하여 압력을 계산해주는 기능이 있었으면 하다.</li>
+                            <li>후방에 카메라 달려 있다면 어플 화면을 통해 후방을 확인 할 수 있었으면 좋겠다.</li>
+                            <li>도난 방지로 자전거 주차장 어플 등록 시스템(우리랑 거리가 멈), gps가 숨겨져 있었으면 좋겠다.</li>
+                            <li>헬맷에도 센서를 부착하여서 낮이면 헬맷에도 차량 처럼 주간 주행등 역할하는 기능을 달아서 안전성 확보에 기여하여 도로 위의 모든 사용자들이 안전하게 다닐수
+                                있도록 하는 방안</li>
+                        </ul>
+                        <hr>
+                        <h1 id="참고자료-api-뉴스-자료-pdf-등">참고자료 (API, 뉴스 자료, PDF 등)</h1>
+                        <ol>
+                            <li>전국 자전거 보관소 API (xml) : <a
+                                    href="https://www.data.go.kr/data/15059118/openapi.do">https://www.data.go.kr/data/15059118/openapi.do</a>
+                            </li>
+                            <li>국토교통부 자전거길 API (xml) : <a
+                                    href="https://www.data.go.kr/data/15057099/openapi.do">https://www.data.go.kr/data/15057099/openapi.do</a>
+                            </li>
+                            <li>전국자전거대여소 표준 데이터 (cgv) : <a
+                                    href="https://www.data.go.kr/data/15017319/standard.do">https://www.data.go.kr/data/15017319/standard.do</a>
+                            </li>
+                            <li>전국 자전거 사고 다발 지역 API (json/xml) : <a
+                                    href="https://taas.koroad.or.kr/api/selectBicycleDataSet.do">https://taas.koroad.or.kr/api/selectBicycleDataSet.do</a>
+                            </li>
+                        </ol>
+                        <ul>
+                            <li>어플에 위험 지역 알람 울리면 좋을 것 같아서 추가</li>
+                        </ul>
+                        <ol start="5">
+                            <li>자전거 부품 정보 및 관리 정보 사이트 : <a href="https://lab306.co.kr">https://lab306.co.kr</a></li>
+                        </ol>
+                        <ul>
+                            <li>자전거에 대한 새로운 뉴스도 볼 수 있고 여러 정보가 실려있음</li>
+                        </ul>
+                        <ol start="6">
+                            <li>바이크 매거진 : <a href="https://www.bikem.co.kr/">https://www.bikem.co.kr/</a></li>
+                        </ol>
+                        <ul>
+                            <li>자전거 관련 뉴스 사이트</li>
+                        </ul>
+                        <ol start="7">
+                            <li>후방 초음파 센서 관련 (자동차 후방 센서 모방 자료)</li>
+                        </ol>
+                        <ul>
+                            <li>이론 : <a
+                                    href="https://www.koreascience.or.kr/article/JAKO201222350107880.pdf">https://www.koreascience.or.kr/article/JAKO201222350107880.pdf</a>
+                            </li>
+                            <li>실습 : <a
+                                    href="https://www.koreascience.or.kr/article/CFKO201230533388142.pdf">https://www.koreascience.or.kr/article/CFKO201230533388142.pdf</a>
+                            </li>
+                        </ul>
+                        <ol start="8">
+                            <li>IoT기반 전기 자전거 제어 시스템 : <a
+                                    href="https://www.koreascience.or.kr/article/JAKO201607433788896.pdf">https://www.koreascience.or.kr/article/JAKO201607433788896.pdf</a>
+                            </li>
+                            <li>데이터, 앱, IoT를 연결한 자전거 산업 뉴스 : <a
+                                    href="https://www.ciokorea.com/news/191879">https://www.ciokorea.com/news/191879</a>
+                            </li>
+                            <li>아두이노를 이용한 블루투스, GPS 제작 자료 : <a
+                                    href="https://mtroll.tistory.com/576">https://mtroll.tistory.com/576</a></li>
+                            <li>블루투스 5.1 gps 활용방법 : <a
+                                    href="https://www.litepoint.com/ko/blog/bluetooth-5-1-%EC%A0%95%EB%B0%80%ED%95%9C-%EC%9C%84%EC%B9%98%EC%99%80-%EB%B0%A9%ED%96%A5-%ED%83%90%EC%A7%80%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0/">https://www.litepoint.com/ko/blog/bluetooth-5-1-정밀한-위치와-방향-탐지가-필요한-이유/</a>
+                            </li>
+                            <li>비콘센서를 이용한 유모차 도난방지 실험과 분석 : <a
+                                    href="https://www.koreascience.or.kr/article/JAKO202006763002725.page">https://www.koreascience.or.kr/article/JAKO202006763002725.page</a>
+                            </li>
+                            <li>MPU6050(기울기 센서) 자료 : <a
+                                    href="http://www.jkelec.co.kr/img/sensors/manual/mpu6050_gy521/mpu6050_gy521_manual.html">http://www.jkelec.co.kr/img/sensors/manual/mpu6050_gy521/mpu6050_gy521_manual.html</a>
+                            </li>
+                        </ol>
+
+                    </div>
+                </div>
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 6주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="팀별-발표">팀별 발표</h1>
+                        <ol>
+                            <li>첫 번째 발표 (팀명 : 감자)</li>
+                        </ol>
+                        <ul>
+                            <li>주제 : 도시락의 칼로리를 계산할 수 있는 시스템</li>
+                            <li>내용 : 도시락에 무게센서와 카메라 센서를 넣어 음식마다의 칼로리를 계산하는 시스템이다. 도시락은 각각 접착식으로 구분 짓기 편하게 되어있다.</li>
+                            <li>평가 : 음식의 종류마다 칼로리 양을 계산 해주는것은 매우 좋게 생각한다. 다만 조미료는 무게도 카메라로도 안담긴다. 칼로리에 큰 역할을 해주는게 조미료,
+                                감미료가 될텐데 예를 들어 설탕 대신에 스테비아가 들어간다던지 이러한 부분에서는 어떻게 데이터를 받을 것인지 생각해봐야 할 것이라 보고있다.</li>
+                        </ul>
+                        <ol start="2">
+                            <li>두 번째 발표 (팀명 : d ability)</li>
+                        </ol>
+                        <ul>
+                            <li>주제 : 시각장애인을 위한 코디 시스템</li>
+                            <li>내용 : 시각장애인들에게 센서를 통한 음성으로 옷들의 색깔 등의 정보를 알려주는 시스템</li>
+                            <li>평가 : 분명 유사작품 분석에서 옷 마다 NFC 기능이 있는것을 부정하였는데 해당 작품에서 바코드를 통해 사이즈를 측정하는 기능을 넣을 것이라고 답한 것에
+                                의문점이 든다. 옷에 있는 바코드 정보를 어떻게 끌어 올 것인가도 생각해봐야 하며 바코드에 사이즈 등의 정보가 내제 되어 있는지도 염려해 봐야한다. 그렇지
+                                않게 되면 앞서 언급한 NFC 기능과 다를게 없어지게 된다.</li>
+                        </ul>
+                        <ol start="3">
+                            <li>세 번째 발표 (팀명 : 킹스맨)</li>
+                        </ol>
+                        <ul>
+                            <li>주제 : 스마트 우산 대여 서비스</li>
+                            <li>내용 : 우산을 대여하는 서비스, 우산에 GPS센서를 부착하여 서비스측에서도 분실 우려를 줄여줄 수 있다.</li>
+                            <li>평가 : 분실 우려를 위한 GPS 센서는 좋게 보고 있다. 다만 파손시에 해당 우산을 회수 할 수 있는지가 문제가 될 것으로 보이고 네비게이션 기능을 넣겠다고
+                                했는데 이 부분에 대해 우산을 쓰면 앞이 안보인다는 이유로 네비를 넣었다는건 말이 안된다고 생각이 든다. 또 정보 오류 시 개인정보 유출의 가능성도 생각해
+                                봐야 할 것이다.</li>
+                        </ul>
+                        <ol start="4">
+                            <li>네 번째 발표 (팀명 : 깨비드릴조)</li>
+                        </ol>
+                        <ul>
+                            <li>주제 : 영유아 발달 장애 진단 시스템</li>
+                            <li>내용 : 발달 장애를 가진 영유아들의 행동을 센서를 통해 분석하여 결과를 알려주는 시스템</li>
+                            <li>평가 : AI만으로 영유아들의 행동을 판단하는건 그릇 된 것으로 보이며 해당 분야 전문가의 관여가 필요해보인다. 또 발달장애 영유아의 가정에서 해당 제품을
+                                구입할 정도라면 그만큼의 부모님들의 공부도 많이 필요하게 될텐데 AI가 분석한 자료만 가지고 뭘 할 것인가. 그것에 대한 구체적인 계획도 많이 필요로 하기
+                                때문에 이성적 사고가 아닌 감성적 사고를 통해 좀 더 집중 분석이 필요해 보인다.</li>
+                        </ul>
+                        <hr>
+                        <h1 id="우리-작품-피드백">우리 작품 피드백</h1>
+                        <ol>
+                            <li>학생들의 피드백</li>
+                        </ol>
+                        <ul>
+                            <li>Q. 센서를 달았을 때 무게나 위치 문제가 생길 것으로 보이는데 자세하게 설명이 가능한가?</li>
+                            <li>A. 센서의 위치는 안장 뒤에 관리용도의 센서들과 아두이노 보드, 핸들 쪽에 데이터 전송 용도의 오드로이드와 외부 기기들이 있게 될 것이다. 해당 센서들을 다
+                                합쳐도 400g 안팎이다. 자전거 운행중에 큰 문제는 되지 않을 것이다.</li>
+                            <li>Q. 모든 자전거에 해당 작품이 연결이 되는건가, 가령 픽시 자전거의 경우에는 무게를 더 최소화 하기 위해 기어변속기, 브레이크를 없앴다. 이런 자전거에 저
+                                센서를 달아야 되는 것인가?</li>
+                            <li>A. 해당 작품은 자전거 관리의 솔루션을 주는 시스템이다. 자전거 이용자가 원할 때 쓰는 것이지 권고 사항이 아니란 말이다. 달기 싫으면 안달아도 된다. 특히
+                                픽시 자전거의 경우에는 무게의 중량을 더 덜어내는게 중요하기 때문에 안달면 된다. 우리의 대상은 하이브리드나 로드 바이크 같이 출퇴근용으로 주로 쓰는
+                                자전거들이다.</li>
+                        </ul>
+                        <ol start="2">
+                            <li>교수님의 피드백</li>
+                        </ol>
+                        <ul>
+                            <li>Q. 꼭 오드로이드를 써야 되느냐? 아두이노 보드만 가지고도 가능할 것 같은데 어떻게 생각하는가?</li>
+                            <li>A. 아두이노 보드만 가지고는 센서의 정보 값을 어플에 보내기에는 부족하다. 그렇기에 안드로이드에 최적화 되어있는 데이터 전송용 보드, 오드로이드를 쓰는
+                                것이다. 아두이노는 센서만 다뤄서 오드로이드에 전송해주는 역할이고 그 데이터 값을 받은 오드로이드에서 어플로 연결이 되는 방법이다.</li>
+                            <li>Q. 지금까지 말했던 설명 외에 다른 방법은 없는 것인가? 예를들어 자전거의 부품 노후화 정도를 그림으로 나타내어 교체가 시급하면 빨간색으로 뜨게 한다던지
+                                다른 센서를 넣어서 작품의 독창성을 조금 더 나타내면 좋겠다.</li>
+                            <li>A. 자전거 부품 노후화 정도를 그림으로 나타내는 기능은 정말 좋은 기능이라고 생각하고 우리 작품에 추가할지 고려해보겠다. 다른 센서를 더 추가해야만 한다면
+                                바퀴의 공기압을 체크할 수 있는 기능이 되도록 해보고 나머지 센서 추가 여부는 팀원들과 함께 더 고민해보겠다.</li>
+                        </ul>
+                        <hr>
+                        <h1 id="내가-한-일">내가 한 일</h1>
+                        <ol>
+                            <li>부팀장 : 4월 14일 13:00 ~ 17:30 회의 내용 및 과제 제출용 기록 총정리</li>
+                            <li>시스템디자인 :</li>
+                        </ol>
+                        <ul>
+                            <li>자전거에 들어갈 센서 위치 조정 및 필요한 재료 조사</li>
+                            <li>자전거 및 스탠드에 들어갈 센서 구상도 제작</li>
+                            <li>작품 로고 제작 및 아이콘 제작</li>
+                            <li>각 센서 반응 과정 요소 그림 제작</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 7주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="우리-작품-피드백">우리 작품 피드백</h1>
+                        <ol>
+                            <li>교수님 피드백</li>
+                        </ol>
+                        <ul>
+                            <li>
+                                <p>Q: 웹 페이지 구현, 앱 디자인 구현, 모델링 등에 대해 칭찬한다. 다만 웹페이지에 다른 것을 넣어도 되지 않을까 싶고 시스템과 관련하여 에그를 꼭
+                                    넣어야만 했는가? 다른 통신 방법으로 블루투스를 이용해도 되지 않을까 싶다. 그리고 팀 역할 구성에 애매한 점이 많기 때문에 역할을 정확히 구분지을
+                                    필요성이 있다. QR을 이용한 자전거 등록 시스템을 추가해보는 것은 어떠한가?</p>
+                            </li>
+                            <li>
+                                <p>A: 웹페이지의 경우에는 큰 중요성을 두지 않아 홍보용 사이트와 네비게이션 이동을 통한 자전거 기록 정도만 볼 수 있게 해놨지만 다른 부분을 넣을 것은
+                                    고민해 보겠다. 시스템에 에그를 추가할려는 것은 신속한 정보 전달을 위해 블루투스 보다 와이파이를 선호해 넣었지만 교수님의 의견을 반영하여 블루투스만
+                                    이용하여 http통신이나 소켓 통신을 이용해 보는 것을 고려해보겠다. 팀 역할 구성에 대해서는 지금 역할에서 수정을 조금씩 해보겠다. QR을 이용한
+                                    자전거 등록 시스템 부분에서는 우리는 자전거를 만드는게 아닌 시스템을 만드는게 목표다 보니 세상 자전거 마다 QR을 하나씩 추가해야하는 번거로움이
+                                    있다. 자전거마다 고유의 차대번호가 있기 때문에 이를 이용해 자전거를 구분짓게 해줄 것이다.</p>
+                            </li>
+                        </ul>
+                        <hr>
+                        <h1 id="내가-한-일">내가 한 일</h1>
+                        <ol>
+                            <li>시스템 발표자료 제작을 위한 회의 (with. 박보민)</li>
+                            <li>시스템 모델링 수정</li>
+                        </ol>
+                        <ul>
+                            <li>자전거 프레임 케이스를 제거하고 모든 센서와 보드를 자전거 안장 케이스에 넣는 방향으로 추진하는 방향으로 수정</li>
+                        </ul>
+                        <ol start="3">
+                            <li>각자 맡은 역할마다 발표자료 제작</li>
+                        </ol>
+                        <ul>
+                            <li>시스템쪽 ppt, 대본 완성</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 10주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="웹페이지-제작">웹페이지 제작</h1>
+                        <ol>
+                            <li>사용자 페이지
+                                a. 메인페이지 &lt;완성&gt;</li>
+                        </ol>
+                        <ul>
+                            <li>고정 화면으로 영상 무한 루프 사용
+                                b. 작품소개 페이지 &lt;완성&gt;</li>
+                            <li>작품을 소개하기 위한 페이지로 어플의 내용을 이룸</li>
+                            <li>풀페이지 JS를 활용하여 디자인 구성
+                                c. 개발자 소개 페이지 &lt;완성&gt;</li>
+                            <li>개발자와 개발환경을 소개하기 위한 페이지</li>
+                            <li>애니메이션 효과를 이용한 스크립트 활용</li>
+                        </ul>
+                        <ol start="2">
+                            <li>관리자 페이지
+                                a. 사용자 정보 페이지 &lt;디자인 구성&gt;</li>
+                        </ol>
+                        <ul>
+                            <li>각 사용자들의 아이디 및 비밀번호 정보와 각 부품들의 관리 상태를 보여줌
+                                b. 실시간 사고 페이지 &lt;디자인 구성&gt;</li>
+                            <li>카카오맵 api 이용</li>
+                            <li>마커를 통해 사고 난 위치를 보기 쉽게 지도 이용</li>
+                            <li>각 사용자에게 전화번호를 보이게 리스트를 만들어 관리의 방향성을 보여줌</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 11주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="웹페이지-제작">웹페이지 제작</h1>
+                        <ol>
+                            <li>회원정보에 필요한 구성 회의 완료</li>
+                        </ol>
+                        <ul>
+                            <li>이메일 (회원 아이디 용)</li>
+                            <li>비밀번호</li>
+                            <li>전화번호 (관리자 페이지에서 보여줄 내용)</li>
+                            <li>이름</li>
+                        </ul>
+                        <ol start="2">
+                            <li>위의 내용을 바탕으로 웹 로그인&amp;회원가입 페이지 수정</li>
+                            <li>백엔드 역할에서 만든 회원정보 api와 웹페이지와 연동</li>
+                        </ol>
+                        <ul>
+                            <li>api는 장고로 만들어짐</li>
+                            <li>html내부에서 서버에 로그인하거나 회원가입하려는 회원정보를 요청하는 json 스크립트를 넣음</li>
+                            <li>요청 결과 깔끔하게 확인.</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 12주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+                        <ol>
+                            <li>제품 구매 페이지
+                                a. 스마트 가방, 자전거 스탠드 제품 판매 페이지
+                                b. 제품은 두가지가 끝이라 카테고리의 중요성이 사라져 섹션을 나눠서 구성함.</li>
+                            <li>회원가입 페이지 - 닉네임 중복 확인 API와 웹페이지 연동
+                                a. 닉네임 칸에 설정하고 싶은 닉네임을 넣고 중복확인 버튼을 누를 시에 API에 요청.
+                                b. data에서 해당 닉네임이 이미 있는 정보인지 새로운 정보인지 판단하여 웹페이지에 불러옴.
+                                c. alert를 사용하여 사용자에게 사용해도 되는 닉네임인지 아닌지를 알려줌.</li>
+                        </ol>
+
+                    </div>
+                </div>
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 13주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+                        <ol>
+                            <li>취업 설명회</li>
+                        </ol>
+                        <ul>
+                            <li>열심히 듣고 중요한 부분 촬영 기록</li>
+                            <li>설명회 강사님에게 잘 듣는 다고 지목 ☺️☺️☺️</li>
+                        </ul>
+                        <ol start="2">
+                            <li>팀 과제</li>
+                        </ol>
+                        <ul>
+                            <li>라즈베리파이📟 &amp;php📠 : 박보민 / 웹(jsp)🖥&amp;영상편집🎥 : 유현호 / 앱📱 : 박선혜</li>
+                            <li>DB에 쌓인 값을 웹 페이지에서 구현 (getFloat사용하여 소숫점 짧게 구현)</li>
+                            <li>시스템 구현 화면, phpmyadmin 화면, 앱 &amp; 웹 화면 동시 촬영</li>
+                            <li>Adobe After Effect 활용해 영상 편집</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="code-12-div">
+                    <span class="code-1-title">1학기 14주차</span>
+                    <hr class="hr-1">
+                    <div class="code-div-1-div">
+                        <h1 id="웹-제작-최종-정리">웹 제작 최종 정리</h1>
+                        <ol>
+                            <li>사이트 : <a href="http://parkbomin.iptime.org:8081">http://parkbomin.iptime.org:8081</a>
+                            </li>
+                            <li>웹 디자인 및 프론트 : 유현호</li>
+                            <li>DB API 연동 : 유현호, 이수한</li>
+                            <li>스크립트 코드들</li>
+                        </ol>
+                        <p>메뉴에 로그인 확인, 로그아웃 확인 (javascript)</p>
+                        <pre><code>let token = localStorage.getItem(&#39;access_token&#39;);
+let nick = localStorage.getItem(&#39;user_nickname&#39;);
+
+if (token != null) {
+    document.getElementById(&#39;user_msg&#39;).innerHTML = nick + &quot;님 환영합니다!&quot;
+    document.getElementById(&#39;sign&#39;).innerHTML = &#39;로그아웃&#39;
+    document.getElementById(&#39;user&#39;).innerHTML = &#39;회원정보&#39;
+    var flag_end = false
+    function sign() {
+        localStorage.clear()
+        alert(&quot;로그아웃 되었습니다!&quot;)
+        location.href = &quot;http://parkbomin.iptime.org:8081/&quot;;
+    }
+    function user() {
+        location.href = &quot;http://parkbomin.iptime.org:8081/html/rog/user.html&quot;;
+    }
+}
+
+else if (token == null) {
+    function sign() {
+        location.href = &quot;http://parkbomin.iptime.org:8081/html/rog/rogin.html&quot;;
+    }
+    function user() {
+        location.href = &quot;http://parkbomin.iptime.org:8081/html/rog/register.html&quot;;
+    }
+}
+</code></pre>
+                        <p>회원가입 (javascript)</p>
+                        <pre><code>function signup() {
+            var p1 = document.getElementById(&#39;password1&#39;).value;
+            var p2 = document.getElementById(&#39;password2&#39;).value;
+
+            if (p1.length &lt; 6) {
+                alert(&#39;비밀번호는 6글자 이상이어야 합니다.&#39;);
+                return;
+            }
+            else if (p1 != p2) {
+                alert(&quot;비밀번호가 일치하지 않습니다.&quot;);
+                return;
+            } else {
+                fetch(&quot;http://parkbomin.iptime.org:18000/user/sign-up/&quot;, {
+                    method: &quot;POST&quot;,
+                    body: JSON.stringify({
+                        &quot;name&quot;: document.getElementById(&#39;name&#39;).value,
+                        &quot;email&quot;: document.getElementById(&#39;email&#39;).value,
+                        &quot;password&quot;: document.getElementById(&#39;password2&#39;).value,
+                        &quot;nickname&quot;: document.getElementById(&#39;nickname&#39;).value,
+                        &quot;phone&quot;: document.getElementById(&#39;phone&#39;).value
+                    })
+                })
+                    .then(res =&gt; res.json())
+                    .then(res =&gt; console.log(res))
+                alert(&quot;회원가입이 완료되었습니다!&quot;);
+                location.href = &quot;rogin.html&quot;;
+                return;
+            }
+        }
+        function n_check() {
+            var nickk = document.getElementById(&#39;nickname&#39;).value;
+            if (nickk.length &lt; 3) {
+                alert(&quot;닉네임이 너무 짧습니다!&quot;);
+                return;
+            }
+            fetch(&quot;http://parkbomin.iptime.org:18000/user/name-check/&quot;, {
+                method: &quot;POST&quot;,
+                body: JSON.stringify({
+                    &quot;nickname&quot;: document.getElementById(&#39;nickname&#39;).value
+                })
+            })
+                .then((response) =&gt; response.json())
+                .then(function(response) {
+                return response.MESSAGE;
+            })
+
+            .then(function(mydata) {
+                login_flag = mydata;
+            if (login_flag == &quot;SUCCESS!&quot;) {
+                alert(&quot;사용 가능한 닉네임입니다!&quot;);
+            }
+            else if (login_flag == &quot;NICKNAME_ALEADY_IN_USE&quot;) {
+                alert(&quot;이미 사용중인 닉네임입니다!&quot;);
+                return;
+            }
+            })
+        }
+</code></pre>
+                        <p>로그인 (javascript)</p>
+                        <pre><code>var ema = document.getElementById(&#39;email&#39;).value;
+        var pwd = document.getElementById(&#39;password&#39;).value;
+        function signin() {
+            console.log(ema.length)
+            console.log(pwd.length)
+
+            fetch(&quot;http://parkbomin.iptime.org:18000/user/log-in/&quot;, {
+                method: &quot;POST&quot;,
+                headers: {
+                    &#39;Content-Type&#39;: &#39;application/json&#39;
+                },
+                body: JSON.stringify({
+                    &quot;email&quot;: document.getElementById(&#39;email&#39;).value,
+                    &quot;password&quot;: document.getElementById(&#39;password&#39;).value
+                })
+            })
+                .then(response =&gt; response.json())
+                .then(response =&gt; {
+                    console.log(response.access_token)
+                    console.log(response.user_nickname)
+                    localStorage.setItem(&#39;access_token&#39;, response.access_token);
+                    localStorage.setItem(&#39;user_nickname&#39;, response.user_nickname);
+                })
+            alert(&quot;로그인이 완료되었습니다!&quot;);
+            location.href = &quot;../../index.html&quot;;
+        }
+</code></pre>
+                        <h1 id="시스템-제작-최종-정리">시스템 제작 최종 정리</h1>
+                        <ol>
+                            <li>시스템 프레임 제작
+                                1-1. 재료 : 플라스틱 박스, 자전거 거치대, 자전거 발판 등
+                                1-2. 추가로 해야할 것들</li>
+                        </ol>
+                        <ul>
+                            <li>라즈베리파이 및 브레드 보드 위치 조정, 중간 작업판 제작</li>
+                            <li>센서 위치 조정</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <button class="span-next" id="nextbtn">
+                <span class="arrow-next"></span>
+            </button>
+        </div>
         <div class="text-div">
             <p class="span-title">
                 <span>아두이노와 라즈베리파이를 이용한 자전거 관리 시스템</span>
@@ -81,7 +620,8 @@
             </p>
             <p class="span-text">본 포트폴리오는 2022년 스마트 ICT 프로젝트 경진대회 최우수상을 수상한 작품을 포트폴리오 형태로 축약한 웹입니다.</p>
             <p class="span-text">자전거를 관리하기 위한 목적의 자전거 길찾기 지도, 자전거 정비소나 사고 다발 지역의 위치를 나타내는 테마지도가 포함되어 있습니다.</p>
-            <p class="span-text">관리모드는 Django에서 백엔드 API를 만들어 프론트에게 정보를 전달하여 GPS, 충격감지 센서 등의 정보를 가꾸어 폴리라인의 형태로 나타내어 줍니다.</p>
+            <p class="span-text">관리모드는 Django에서 백엔드 API를 만들어 프론트에게 정보를 전달하여 GPS, 충격감지 센서 등의 정보를 가꾸어 폴리라인의 형태로 나타내어 줍니다.
+            </p>
             <p class="span-text">※ 백엔드, DB를 관리하던 서버의 문제로 관리모드에서 기능은 현재 수행하지 못하는 상태입니다.</p>
             <p class="span-text"></p>
         </div>
@@ -153,6 +693,7 @@
             }
         }
     </script>
+    <script src="js/scroll.js"></script>
 </body>
 
 </html>

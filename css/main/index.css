@@ -1,92 +1,111 @@
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 @font-face {
     font-family: 'IBMPlexSansKR-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-        
-        
-        body {
-            overflow-y: hidden;
-            top: 0;
-            left: 0;
-        }
 
-        .selecter {
-            position: relative;
-            text-align: center;
-            vertical-align: middle;
-            height: 900px;
-            width: 100%;
-            left: 0px;
-            right: 0px;
-            margin: 0 auto;
-            top: 130px;
-        }
+input:focus {
+    outline: none;
+}
 
-        .text-div {
-            position: relative;
-            vertical-align: middle;
-            width: 100%;
-            height: 250px;
-            top: 80px;
-            left: 0px;
-            right: 0px;
-            margin-left: 50px;
-            font-family: 'IBMPlexSansKR-Regular';
-            color: #fff;
-        }
+input {
+    border: none;
+    background: transparent;
+    font-family: 'SBAggroB';
+    color: #fff;
+}
 
-        .selecter img {
-            width: 560px;
-            filter: drop-shadow(5px 5px 20px #000);
-            transition: all 1.0s;
-        }
 
-        .select_mapsearch {
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            width: 560px;
-            left: 17%;
-            margin-left: -280px;
-        }
+body {
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+}
 
-        .select_mapmarker {
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            width: 560px;
-            left: 50%;
-            margin-left: -280px;
-        }
+.selecter {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    height: 900px;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    top: 130px;
+}
 
-        .select_admin {
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            width: 560px;
-            left: 83%;
-            margin-left: -280px;
-        }
+.text-div {
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    height: 250px;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    margin-left: 50px;
+    font-family: 'IBMPlexSansKR-Regular';
+    color: #fff;
+}
 
-        .sel-1:hover {
-            transform: scale(1.10);
-        }
+.selecter img {
+    width: 560px;
+    filter: drop-shadow(5px 5px 20px #000);
+    transition: all 1.0s;
+}
 
-        .sel-2:hover {
-            transform: scale(1.10);
-        }
+.select_mapsearch {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 560px;
+    left: 17%;
+    margin-left: -280px;
+}
 
-        .sel-3:hover {
-            transform: scale(1.10);
-        }
+.select_mapmarker {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 560px;
+    left: 50%;
+    margin-left: -280px;
+}
 
-        .span-title {
-            font-size: 30px;
-            font-weight: 600;
-        }
-        .span-text {
-            font-weight: 200;
-            font-size: 20px;
-        }
+.select_admin {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 560px;
+    left: 83%;
+    margin-left: -280px;
+}
+
+.sel-1:hover {
+    transform: scale(1.10);
+}
+
+.sel-2:hover {
+    transform: scale(1.10);
+}
+
+.sel-3:hover {
+    transform: scale(1.10);
+}
+
+.span-title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.span-text {
+    font-weight: 200;
+    font-size: 20px;
+}
