@@ -10,72 +10,11 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/instyle.css" />
     <link rel="stylesheet" type="text/css" href="css/loading.css" />
+    <link rel="stylesheet" type="text/css" href="css/main/index.css" />
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon/favicon.ico">
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="js/loading.js"></script>
-
-    <style>
-        body {
-            overflow-y: hidden;
-            top: 0;
-            left: 0;
-        }
-
-        .selecter {
-            position: relative;
-            text-align: center;
-            vertical-align: middle;
-            width: 1920px;
-            height: 900px;
-            top: 300px;
-        }
-
-        .selecter img {
-            width: 560px;
-            filter: drop-shadow(5px 5px 20px #000);
-            transition: all 1.0s;
-        }
-
-        .select_mapsearch {
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            width: 560px;
-            left: 17%;
-            margin-left: -280px;
-        }
-
-        .select_mapmarker {
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            width: 560px;
-            left: 50%;
-            margin-left: -280px;
-        }
-
-        .select_admin {
-            position: absolute;
-            text-align: center;
-            vertical-align: middle;
-            width: 560px;
-            left: 83%;
-            margin-left: -280px;
-        }
-
-        .sel-1:hover {
-            transform: scale(1.10);
-        }
-
-        .sel-2:hover {
-            transform: scale(1.10);
-        }
-
-        .sel-3:hover {
-            transform: scale(1.10);
-        }
-    </style>
 
 </head>
 
@@ -135,6 +74,17 @@
     </header>
     <!--페이지-->
     <main>
+        <div class="text-div">
+            <p class="span-title">
+                <span>아두이노와 라즈베리파이를 이용한 자전거 관리 시스템</span>
+                <span>Care Bicycle Case</span>
+            </p>
+            <p class="span-text">본 포트폴리오는 2022년 스마트 ICT 프로젝트 경진대회 최우수상을 수상한 작품을 포트폴리오 형태로 축약한 웹입니다.</p>
+            <p class="span-text">자전거를 관리하기 위한 목적의 자전거 길찾기 지도, 자전거 정비소나 사고 다발 지역의 위치를 나타내는 테마지도가 포함되어 있습니다.</p>
+            <p class="span-text">관리모드는 Django에서 백엔드 API를 만들어 프론트에게 정보를 전달하여 GPS, 충격감지 센서 등의 정보를 가꾸어 폴리라인의 형태로 나타내어 줍니다.</p>
+            <p class="span-text">※ 백엔드, DB를 관리하던 서버의 문제로 관리모드에서 기능은 현재 수행하지 못하는 상태입니다.</p>
+            <p class="span-text"></p>
+        </div>
         <div class="selecter">
             <div class="select_mapsearch">
                 <a href="html/mapsearch.html">
