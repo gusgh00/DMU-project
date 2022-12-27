@@ -15,12 +15,29 @@
     <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon/favicon.ico">
     <script
         src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxf8a0d7c16d01466a8bae0f6451de98be"></script>
-        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <script src="../js/onoffdiv.js"></script>
-        <script src="../js/main/mapsearch.js"></script>
-        <script src="../js/loading.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="../js/onoffdiv.js"></script>
+    <script src="../js/main/mapsearch.js"></script>
+    <script src="../js/loading.js"></script>
+    <script type="text/javascript">
+        function onoff() {
+            let codediv = document.getElementById('codediv');
+            let title = document.getElementById("listtitle");
 
-    
+            if (codediv.style.top === '60px') {
+                codediv.style.top = '730px';
+                codediv.style.opacity = '0.4';
+                document.getElementById("aggro").innerHTML = "길 찾기";
+            }
+            else {
+                codediv.style.top = '60px';
+                codediv.style.opacity = '0.9';
+                document.getElementById("aggro").innerHTML = "길 찾기 - 소스코드";
+            }
+        }
+    </script>
+
+
 
 </head>
 
@@ -90,7 +107,7 @@
                         <span class="code-1-title">HTML</span>
                         <hr class="hr-1">
                         <div class="code-div-1-div">
-<pre>
+                            <pre>
 &lt;body onload="initTmap()"&gt;
     &lt;!--헤더--&gt;
     &lt;header class="container"&gt;
@@ -255,7 +272,7 @@
                         <span class="code-2-title">CSS</span>
                         <hr class="hr-2">
                         <div class="code-div-2-div">
-<pre>
+                            <pre>
     body {
         /* overflow-y: hidden; */
         margin: 0;
@@ -545,7 +562,7 @@
                         <span class="code-3-title">JavaScript</span>
                         <hr class="hr-3">
                         <div class="code-div-3-div">
-<pre>
+                            <pre>
 // 페이지가 로딩이 된 후 호출하는 함수입니다.
 var map;
 var label;
@@ -822,7 +839,8 @@ function enterkey2() {
                             <span>시작</span>
                         </div>
                         <div class="sp-div">
-                            <input type="text" id="startPoint" class="sp-text" placeholder="시작 지점을 입력하세요." onkeypress="enterkey1()">
+                            <input type="text" id="startPoint" class="sp-text" placeholder="시작 지점을 입력하세요."
+                                onkeypress="enterkey1()">
                         </div>
                         <div class="sp-btn-div">
                             <button onclick="searchPOI()" id="searchSP">검색</button>
@@ -833,7 +851,8 @@ function enterkey2() {
                             <span>종료</span>
                         </div>
                         <div class="ep-div">
-                            <input type="text" id="endPoint" class="ep-text" placeholder="종료 지점을 입력하세요." onkeypress="enterkey2()">
+                            <input type="text" id="endPoint" class="ep-text" placeholder="종료 지점을 입력하세요."
+                                onkeypress="enterkey2()">
                         </div>
                         <div class="ep-btn-div">
                             <button onclick="searchPOIs()" id="searchEP">검색</button>

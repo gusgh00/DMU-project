@@ -19,6 +19,23 @@
     <script src="../js/onoffdiv.js"></script>
     <script src="../js/main/adminacci.js"></script>
     <script src="../js/loading.js"></script>
+    <script type="text/javascript">
+        function onoff() {
+            let codediv = document.getElementById('codediv');
+            let title = document.getElementById("listtitle");
+
+            if (codediv.style.top === '60px') {
+                codediv.style.top = '730px';
+                codediv.style.opacity = '0.4';
+                document.getElementById("aggro").innerHTML = "실시간 사고";
+            }
+            else {
+                codediv.style.top = '60px';
+                codediv.style.opacity = '0.9';
+                document.getElementById("aggro").innerHTML = "실시간 사고 - 소스코드";
+            }
+        }
+    </script>
 
 </head>
 
@@ -86,7 +103,7 @@
                 <span class="code-1-title">HTML</span>
                 <hr class="hr-1">
                 <div class="code-div-1-div">
-<pre>
+                    <pre>
     &lt;body onload="initTmap1(), initTmap2(), initTmap3()"&gt;
     &lt;!--헤더--&gt;
     &lt;header class="container"&gt;
@@ -231,7 +248,7 @@
                 <span class="code-2-title">CSS</span>
                 <hr class="hr-2">
                 <div class="code-div-2-div">
-<pre>
+                    <pre>
     body {
         overflow-y: hidden;
         margin: 0;
@@ -418,7 +435,7 @@
                 <span class="code-3-title">JavaScript</span>
                 <hr class="hr-3">
                 <div class="code-div-3-div">
-<pre>
+                    <pre>
     var map;
     var map1;
     var map2;

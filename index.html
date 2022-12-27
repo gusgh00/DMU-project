@@ -33,6 +33,26 @@
                 document.getElementById("aggro").innerHTML = "Trello 정리 리스트";
             }
         }
+
+        let trellodiv1 = document.getElementById('codedivdiv1');
+        let trellodiv2 = document.getElementById('codedivdiv2');
+        let trellodiv3 = document.getElementById('codedivdiv3');
+
+        function trello1() {
+            document.getElementById('codedivdiv1').style.display = "flex";
+            document.getElementById('codedivdiv2').style.display = "none";
+            document.getElementById('codedivdiv3').style.display = "none";
+        }
+        function trello2() {
+            document.getElementById('codedivdiv1').style.display = "none";
+            document.getElementById('codedivdiv2').style.display = "flex";
+            document.getElementById('codedivdiv3').style.display = "none";
+        }
+        function trello3() {
+            document.getElementById('codedivdiv1').style.display = "none";
+            document.getElementById('codedivdiv2').style.display = "none";
+            document.getElementById('codedivdiv3').style.display = "flex";
+        }
     </script>
 
 </head>
@@ -100,7 +120,18 @@
             <button class="span-prev" id="prevbtn">
                 <span class="arrow-prev"></span>
             </button>
-            <div class="code-div-div" id="codedivdiv">
+            <div class="trello-div-div">
+                <div class="trello-btn-div trello-btn-1">
+                    <input type="button" class="trello-btn" id="trello1" value="1학기" onclick="trello1()">
+                </div>
+                <div class="trello-btn-div trello-btn-2">
+                    <input type="button" class="trello-btn" id="trello2" value="방학" onclick="trello2()">
+                </div>
+                <div class="trello-btn-div trello-btn-3">
+                    <input type="button" class="trello-btn" id="trello3" value="2학기" onclick="trello3()">
+                </div>
+            </div>
+            <div class="code-div-div trello-1" id="codedivdiv1">
                 <div class="code-12-div">
                     <span class="code-1-title">1학기 5주차</span>
                     <hr class="hr-1">
@@ -605,6 +636,772 @@ else if (token == null) {
                             <li>라즈베리파이 및 브레드 보드 위치 조정, 중간 작업판 제작</li>
                             <li>센서 위치 조정</li>
                         </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="code-div-div trello-2" id="codedivdiv2">
+                <div class="code-13-div">
+                    <span class="code-2-title">방학 1주차</span>
+                    <hr class="hr-2">
+                    <div class="code-div-2-div">
+                        <h1 id="1학기-총-정리">1학기 총 정리</h1>
+<ol>
+<li>웹사이트 제작 시작</li>
+</ol>
+<ul>
+<li>로고 제작과 전체적인 페이지 흐름, 아이콘 등 디자인 구성</li>
+<li>관리자 페이지의 중요성 파악과 관리자 페이지에 필요한 요소 구성</li>
+</ul>
+<ol start="2">
+<li>웹사이트 중간 단계</li>
+</ol>
+<ul>
+<li>헤더 메뉴의 수정</li>
+<li>학교서버 -&gt; 박보민 개인 서버 이동.</li>
+</ul>
+<ol start="3">
+<li>웹사이트와 백엔드의 연동</li>
+</ol>
+<ul>
+<li>백엔드 역할을 맡은 이수한과 API 연동 시작</li>
+<li>로그인, 회원가입, 관리자 페이지 API 연동 완료</li>
+</ul>
+<ol start="4">
+<li>시스템 구성</li>
+</ol>
+<ul>
+<li>시스템 만들 때 필요한 프레임 모델링.</li>
+<li>시스템 구현 중 오작동 검수</li>
+</ul>
+<ol start="5">
+<li>부족했던 점 &amp; 보완해야 할 점.</li>
+</ol>
+<ul>
+<li>불안정한 웹의 흐름</li>
+<li>웹의 전체적인 구성과 디자인의 변경</li>
+<li>관리자 페이지의 구성을 보기 편한 위치로 조정</li>
+</ul>
+<h1 id="내가-한-일">내가 한 일</h1>
+<ol>
+<li>리액트 공부 시작</li>
+<li>리액트 + node.js 연동 후 연습</li>
+<li>주말 야간 알바 시작</li>
+<li>작품에 더 필요한 사항 탐색</li>
+</ol>
+
+                    </div>
+                </div>
+                <div class="code-13-div">
+                    <span class="code-2-title">방학 2주차</span>
+                    <hr class="hr-2">
+                    <div class="code-div-2-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<ol>
+<li>로고 최종 디자인</li>
+<li>앱 아이콘 및 웹 용 페비콘 제작</li>
+</ol>
+
+                    </div>
+                </div>
+                <div class="code-13-div">
+                    <span class="code-2-title">방학 4주차</span>
+                    <hr class="hr-2">
+                    <div class="code-div-2-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<ol>
+<li>자전거 안장 가방</li>
+</ol>
+<ul>
+<li>3주차 때 실패한 가방을 자전거 샵을 수소문하여 방문 후 구매 완료</li>
+<li>추가 적 디자인 검토 (케바케 로고 오버로크, 센서&amp;보드 위치 선정)</li>
+</ul>
+
+                    </div>
+                </div>
+                <div class="code-13-div">
+                    <span class="code-2-title">방학 5주차</span>
+                    <hr class="hr-2">
+                    <div class="code-div-2-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<ol>
+<li>css 모션 인터렉션 공부</li>
+</ol>
+<ul>
+<li>애플 기업의 사이트 등 과 같은 인터렉션 공부 (스크롤 모션)</li>
+</ul>
+<ol start="2">
+<li>리액트 공부 (현재 진행형)</li>
+</ol>
+
+                    </div>
+                </div>
+                <div class="code-13-div">
+                    <span class="code-2-title">방학 7주차</span>
+                    <hr class="hr-2">
+                    <div class="code-div-2-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<ol>
+<li>모션 그래픽 공부</li>
+</ol>
+<ul>
+<li>어도비 프로그램 중 애프터 이펙트를 활용한 모션 그래픽 공부</li>
+<li>케바케 로고를 이용한 모션그래픽 디자인</li>
+<li>첫번째 작품 : <a href="https://youtu.be/p0gmne8Rckc">https://youtu.be/p0gmne8Rckc</a>
+  a. 무게감도 없고 텍스트 모션이 맘에 안듦. 컬러도 별로...</li>
+<li>두번째 작품 : <a href="https://youtu.be/rQ_6eNGqT5Y">https://youtu.be/rQ_6eNGqT5Y</a>
+  a. 모션에 무게감이 생기고 살아있는 듯한 움직임이 좋음
+  b. 대신 텍스트의 움직임이 뚝뚝 끊김...</li>
+<li>두번째 작품 수정 : <a href="https://youtu.be/NoPSGi-KMbk">https://youtu.be/NoPSGi-KMbk</a>
+  a. 텍스트의 움직임을 수정하여 부드러운 움직임을 보여줌.
+  b. 로고에 생동감이 부족함.</li>
+<li>두번째 작품 수정 : <a href="https://youtu.be/AEW2e_Wy3NM">https://youtu.be/AEW2e_Wy3NM</a>
+  a. 로고에 그림자를 넣어주어 생동감을 실어 넣음.</li>
+</ul>
+
+                    </div>
+                </div>
+                <div class="code-13-div">
+                    <span class="code-2-title">방학 8주차</span>
+                    <hr class="hr-2">
+                    <div class="code-div-2-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<p>웹페이지나 앱 등의 화면에서 보여주기 위한 디자인을 위해 색상과 구성에 대한 고민을 많이 해보았다.
+결국에는 이는 졸업작품이기 전에 일반 사용자들이 사용해야 할 제품이라고 생각을 하여 디자인에 조금 더 공을 들여보기로 하였다.
+앞서 7주차에서 만든 모션그래픽 작품을 만들기 위해 색상을 먼저 골라내었고 로고를 어디서든 쓸 수 있게 많은 수정을 하였다.
+그래서 나온 결과 색상은 회색+블루와 그의 보색 계열인 밝은 노랑으로 골라 총 8가지 색상을 추출 하였다. 사람들의 눈의 피로를 줄이기 위해 쨍한 색상을 완전히 배제 하여 파스텔 느낌의 컬러만을 이용하기로 하였다.</p>
+<h1 id="8월-안으로-해야-할-일">8월 안으로 해야 할 일</h1>
+<ol>
+<li>앱 화면 디자인 샘플 제작</li>
+<li>앱 진입 시 로딩 화면 모션그래픽 제작</li>
+<li>시스템 센서들이 탑재 될 가방, 거치대 디자인 구상</li>
+<li>웹의 전체적인 수정 (a.k.a 애플 아이폰 광고 페이지)</li>
+</ol>
+
+                    </div>
+                </div>
+            </div>
+            <div class="code-div-div trello-3" id="codedivdiv3">
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 1주차</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="9월-계획-정리">9월 계획 정리</h1>
+<ol>
+<li>웹 페이지
+ a. 디자인 전면적인 수정</li>
+</ol>
+<ul>
+<li>깔끔하게</li>
+<li>직관적이게</li>
+<li>예쁘게
+ b. 관리자 페이지 필요한 것과 불필요한 것들 가감</li>
+</ul>
+<ol start="2">
+<li>앱, 백엔드 개발자와의 협업
+ a. 웹뷰로 보여줄 내용</li>
+</ol>
+<ul>
+<li>카카오맵 API 이용하여 지도 경로 찾기 기능 구현
+ b. 스마트폰 자체 GPS를 백엔드 DB로 보내어 관리자 페이지에 사용자 위치 표시</li>
+</ul>
+<ol start="3">
+<li>시스템 개발자와의 협업
+ a. 안장 가방, 자전거 스탠드 프레임 제작
+ b. 센서 납땜과 고정</li>
+</ol>
+<hr>
+<h1 id="입시-지원서-계획">입시 지원서 계획</h1>
+<ol>
+<li><p>나의 지망 또는 비전
+ 웹 개발자로 시작 할 예정이다. 그냥 웹 개발자가 아닌 디자인, 백엔드를 모두 다룰 수 있는 풀스택 개발자로 들어갈 것이다. 그러기 위해 현재 전공에서 배우는 것과 내가 따로 독학으로 공부해온 어도비 디자인 프로그램을 응용 그리고 발전시킬 것이다.</p>
+</li>
+<li><p>필요한 기술과 내가 공부한 정도
+ a. 언어</p>
+</li>
+</ol>
+<ul>
+<li>HTML5 : 90%</li>
+<li>CSS3 : 90%</li>
+<li>javascript : 70%</li>
+<li>json : 65%</li>
+<li>MySql : 60%</li>
+<li>react : 20%</li>
+<li>node.js : 10%</li>
+<li>Django : 5%</li>
+<li>jsp : 70%</li>
+<li>php : 60%
+ b. 디자인 기술</li>
+<li>어도비 포토샵 : 90%</li>
+<li>어도비 애프터 이펙트 : 80%</li>
+<li>어도비 일러스트레이터 : 80%</li>
+<li>피그마 : 75%</li>
+</ul>
+<ol start="3">
+<li>이 외 기술
+ a. 언어</li>
+</ol>
+<ul>
+<li>C : 80%</li>
+<li>Java : 70%</li>
+<li>python : 85%
+ b. 기술</li>
+<li>Unity : 40%</li>
+<li>Android Studio : 70%</li>
+</ul>
+<ol start="4">
+<li><p>해당 직업으로 지망하는 이유
+  나는 디자인하는 것을 좋아한다. 좋아하는 것 이상으로 잘한다. 그러나 디자인 계통으로 안가고 컴퓨터 공학으로 진학 한 이유는 내가 고등학교 때 이과여서 진학한 이유도 있었지만 가장 큰 이유는 내가 하는 디자인과 현재 가장 큰 기술인 IT기술과 접목시키면 크게 성공할 수 있지 않을까 해서 진학하게 되었다. 진학하게 되면서 앱개발과 웹개발이 내가 원하는 것과 가장 가까웠고 디자인을 접목 시키기에 안성맞춤이었다. 그러나 디자인 기술만 가지고는 어림도 없다는 것도 알았다. 현재 웹 퍼블리셔로 취업하는 사람들을 보면 웹 디자인 기술만 가지고 들어가는 사람이 대부분이었다. 한마디로 백엔드 기술에 굉장히 취약하였다. 그렇기 때문에 디자인, 백엔드 두 분야에서 월등하게 잘하는 내가 시작한다면 좋은 점수를 얻을 것으로 보인다.</p>
+</li>
+<li><p>나의 장단점
+ a. 장점</p>
+</li>
+</ol>
+<ul>
+<li>철저한 시간 관리</li>
+<li>관심있는 분야에 있어서 공부하는 집중력</li>
+<li>게임이나 술, 클럽 등 유흥에 관심없음</li>
+<li>생각이 많아 아이디어가 금세 생겨 빠른 기획안을 처리 할 수 있다.
+ b. 단점</li>
+<li>승부욕이 강해 안되는 부분이 생기면 해당 부분에만 매달린다.</li>
+<li>생각이 많아 쉽게 정리가 안되는 일이 생기면 금방 지친다.</li>
+</ul>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 2주차-1</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<hr>
+<h1 id="안드로이드-용-지도-길-찾기-웹에서-구현">안드로이드 용 지도 길 찾기 웹에서 구현</h1>
+<p>안드로이드에서 지도 API를 이용하는 것은 매우 힘든일이다. 그러기에 웹에서 구현하여 안드로이드의 웹뷰 기능을 이용하여 보여주기로 하였다.</p>
+<ol>
+<li>사용한 소스
+ a. 사용한 오픈 API : 티맵 API</li>
+</ol>
+<ul>
+<li>이유 : 카카오맵 API, 네이버 지도 API 같은 API들도 있었지만 길찾기의 경로 구현 기능이 미흡하거나 없었다. 이런 기능이 살아있는 티맵 API를 선택하였다. 
+ b. 사용한 언어 : JavaScript, Json</li>
+</ul>
+<ol start="2">
+<li>구현한 기능
+ a. 지역 검색 후 마커 생성 기능</li>
+</ol>
+<ul>
+<li>예) 구일역 검색 후 구일역 관련 마커 생성 (최대 10개)</li>
+<li>문제 발생) 마커 선택하여 해당 마커의 정보를 불러오는 샘플이 없었다. </li>
+<li>문제 해결) b번으로 이동
+ b. 마커 선택 후 해당 정보 불러오는 기능</li>
+<li>콘솔 로그에 2.a의 정보가 Json배열로 저장된다는 사실을 알았다.</li>
+<li>마커를 선택 했을 때 배열 중 하나의 정보만 전역변수에 저장하게 하여 Input값에 지역 이름, 나머지 정보는 위도 경도 값만 저장하게 하였다.</li>
+<li>문제 발생) 함수 충돌로 인해 저장한 정보가 뒤섞이게 되었다.</li>
+<li>문제 해결) 함수를 출발지 정보, 도착지 정보 두개로 나누어서 하드 코딩 하였다.
+ c. 저장된 위도, 경도 값을 통해 경로 탐색</li>
+<li>출발지, 도착지 변수를 다르게 해주어 경로탐색 함수에 넣어주었다.</li>
+<li>문제 없이 경로가 잘 나와주었다.</li>
+</ul>
+<ol start="3">
+<li>제작 된 화면
+ a. 링크 : <a href="http://parkbomin.iptime.org:8081/html/mapsearch.html">http://parkbomin.iptime.org:8081/html/mapsearch.html</a></li>
+</ol>
+<hr>
+<h1 id="앱-랜딩페이지로딩화면-로티파일-제작">앱 랜딩페이지(로딩화면) 로티파일 제작</h1>
+<ol>
+<li><p>사용한 소스
+ a. 사용한 프로그램 : 어도비 애프터 이펙트
+ b. 사용한 플러그인 : 로티파일js
+ c. 사용한 언어 : json</p>
+</li>
+<li><p>문제 발생
+ a. 사이즈 문제 : 안드로이드에 맞춰져 있는 규격에 맞게 변경할 예정
+ b. 속도감 문제 : 너무 빠르게 지나간다. 여유감을 줘야 할 것 같다.</p>
+</li>
+<li><p>문제 해결
+ a. 해당 애니메이션은 폐기하고 새롭게 만들 예정
+ b. 레이어가 너무 많았기 때문에 확 줄일 필요가 있다.</p>
+</li>
+<li><p>제작 된 화면(웹페이지에서 구현)
+ a. 링크 : <a href="http://parkbomin.iptime.org:8081/html/lottiesample.html">http://parkbomin.iptime.org:8081/html/lottiesample.html</a></p>
+</li>
+</ol>
+<hr>
+<h1 id="2학기-자슬라-프로젝트-계획서">2학기 자슬라 프로젝트 계획서</h1>
+<p>최대한 9월안으로 끝낼 수 있게 몰아놨다. 색깔 블럭 하나 당 100%로 무조건 끝내야만 할 것이다. 웹 프론트 개발은 1학기 초에 대부분 끝내 놓았기 때문에 시스템 프레임 제작이나 프론트 애니메이션 디자인에 집중 할 예정이다.</p>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 2주차-2</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<hr>
+<h1 id="앱-랜딩페이지설명화면-로티파일-제작">앱 랜딩페이지(설명화면) 로티파일 제작</h1>
+<ol>
+<li><p>사용한 소스
+ a. 사용한 프로그램 : 어도비 애프터 이펙트
+ b. 사용한 플러그인 : 로티파일js
+ c. 사용한 언어 : json</p>
+</li>
+<li><p>문제 발생
+ a. 안드로이드에서 사용이 불가능한 애니메이션 때문에 제대로 안나온다.</p>
+</li>
+<li><p>문제 해결
+ a. gif로 랜더링하여 문제 없이 설명 랜딩페이지가 잘 나와 주었다.</p>
+</li>
+<li><p>제작 된 화면(웹페이지에서 구현)
+ a. 링크 : <a href="http://parkbomin.iptime.org:8081/html/lottiesample2.html">http://parkbomin.iptime.org:8081/html/lottiesample2.html</a></p>
+</li>
+</ol>
+<hr>
+<h1 id="더-필요한-물품">더 필요한 물품</h1>
+<ol>
+<li>시스템 프레임 제작 시
+ a. 안장 가방</li>
+</ol>
+<ul>
+<li>케바케 로고 오바로크
+ b. 자전거 스탠드</li>
+<li>페인팅 도구 : 흰색 락카, 파란색 락카 또는 검은색 락카, 서페이서</li>
+<li>접착 도구 : 초강력 본드 또는 글루건, 사포 강도 종류 별로</li>
+<li>센서 가림막 플라스틱과 볼트 너트</li>
+</ul>
+<hr>
+<h1 id="u11-대학-연합-현직자-직무-특강">U11 대학 연합 현직자 직무 특강</h1>
+<ol>
+<li>멘토
+ a. 날짜 : 9월 16일 (금)
+ b. 직무 : SW개발 및 관리 (DB)
+ c. 현직 회사 : 키즈노트 (카카오 계열)
+ d. 성함 : 박병준
+ e. 직무 : 백엔드 엔지니어</li>
+<li>내용 (사진 촬영 및 캡쳐 후 유포가 불가능하여 사진 첨부 X)</li>
+</ol>
+<p> 내 질문</p>
+<pre><code> Q : 프론트를 지망하면서 백엔드를 심도있게
+공부하면 취업 시에 도움이 되는가?
+
+ A : 프론트를 지망하고 있는대 불구하고 백엔드에 대해
+심도있게 공부하면 프론트에 집중하기 어려워질것이다.
+로직이나 아키텍쳐에 대해 알아보는것이 필요.
+</code></pre>
+<pre><code> Q : 본인만의 디버깅 하는 프로세스 방법이 있나요??
+ A : 디버깅 프로세스는 개인만의 프로세스가 될 수 없다.
+(리모트 디버깅에 대한 키워드 구글링 필요.)
+</code></pre>
+<p> 타 질문</p>
+<pre><code> Q : 코딩테스트 사이트 알려주세요.
+ A : 코딩테스트 준비
+HakerRank intermediate
+삼성 SW Expert Academy intermediate
+두가지가 있다.
+</code></pre>
+<pre><code> Q : 이 외에 준비해야 할 것들이 있을까요?
+ A :
+ a. 백준 문제 꼭 많이 풀어볼 것
+
+ b. 강의에 시간들이는 것 보단 책을 보는 것을 추천한다.
+
+ c. 지원 많이 하고 면접 많이 보면서 경험을 키워라
+
+ d. 깃플로우 라는 단어 인식 필요. 깃허브 정리 무조건 해야만 한다.
+
+ e. 비전공자는 마이크로소프트 교육인증 과정 참고할 것
+</code></pre>
+<pre><code> Q. 백엔드에서 필요로하는 능력들은 무엇이 있을까요?
+ A.
+ a. 일정 및 목표 도달 지표관리를 위한 관리도구
+(JIRA, Confluence, MS Teams 등) 활용 능력 필요.
+
+ b. 해당 스택언어 기본 문법 컨벤션 (변수, 클래스, 메소드 등) + 
+웹 서비스 원리 (서버, 클라이언트 연결 구조 등) 지식 필요.
+
+ c. 리눅스 기본 활용 (계정, bash, ssh, sftp 등) + 
+AWS EC2 인스턴스 사용 경험
+</code></pre>
+<pre><code> Q. 백엔드 개발자를 하면서 워라벨 때문에
+스트레스 받는 경우가 많다고 하던데 멘토님은 어떤가요? 
+ A. 본인은 워라벨을 버릴 만큼 그런 큰 사고가 없었지만
+백엔드 개발자는 가끔 일어나는 사고 때문에
+워라벨을 포기해야하는 경우가 많을 것이다.
+</code></pre>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 3주차</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<hr>
+<h1 id="웹-프론트-수정-계획">웹 프론트 수정 계획</h1>
+<ol>
+<li>수정 계획
+ a. 니즈 파악
+  보통 자전거를 많이 이용하는 연령대는 KOSIS 기준 30대 20대 40대 순이다. 20대에서 40대 사이가 웹사이트에 접근한다 했을 때 디자인이 화려한게 좋을까? 글씨 사이즈가 작아서 불편한게 있을까? 결국에는 웹에 접근했다는건 필요한 정보를 가져가기 위한 목적이 많을 것이고 화려한 디자인을 원치 않는 이용자가 많을 것이다. 그래서 디자인을 일명&#39;꾸안꾸&#39;스타일로 점잖게 만들어 보려고 한다. 또 사용자가 정보를 얻기 위한 목적 페이지는 애니메이션 효과를 넣지 않을 것이다.
+ b. 사용자 페이지 구성</li>
+</ol>
+<ul>
+<li>메인페이지 : 작품에 대한 설명 (작품 소개 페이지 &amp; 개발자 소개 페이지 제거)</li>
+<li>구매페이지 : 제품을 구매할 수 있는 경로</li>
+<li>지도 열기 페이지 : 자전거 정비 샵, 자전거 주차장 등의 위치를 확인 할 수 있는 지도 페이지.</li>
+<li>로그인 &amp; 회원가입 : 회원가입과 로그인을 할 수 있는 페이지</li>
+<li>회원정보 페이지 : 로그인 이 후 들어갈 수 있는 경로. (자전거 등록 페이지 및 버튼 제거)
+ c. 관리자 페이지 구성</li>
+<li>사용자 목록 페이지 : 회원가입한 모든 사용자의 정보를 보여주는 페이지.</li>
+<li>실시간 사고 페이지 : 실시간으로 회원의 자전거 사고가 난 지역을 볼 수 있는 페이지.</li>
+<li>자전거 스탠드 위치 페이지 : 회원의 자전거 스탠드 위치를 볼 수 있는 페이지.
+ d. 애니메이션 효과 : 사용자 페이지는 애니메이션 효과를 넣지만 관리자 페이지는 애니메이션 효과를 최대한 배제한다. 이유는 사용자 페이지는 회원에게 시각적인 즐거움을 줘야하지만 관리자 페이지는 관리가 주목적이기 때문에 즐거움을 줄 필요가 없다.
+ e. 콘셉트 모티브</li>
+<li>Dashgo : <a href="https://dashgo.com/login">https://dashgo.com/login</a></li>
+<li>토스 : <a href="https://toss.im/">https://toss.im/</a>
+ f. 필요한 정보&amp;기술</li>
+<li>오픈API : 자전거 정비소 오픈API, 자전거 공용 주차장 오픈 API, 자전거 사고 다발 지역 오픈 API</li>
+<li>로티파일 js : 일부 애니메이션 효과에 로티 json 파일을 통해 효과를 줄 예정. (모든 애니메이션 효과는 직접 본인이 제작할 것)
+ g. 웹페이지 제작 시 지켜야 하는 룰에 맞춰서 하단에 콘택트 부분 만들어서 해당 팀의 정보, 위치 등 내용 기술 할 것</li>
+</ul>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 4주차</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<hr>
+<h1 id="웹뷰-지도-api-수정">웹뷰 지도 API 수정</h1>
+<ol>
+<li>경로 취소 버튼 눌렀을 때 오류 수정
+ a. 경로 취소 함수에 window.reload();를 넣었지만 안드로이드 에뮬에서 내부 웹으로 넘어가는 오류가 생김.
+ b. 해당 코드를 지우고 지도 자체를 destroy하고 다시 추가하는 방법으로 수정.
+ c. 버튼 등 input 타입도 원상태로 초기화 하게 수정.</li>
+</ol>
+<pre><code>function RoadCancel() {
+            var btn_sp = document.getElementById(&quot;searchSP&quot;);
+            var btn_ep = document.getElementById(&quot;searchEP&quot;);
+            var btn_search = document.getElementById(&quot;searchLoad&quot;);
+            var btn_cancel = document.getElementById(&quot;searchLoadCancel&quot;);
+            btn_sp.disabled = false;
+            btn_sp.style.backgroundColor = &#39;#ff3d7e&#39;;
+            btn_sp.style.color = &#39;#ffffff&#39;;
+            btn_ep.disabled = false;
+            btn_ep.style.backgroundColor = &#39;#9c35fd&#39;;
+            btn_ep.style.color = &#39;#ffffff&#39;;
+            btn_search.disabled = false;
+            btn_search.style.backgroundColor = &#39;#88a795&#39;;
+            btn_search.style.color = &#39;#ffffff&#39;;
+            btn_cancel.disabled = true;
+            btn_cancel.style.backgroundColor = &#39;#4e5c77&#39;;
+            btn_cancel.style.color = &#39;#46494f&#39;
+
+            var inputs = document.getElementById(&quot;startPoint&quot;);
+            var inpute = document.getElementById(&quot;endPoint&quot;);
+
+            document.getElementById(&quot;whattime&quot;).innerHTML = &quot;-&quot;
+            document.getElementById(&quot;whatdistance&quot;).innerHTML = &quot;-&quot;
+
+            inputs.value = null;
+            inpute.value = null;
+
+            slatlngsear = null;
+            elatlngsear = null;
+
+            map.destroy(); //지도 삭제
+            initTmap(); //지도 불러오기
+        }
+</code></pre>
+<ol start="2">
+<li><p>소요 시간 추가
+ a. 소요시간과 관련된 API 제공하는 가이드가 없었다. (하나도)
+ b. 경로 검색 후 저장되는 Json 배열을 콘솔로그 창에서 확인해 보기로 했다.
+ c. time 변수에 Sec값으로 저장되는 것을 알고 반복문 이용하여 더해보기로 한다.
+ d. 자가용으로 이동하는 시간과 근사값이 나오는 것을 확인했다.
+ e. 자전거의 평균 속도, 자동차의 평균 속도를 비례한 값으로 4배가 나와 해당 시간에 4배를 해주고 시간, 분, 초 단위로 나누어 주었다.</p>
+</li>
+<li><p>총 거리 추가
+ a. Json 배열에 있는 totalDistance 변수 이용하여 총 거리 구현.</p>
+</li>
+<li><p>자전거가 왜 고속도로를 타냐? 라는 친구의 질문.
+ a. 맞네? 내부순환도로를 타고있네? 빠르게 수정.
+ b. searchOption은 경로 탐색 옵션, 12번은 이륜차 도로 우선 정보를 불러오는 것이다.</p>
+</li>
+</ol>
+<pre><code>var optionObj = {
+                reqCoordType: &quot;WGS84GEO&quot;, //요청 좌표계 옵셥 설정입니다.
+                resCoordType: &quot;WGS84GEO&quot;,  //응답 좌표계 옵셥 설정입니다.
+                trafficInfo: &quot;Y&quot;,
+                searchOption: 12 //경로탐색 옵션, 이륜차 도로 우선
+            };
+</code></pre>
+<hr>
+<h1 id="웹페이지-수정">웹페이지 수정</h1>
+<ol>
+<li>경로 단축화
+ a. 사용자 페이지</li>
+</ol>
+<ul>
+<li>메인 화면 (설명 페이지)</li>
+<li>찾아보기 : 자전거 정비소, 자전거 공용 주차장, 자전거 사고 다발 지역 등 지도API를 통한 검색 POI</li>
+<li>구매하기 : 제품을 구매할 수 있는 페이지
+ b. 관리자 페이지</li>
+<li>사용자 정보 : 모든 사용자들의 DB를 확인 할 수 있는 페이지</li>
+<li>실시간 추적 : 충격 센서를 통한 실시간 사고와 자전거 거치대들의 위치를 확인 할 수 있는 지도API 페이지</li>
+</ul>
+<ol start="2">
+<li>디자인 수정
+ a. 개발자 소개와 제품 설명 등 나뉘어져 있던 페이지를 하나로 합치면서 새롭게 만들었다.</li>
+</ol>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 5주차</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<hr>
+<h1 id="코엑스-전자박람회-관람">코엑스 전자박람회 관람</h1>
+<ol>
+<li>10월 4일 화요일에 코엑스 박람회 방문
+ a. 동양미래대학교 부스에 먼저 도착하여 학우들과 인사를 나눈 후 관람 시작
+ b. 카르페디엠, 마스 등 동양미래대학교의 독창적이고 학우들이 고생하며 만든 결과물을 볼 수 있어서 좋았다.
+ c. 이 외에 다른 기업들과 대학교들의 작품을 보면서 여러 질의 응답을 하였다.</li>
+</ol>
+<ul>
+<li>각종 카메라 센서들의 작동방식과 칩셋의 독보적인 기능</li>
+<li>적외선 센서의 작동방식과 해당 센서의 허점에 대한 질의응답</li>
+<li>삼성, LG의 가전제품의 IoT 기능 탐색, 대기업들의 UI/UX의 특징 모색</li>
+</ul>
+<hr>
+<h1 id="웹사이트-진행사항">웹사이트 진행사항</h1>
+<ol>
+<li>지도API 이용하여 사용자 페이지에 검색 기능 추가
+ a. 공공API를 추가하여 자전거 사고 다발 지역, 공용 자전거(이하 따릉이) 등 각 자전거 관련 위치 정보를 지도에 마커로 구현.
+ b. 카테고리를 통한 마커 구분
+ c. 각 기능 및 마커 설명 추가
+ d. input 섹션과 체크박스 섹션에 투명도 추가 후 마우스 hover시 나타나게 조정
+ e. 지도를 꽉차게 채워서 시야에 다 들어오게 디자인
+ f. 해당 마커들은 서울 및 수도권 지역만 추가 예정
+ g. 체크박스 디자인 수정
+ h. input 타입에 엔터키 반응 시 버튼 반응 처럼 검색기능이 되게 끔 구현
+ i. 문제 발생</li>
+</ol>
+<ul>
+<li>문제 : 해당 마커 정보를 불러오기 위한 공공 오픈API를 불러오려는 시도에서 status에서 200이 아닌 null 값이 뜨면서 통신이 안되는 상태 발생.</li>
+<li>개요 : 마커를 여러개로 불러와야하기 때문에 json의 배열로 불러와야만 하는데 오픈API url 자체로 웹 접속 시에는 문제 없이 배열이 나타나지만 자바스크립트로 파라미터등 ajax 통신 코드 작성시 정보가 null 값으로 뜨는 문제가 생긴다.</li>
+</ul>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 6주차</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<hr>
+<h1 id="웹사이트">웹사이트</h1>
+<ol>
+<li>지도API 사용자 페이지 구현
+ a. 서울시 공용 자전거 공공데이터</li>
+</ol>
+<ul>
+<li>오픈API로 불러오는 방식이 아닌 가장 최근의 CSV 파일을 불러오고 JSON으로 변환하는 과정을 거쳤다.
+ b. 자전거 주차장 공공데이터</li>
+<li>엑셀 파일에서 CSV로, CSV에서 JSON으로 변환하는 과정을 거쳤다.
+ c. 자전거 편의시설 공공데이터</li>
+<li>원래는 자전거 정비소만을 찾고자 했으나 편의시설 정보에 사용자들이 필요로 하는 것들이 많아 이용하게 되었다.</li>
+<li>json 파일이 있지만 웹에서 쓰기에는 적합하지 않아 CSV 파일을 다듬은 후 JSON으로 변환하였다.
+ d. 사고 다발 지역</li>
+<li>이전 주차에서 문제 되었던 사고다발지역 API이다. 오픈API를 웹에서 통신시 응답이 돌아오지 않아 문제가 되었었다.</li>
+<li>선택한 방법은 힘들지만 아주 간단한 방법이다. 웹키 접속은 가능하기 때문에 서울시로 파라미터를 고정한 상태에서 구 지역 파라미터 값만 변경하며 웹 접속을 하여 json 텍스트를 복사 및 붙여넣기 하여 새로운 json 파일을 만들었다.
+ e. 각 체크박스를 체킹 했을 때 해당 정보의 마커들이 잘 뜨는 모습을 볼 수 있다.
+ f. 저 4개의 정보를 한번에 불러올 때에는 다소 버벅임이 생길 수 있으니 첫 화면에 체킹이 안되어 있을 때 필요한 것만 체크하여 확인하도록 권고한다.
+ g. 해당 마커 지도 뷰를 안드로이드 개발하는 팀장님이 맘에 들어하셔서 웹뷰 용으로 축약하여 만들었다. 검색기능 제거, 마커 세부 내용 제거
+ h. 링크 : <a href="https://jasla.duckdns.org/html/main/mapsearch.html">https://jasla.duckdns.org/html/main/mapsearch.html</a></li>
+</ul>
+<ol start="2">
+<li>지도API 관리자 페이지 수정
+ a. 기존의 카카오맵 API를 제거하고 통일성을 위해 티맵API로 수정
+ b. 사용자 목록이 추가 될 테이블을 스크롤 뷰로 꾸미고 한 쪽에 몰아둠
+ c. 맵의 활용성을 높이기 위해 크고 직관적이게 구현
+ d. 안드로이드에서 gps 값을 백엔드와 통신 구현 완료 (해당 부분은 자전거 충격 등 활용 예정)
+ e. 링크 : <a href="https://jasla.duckdns.org/html/admin/accinow.html">https://jasla.duckdns.org/html/admin/accinow.html</a></li>
+</ol>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 7주차</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<h1 id="웹-페이지">웹 페이지</h1>
+<ol>
+<li>사용자 페이지
+ a. 메인 로고, 앱 다운로드 링크, 개발자 소개 애니메이션으로 단순한 구성
+ b. 하드웨어 구매 페이지 삭제 -&gt; HOME 이동으로 변경</li>
+</ol>
+<ul>
+<li>이유 : 자전거 관리자라는 명목과 거리가 멀다.
+ c. 찾아보기 페이지에서 첫 지도 화면 줌 키움
+ d. 로그인, 회원가입, 회원정보 페이지 로티파일 애니메이션 추가 및 디자인 변경</li>
+<li>자전거 등록 추가 버튼 제거 : 자전거 등록의 의미가 사라져 안드로이드와 같이 의견 나눔</li>
+</ul>
+<ol start="2">
+<li>관리자 페이지
+ a. 실시간 추적 : 라이더들이 라이딩 시작 했을 때 위치를 마커로 표현
+ b. 실시간 사고 : 라이더가 사고가 났을 때 특별한 마커 생성.</li>
+</ol>
+<hr>
+<p><a href="https://jasla.duckdns.org/">https://jasla.duckdns.org/</a></p>
+<hr>
+<h1 id="프레임-제작">프레임 제작</h1>
+<ol>
+<li>자전거 거치대 프레임 제작
+ a. 전선 빼낼 구멍 뚫기
+ b. 케이스 장착할 측면에 폼보드 부착 (빠데 이용)</li>
+</ol>
+<hr>
+<h1 id="앞으로-해야-할-일">앞으로 해야 할 일</h1>
+<ol>
+<li>관리자 페이지에서 사용자 목록 페이지를 지우고 실시간 사고 페이지를 만들어 라이더들의 위치를 살피는 실시간 추적과 다르게 사고가 발생하면 마커가 찍히는 실시간 사고 페이지를 따로 만든다.</li>
+<li>안드로이드 라이딩 종료 화면에서 사고났던 위치를 보여주는 지도 웹뷰 제작</li>
+<li>시스템 프레임 제작 마무리</li>
+<li>시연영상 촬영 후 편집</li>
+</ol>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 중간고사</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<h1 id="웹사이트">웹사이트</h1>
+<ol>
+<li>모든 웹사이트 디자인 및 기능 구현  완료</li>
+<li>실시간 사고 페이지
+ a. 사용자의 실시간 이동 폴리라인 기능 구현 완료
+ b. 실시간 사고 마커 기능 구현 완료</li>
+</ol>
+<hr>
+<h1 id="시스템">시스템</h1>
+<ol>
+<li>시스템 구성도 그림 제작</li>
+<li>시스템 프레임 제작
+ a. 자전거 스탠드</li>
+</ol>
+<ul>
+<li>들어간 재료 : 자전거 스탠드, 자전거 발판, 빠데, 본드, 페인트, 폼보드</li>
+<li>들어간 센서 &amp; 보드 : 아두이노, 라즈베리파이, 압력감지센서, 온습도 센서
+ b. 자전거 안장가방</li>
+<li>들어간 재료 : 자전거 안장가방</li>
+<li>들어간 센서 &amp; 보드 : 아두이노, 라즈베리파이, 충격감지 센서, 카메라 모듈</li>
+</ul>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 9주차</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="중간고사-발표">중간고사 발표</h1>
+<ol>
+<li>자전거 스탠드 시연 사고
+ a. 압력센서에 설치했던 갑압판이 부셔지는 사고 발생
+ b. 시연 때 압력센서를 눌러주면서 안드로이드 앱에서 주차 모드가 실행 되는 화면을 보여줌 으로 시연 완료
+ c. 문제 해결</li>
+</ol>
+<ul>
+<li>압력센서에 고정 시키고 무게 중심을 실어줄 만한 제품을 모색한다.</li>
+<li>필요한 제품 : 용수철 3개 이상, 용수철 내부에 들어갈 짧은 막대</li>
+<li>압력센서와 갑압판을 따로 두지 말고 한번에 만들어 낸다.</li>
+<li>압력센서를 누를 때 마다 로그를 확인 해야하는 번거로움이 생기기 때문에 LED도 같이 넣어주면 좋을 것 같다는 생각?</li>
+</ul>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 경진대회</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-한-일">내가 한 일</h1>
+<h1 id="웹-사이트">웹 사이트</h1>
+<ol>
+<li>각 계정 별 이동경로와 충격감지 마커 구현 : 한 지도에 여러 계정의 정보를 표현하기에 역부족이었다. 팀장과 백엔드 개발자와 삼자대면 토론을 통해 백엔드는 사용자 리스트에 실시간으로 바뀌는 GPS 값을 넣어 계정 별로 PK값을 주어 DB에 변화를 주었다. 프론트에서는 지도를 2개 이상 만들어 각 계정 별로 표현하게 끔 만들어 각각 변화 되게 만들어 겹치지 않게 구현해야만 했다.
+ a. 무수히 많은 문제점들</li>
+</ol>
+<ul>
+<li>웹의 한계점 : 지도가 바뀌는 모습은 동적으로 API를 호출하는 것이지만 DB의 정보를 호출하는 것은 비동기호출이기 때문에 백엔드 통신을 요청한 이후에 변화 된 모습을 볼 수 있다. 그렇기 때문에 계정이 여러개일 경우 각각 저장 된 정보를 볼 수가 없다는게 단점이다.</li>
+<li>비동기 호출의 또 다른 단점 : DB는 추가되는 방식이 아닌 업데이트가 되는 방식이라 한꺼번에 많은 정보를 요청하는 게 아니라 자바스크립트 내 에서 연속적으로 호출을 해야만 했다. setInterval()함수를 이용하여 몇 초 간격으로 불러오는 방법을 채택하여 해당 단점을 최소화 시켰지만 이는 계정이 많을 경우 서버에 큰 부담감과 많은 딜레이가 생길 것으로 보인다.</li>
+<li>반복 호출하면서 생기는 테이블 스택 : 5초마다 호출 하면서 테이블이 계속 쌓이는 모습이 보였다. 이 부분을 고치기 위해 테이블 만드는 함수를 따로 만들거나 전역 변수 지정 등 많은 시도를 해보았지만 모두 실패하였다. 그래서 다른 setInterval()함수를 새로 만들어서 for문으로 배열 길이에 따라 테이블을 삭제하고 다시 생성되도록 반복하여 테이블 삭제가 깔끔하게 이루어지도록 하였다.
+ b. 문제 해결 진행 : 졸업작품이기 때문에 우리는 임시로 인원을 3명으로 정하여 계정 별로 변화 하는 모습을 보여주기로 했고 이 부분은 백엔드와 프론트의 협업으로 순탄히 진행되어 결과는 깔끔하게 나왔다. (백엔드의 힘이 더 큰 듯)</li>
+</ul>
+<ol start="2">
+<li>웹사이트의 마무리
+ a. 사용자 모드</li>
+</ol>
+<ul>
+<li>메인 페이지 : 간단하게 케바케로고와 구글 스토어 링크 버튼을 만들고 하단에는 개발자 소개 애니메이션을 넣어 주었다.</li>
+<li>자전거 편의 시설 지도 : 각 편의시설, 사고 다발 지역, 따릉이 위치 등의 정보를 json 파싱을 통해 공개API소스를 불러왔다. 해당 정보는 마커로 표현이 되어 사용자가 보기 쉽게 마커 디자인까지 꾸며주고 체크박스로 나누어 볼 수 있게 해주었다.
+ b. 관리자 모드</li>
+<li>실시간 사고 : 각 계정 별로 이동하는 폴리라인 경로와 충격감지 센싱을 통한 gps의 실시간 사고 마커를 구현하게 해주었다. 관리 시작 버튼을 통해 5초마다 갱신 되도록 해주었다.</li>
+<li>실시간 추적 : 각 계정 별 라이딩 중인 사용자의 위치를 마커로 구현한다. 새로 고침할 때 마다 갱신 된다.</li>
+</ul>
+<hr>
+<h1 id="시스템-프레임">시스템 프레임</h1>
+<ol>
+<li>자전거 스탠드 : 9주차에서 만든 갑압판 구상도를 기반으로 용수철을 두개로 줄이고 압력센서는 중앙에 압정을 꽂아 부착하는 방법으로 시도하여 만들었다. 이전보다 더 튼튼하게 만들어져서 쉽게 부셔지지도 않고 무게도 잘 잡히는 모습을 볼 수 있었다. 해당 프레임의 센싱은 이전에 완성되었기 때문에 더 손볼일은 없을 듯 하다.</li>
+</ol>
+
+                    </div>
+                </div>
+                <div class="code-14-div">
+                    <span class="code-3-title">2학기 최종</span>
+                    <hr class="hr-3">
+                    <div class="code-div-3-div">
+                        <h1 id="내가-맡은-부분">내가 맡은 부분</h1>
+<ol>
+<li>웹 프론트
+ a. 전체 구성 및 디자인
+ b. 지도 API 기능 구현</li>
+</ol>
+<ul>
+<li>자전거 테마 지도 기능</li>
+<li>관리자 페이지 실시간 추적 기능
+ c. 백엔드 통신</li>
+<li>사용자 DB 요청</li>
+<li>로그인 &amp; 회원가입 요청</li>
+<li>충격감지 GPS 값 요청</li>
+</ul>
+<ol start="2">
+<li>시스템 디자인
+ a. 시스템 프레임 디자인 모델링
+ b. 시스템 프레임 제작</li>
+</ol>
+<ul>
+<li>자전거 스탠드 (주차 센서)</li>
+<li>자전거 안장 가방 (블랙박스)</li>
+</ul>
+<ol start="3">
+<li>안드로이드
+ a. 지도 API 기능 구현</li>
+</ol>
+<ul>
+<li>길 찾기 기능</li>
+<li>자전거 테마 지도 기능</li>
+</ul>
+<ol start="4">
+<li>브랜딩
+ a. 케바케 로고 디자인
+ b. 자전거 좋아하는 주변 지인들의 인터뷰를 통한 니즈 파악
+ c. 로티파일즈 모션그래픽</li>
+</ol>
+<ul>
+<li>애프터 이펙트를 활용한 모션그래픽으로 로티파일즈 제작</li>
+</ul>
 
                     </div>
                 </div>
