@@ -26,12 +26,12 @@
 
             if (codediv.style.top === '60px') {
                 codediv.style.top = '730px';
-                codediv.style.opacity = '0.4';
+                codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.4)';
                 document.getElementById("aggro").innerHTML = "실시간 사고";
             }
             else {
                 codediv.style.top = '60px';
-                codediv.style.opacity = '0.9';
+                codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.8)';
                 document.getElementById("aggro").innerHTML = "실시간 사고 - 소스코드";
             }
         }
@@ -97,6 +97,9 @@
     <main>
         <div class="code-div" id="codediv">
             <div class="onoff-btn-div">
+                <div class="onoff-btn-text-div">
+                    <span>👨‍💻 관리모드 - 소스코드 보기 👩‍💻</span>
+                </div>
                 <input type="button" class="onoff-btn" id="onoff" onclick="onoff()">
             </div>
             <div class="code-1-div">

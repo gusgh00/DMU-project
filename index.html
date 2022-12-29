@@ -24,12 +24,12 @@
 
             if (codediv.style.top === '60px') {
                 codediv.style.top = '730px';
-                codediv.style.opacity = '0.4'
+                codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.4)';
                 document.getElementById("aggro").innerHTML = "메인 페이지";
             }
             else {
                 codediv.style.top = '60px';
-                codediv.style.opacity = '0.9'
+                codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.8)';
                 document.getElementById("aggro").innerHTML = "Trello 정리 리스트";
             }
         }
@@ -115,6 +115,9 @@
     <main>
         <div class="code-div" id="codediv">
             <div class="onoff-btn-div">
+                <div class="onoff-btn-text-div">
+                    <span>📄Trello 정리 리스트 보기📄</span>
+                </div>
                 <input type="button" class="onoff-btn" id="onoff" onclick="onoff()">
             </div>
             <button class="span-prev" id="prevbtn">

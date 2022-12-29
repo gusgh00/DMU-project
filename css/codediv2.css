@@ -18,8 +18,7 @@
     width: 1920px;
     height: 1080px;
     top: 730px;
-    background-color: rgb(37, 37, 37);
-    opacity: 0.4;
+    background-color: rgba(37, 37, 37, 0.4);
     transition: all 1.0s;
 }
 .onoff-btn-div {
@@ -37,13 +36,19 @@
     transition: all 1.0s;
 }
 .onoff-btn {
+    position: relative;
     width: 200px;
-    line-height: 20px;
+    height: 20px;
+    top: -30px;
     cursor: pointer;
 }
 .onoff-btn-div:hover {
-    width: 250px;
-    margin-left: -125px;
+    width: 300px;
+    margin-left: -150px;
+}
+.onoff-btn-div:hover>.onoff-btn-text-div {
+    color: rgba(255, 112, 83, 1.0);
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 
 .code-div-div {
@@ -112,7 +117,7 @@
     margin-right: 80px;
     border-radius: 0.8rem;
     border: 5px solid rgb(255, 112, 83);
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .code-13-div {
@@ -126,7 +131,7 @@
     margin-right: 80px;
     border-radius: 0.8rem;
     border: 5px solid rgb(203, 255, 59);
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .code-14-div {
@@ -140,7 +145,7 @@
     margin-right: 80px;
     border-radius: 0.8rem;
     border: 5px solid rgb(56, 119, 255);
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .code-1-title {
@@ -213,6 +218,17 @@
 }
 pre {
     font-family: 'EliceDigitalBaeum_Bold';
+}
+
+.onoff-btn-text-div {
+    position: relative;
+    top: -25px;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    font-family: 'EliceDigitalBaeum_Bold';
+    color: rgba(255, 255, 255, 0);
+    transition: all 1.0s;
 }
 
 
