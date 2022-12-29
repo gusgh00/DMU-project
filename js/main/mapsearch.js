@@ -70,7 +70,8 @@ function onComplete() {
             };
             addMarker(lonlatoption);//마커를 추가하는 함수입니다.
         });
-    } else {
+    }
+    else {
         alert('검색결과가 없습니다.');
     }
     map.setCenter(new Tmapv3.LatLng(this._responseData.searchPoiInfo.pois.poi[0].frontLat, this._responseData.searchPoiInfo.pois.poi[0].frontLon));
@@ -129,7 +130,8 @@ function onCompleteE() {
             };
             addMarkerE(lonlatoption);//마커를 추가하는 함수입니다.
         });
-    } else {
+    }
+    else {
         alert('검색결과가 없습니다.');
     }
     map.setCenter(new Tmapv3.LatLng(this._responseData.searchPoiInfo.pois.poi[0].frontLat, this._responseData.searchPoiInfo.pois.poi[0].frontLon));
@@ -158,7 +160,6 @@ function getRP() {
     tData2.getRoutePlanJson(s_latlng, e_latlng, optionObj, params);
     removeMarkers()
     removeMarkersE()
-    //중략…
 }
 //경로안내
 function onCompleteH() {
@@ -203,23 +204,6 @@ function onCompleteH() {
 }
 //경로취소
 function RoadCancel() {
-    var btn_sp = document.getElementById("searchSP");
-    var btn_ep = document.getElementById("searchEP");
-    var btn_search = document.getElementById("searchLoad");
-    var btn_cancel = document.getElementById("searchLoadCancel");
-    // btn_sp.disabled = false;
-    // btn_sp.style.backgroundColor = '#ff3d7e';
-    // btn_sp.style.color = '#ffffff';
-    // btn_ep.disabled = false;
-    // btn_ep.style.backgroundColor = '#9c35fd';
-    // btn_ep.style.color = '#ffffff';
-    // btn_search.disabled = false;
-    // btn_search.style.backgroundColor = '#88a795';
-    // btn_search.style.color = '#ffffff';
-    // btn_cancel.disabled = true;
-    // btn_cancel.style.backgroundColor = '#4e5c77';
-    // btn_cancel.style.color = '#46494f'
-
     var inputs = document.getElementById("startPoint");
     var inpute = document.getElementById("endPoint");
 
