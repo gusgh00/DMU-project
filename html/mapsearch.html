@@ -24,13 +24,13 @@
             let codediv = document.getElementById('codediv');
             let title = document.getElementById("listtitle");
 
-            if (codediv.style.top === '60px') {
-                codediv.style.top = '730px';
+            if (codediv.style.bottom === '-60px') {
+                codediv.style.bottom = '-730px';
                 codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.4)';
                 document.getElementById("aggro").innerHTML = "길 찾기";
             }
             else {
-                codediv.style.top = '60px';
+                codediv.style.bottom = '-60px';
                 codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.8)';
                 document.getElementById("aggro").innerHTML = "길 찾기 - 소스코드";
             }

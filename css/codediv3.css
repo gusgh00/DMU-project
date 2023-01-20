@@ -47,102 +47,50 @@
     margin-left: -150px;
 }
 .onoff-btn-div:hover>.onoff-btn-text-div {
-    color: rgba(255, 112, 83, 1.0);
+    color: rgba(203, 255, 59, 1.0);
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 
-.code-div-div {
+.code-1-div {
     position: absolute;
-    width: 1600px;
-    height: 800px;
-    left: 50%;
-    margin-left: -800px;
-    overflow-x: scroll;
-}
-.trello-div-div {
-    position: absolute;
-    display: flex;
-    z-index: 50;
-    margin-top: 50px;
-    left: 200px;
-}
-.trello-btn-div {
-    position: relative;
-    width: 100px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 0.8rem;
-    margin-right: 20px;
-    transition: all 1.0s;
-}
-.trello-btn-1 {
-    background-color: rgb(255, 112, 83);
-}
-.trello-btn-2 {
-    background-color: rgb(203, 255, 59);
-}
-.trello-btn-3 {
-    background-color: rgb(56, 119, 255);
-}
-.trello-btn-div>input {
-    line-height: 20px;
-}
-.trello-btn {
-    z-index: 60;
-    cursor: pointer;
-    color: black;
-    font-size: 15px;
-}
-.trello-btn-div:hover {
-    width: 130px;
-}
-.trello-1 {
-    display: flex;
-}
-.trello-2 {
-    display: none;
-}
-.trello-3 {
-    display: none;
-}
-
-.code-12-div {
-    position: relative;
     text-align: center;
     vertical-align: middle;
     z-index: 50;
     width: 520px;
     height: 600px;
     top: 80px;
-    margin-right: 80px;
+    left: 20%;
+    margin-left: -260px;
     border-radius: 0.8rem;
     border: 5px solid rgb(255, 112, 83);
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.code-13-div {
-    position: relative;
+.code-2-div {
+    position: absolute;
     text-align: center;
     vertical-align: middle;
     z-index: 50;
     width: 520px;
     height: 600px;
     top: 80px;
-    margin-right: 80px;
+    left: 50%;
+    margin-left: -260px;
     border-radius: 0.8rem;
     border: 5px solid rgb(203, 255, 59);
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.code-14-div {
-    position: relative;
+.code-3-div {
+    position: absolute;
     text-align: center;
     vertical-align: middle;
     z-index: 50;
     width: 520px;
     height: 600px;
     top: 80px;
-    margin-right: 80px;
+    left: 80%;
+    margin-left: -260px;
     border-radius: 0.8rem;
     border: 5px solid rgb(56, 119, 255);
     background-color: rgba(0, 0, 0, 0.7);
@@ -192,7 +140,7 @@
     overflow-x: auto;
     left: 50%;
     margin-left: -225px;
-    color: #fff;
+    color: rgb(255, 203, 193);
 }
 .code-div-2-div {
     position: absolute;
@@ -203,7 +151,7 @@
     overflow-x: auto;
     left: 50%;
     margin-left: -225px;
-    color: #fff;
+    color: rgb(236, 255, 185);
 }
 .code-div-3-div {
     position: absolute;
@@ -214,12 +162,11 @@
     overflow-x: auto;
     left: 50%;
     margin-left: -225px;
-    color: #fff;
+    color: rgb(203, 219, 255);
 }
 pre {
     font-family: 'EliceDigitalBaeum_Bold';
 }
-
 .onoff-btn-text-div {
     position: relative;
     top: -25px;
@@ -227,52 +174,6 @@ pre {
     left: 50%;
     margin-left: -150px;
     font-family: 'EliceDigitalBaeum_Bold';
-    color: rgba(255, 112, 83, 0);
+    color: rgba(203, 255, 59, 0);
     transition: all 1.0s;
-}
-
-
-
-.span-prev {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 300px;
-    left: 30px;
-}
-.span-next {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 300px;
-    right: 100px;
-}
-.arrow-prev, .arrow-next {
-    position: relative;
-}
-.arrow-prev::after {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    content: '';
-    width: 80px;
-    height: 80px;
-    border-top: 5px solid rgb(255, 255, 255);
-    border-right: 5px solid rgb(255, 255, 255);
-    transform: rotate(225deg);
-}
-.arrow-next::after {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    content: '';
-    width: 80px;
-    height: 80px;
-    border-top: 5px solid rgb(255, 255, 255);
-    border-left: 5px solid rgb(255, 255, 255);
-    transform: rotate(135deg);
-}
-button {
-    all: unset;
-    cursor: pointer;
 }

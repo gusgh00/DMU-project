@@ -17,7 +17,7 @@
     z-index: 30;
     width: 1920px;
     height: 1080px;
-    top: 730px;
+    bottom: -730px;
     background-color: rgba(37, 37, 37, 0.4);
     transition: all 1.0s;
 }

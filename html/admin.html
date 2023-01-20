@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css" />
     <link rel="stylesheet" type="text/css" href="../css/footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/instyle.css" />
-    <link rel="stylesheet" type="text/css" href="../css/codediv.css" />
+    <link rel="stylesheet" type="text/css" href="../css/codediv3.css" />
     <link rel="stylesheet" type="text/css" href="../css/main/adminacci.css" />
     <link rel="stylesheet" type="text/css" href="../css/loading.css" />
     <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon/favicon.ico">
@@ -24,13 +24,13 @@
             let codediv = document.getElementById('codediv');
             let title = document.getElementById("listtitle");
 
-            if (codediv.style.top === '60px') {
-                codediv.style.top = '730px';
+            if (codediv.style.bottom === '-200px') {
+                codediv.style.bottom = '-870px';
                 codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.4)';
                 document.getElementById("aggro").innerHTML = "실시간 사고";
             }
             else {
-                codediv.style.top = '60px';
+                codediv.style.bottom = '-200px';
                 codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.8)';
                 document.getElementById("aggro").innerHTML = "실시간 사고 - 소스코드";
             }

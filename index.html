@@ -23,13 +23,13 @@
             let codediv = document.getElementById('codediv');
             let title = document.getElementById("listtitle");
 
-            if (codediv.style.top === '60px') {
-                codediv.style.top = '730px';
+            if (codediv.style.bottom === '-200px') {
+                codediv.style.bottom = '-870px';
                 codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.4)';
                 document.getElementById("aggro").innerHTML = "메인 페이지";
             }
             else {
-                codediv.style.top = '60px';
+                codediv.style.bottom = '-200px';
                 codediv.style.backgroundColor = 'rgba(37, 37, 37, 0.8)';
                 document.getElementById("aggro").innerHTML = "Trello 정리 리스트";
             }
